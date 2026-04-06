@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ──────────────────────────────────────────────── -->
+  <!-- Replace with your actual details -->
+  <title>Alex Weber – Full-Stack Developer &amp; UI Designer</title>
+  <meta name="description"    content="Portfolio von Alex Weber – Full-Stack Entwickler und UI Designer. Maßgeschneiderte Weblösungen, moderne Interfaces und professionelle Beratung." />
+  <meta name="keywords"       content="Full-Stack Developer, UI Designer, Web Development, React, Node.js, Portfolio, München" />
+  <meta name="author"         content="Alex Weber" />
+  <meta name="robots"         content="index, follow" />
+  <!-- Update to your deployed URL -->
+  <link rel="canonical"       href="https://alexweber.dev/" />
+
+  <!-- ── Open Graph / Social ──────────────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://alexweber.dev/" />
+  <meta property="og:title"       content="Alex Weber – Full-Stack Developer &amp; UI Designer" />
+  <meta property="og:description" content="Portfolio von Alex Weber – Full-Stack Entwickler und UI Designer." />
+  <meta property="og:image"       content="https://alexweber.dev/assets/og-image.jpg" />
+  <meta property="og:locale"      content="de_DE" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Alex Weber – Full-Stack Developer &amp; UI Designer" />
+  <meta name="twitter:description" content="Portfolio von Alex Weber – Full-Stack Entwickler und UI Designer." />
+  <meta name="twitter:image"       content="https://alexweber.dev/assets/og-image.jpg" />
+
+  <!-- ── Schema.org structured data ──────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alex Weber",
+    "jobTitle": "Full-Stack Developer & UI Designer",
+    "url": "https://alexweber.dev",
+    "email": "hello@alexweber.dev",
+    "address": { "@type": "PostalAddress", "addressLocality": "München", "addressCountry": "DE" },
+    "sameAs": [
+      "https://github.com/alexweber",
+      "https://linkedin.com/in/alexweber",
+      "https://twitter.com/alexweber"
+    ]
+  }
+  </script>
+
+  <!-- ── Performance hints ────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Inline SVG favicon – no extra file needed -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236366f1'/><text x='16' y='23' font-size='18' font-weight='800' font-family='system-ui' fill='white' text-anchor='middle'>AW</text></svg>" />
+
+  <!-- Prevent flash of unstyled dark mode -->
+  <script>
+    (function () {
+      const t = localStorage.getItem("portfolio-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Mobile menu backdrop -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER / NAVIGATION
+       ══════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Hauptnavigation">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
+        <span class="nav__logo-text">AW<span class="accent">.</span></span>
+      </a>
+
+      <!-- Nav links -->
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#about"    class="nav__link" data-i18n="nav.about">Über mich</a></li>
+        <li><a href="#projects" class="nav__link" data-i18n="nav.projects">Projekte</a></li>
+        <li><a href="#services" class="nav__link" data-i18n="nav.services">Leistungen</a></li>
+        <li><a href="#contact"  class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav__controls">
+
+        <!-- Language switcher -->
+        <div class="lang-switcher" role="group" aria-label="Sprache wählen">
+          <button class="lang-btn active" data-lang="de" aria-pressed="true"  title="Deutsch">DE</button>
+          <button class="lang-btn"        data-lang="en" aria-pressed="false" title="English">EN</button>
+          <button class="lang-btn"        data-lang="es" aria-pressed="false" title="Español">ES</button>
+        </div>
+
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Dunkelmodus umschalten" aria-pressed="false">
+          <!-- Sun icon (shown in light mode) -->
+          <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in dark mode) -->
+          <svg class="theme-icon theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       MAIN CONTENT
+       ══════════════════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero__container">
+
+        <!-- Text content -->
+        <div class="hero__content">
+          <p class="hero__greeting animate-fade-up" data-i18n="hero.greeting">Hallo, ich bin</p>
+          <h1 class="hero__name animate-fade-up" id="hero-heading" data-i18n="hero.name">Alex Weber</h1>
+          <p class="hero__tagline animate-fade-up" data-i18n="hero.tagline">Full-Stack Developer &amp; UI Designer</p>
+          <p class="hero__description animate-fade-up" data-i18n="hero.description">
+            Ich erschaffe digitale Erlebnisse, die begeistern – von der ersten Idee bis zum fertigen Produkt.
+          </p>
+          <div class="hero__cta animate-fade-up">
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.cta">Projekte entdecken</a>
+            <a href="#contact"  class="btn btn--outline" data-i18n="hero.ctaContact">Kontakt aufnehmen</a>
+          </div>
+          <div class="hero__stats animate-fade-up">
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-label="50 plus">50+</span>
+              <span class="hero__stat-label" data-i18n="hero.statProjects">Projekte</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-label="5 plus">5+</span>
+              <span class="hero__stat-label" data-i18n="hero.statYears">Jahre Erfahrung</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-label="30 plus">30+</span>
+              <span class="hero__stat-label" data-i18n="hero.statClients">Kunden</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avatar with floating tech badges -->
+        <div class="hero__image-wrapper animate-fade-left" aria-hidden="true">
+          <div class="hero__image-container">
+            <div class="hero__avatar">
+              <!-- Decorative SVG layer -->
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="75" r="50" fill="currentColor" opacity=".12"/>
+                <ellipse cx="100" cy="160" rx="65" ry="38" fill="currentColor" opacity=".08"/>
+              </svg>
+              <!-- Replace this span with an <img> pointing to your real photo -->
+              <span class="hero__avatar-initials">AW</span>
+            </div>
+            <div class="hero__badge hero__badge--1">
+              <span aria-hidden="true">🚀</span>
+              <span data-i18n="hero.badge1">React</span>
+            </div>
+            <div class="hero__badge hero__badge--2">
+              <span aria-hidden="true">⚡</span>
+              <span data-i18n="hero.badge2">Node.js</span>
+            </div>
+            <div class="hero__badge hero__badge--3">
+              <span aria-hidden="true">🎨</span>
+              <span data-i18n="hero.badge3">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.hero__container -->
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────────────────── -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+
+        <header class="section__header reveal">
+          <span class="section__tag" data-i18n="about.tag">Über mich</span>
+          <h2 class="section__title" id="about-heading" data-i18n="about.title">Wer steckt dahinter?</h2>
+        </header>
+
+        <div class="about__grid">
+
+          <!-- Profile image placeholder -->
+          <div class="about__image-col reveal">
+            <div class="about__image-wrapper">
+              <!-- Replace the placeholder below with <img src="assets/profile.jpg" alt="…" loading="lazy" /> -->
+              <div class="about__image-placeholder"
+                   role="img"
+                   aria-label="Profilfoto von Alex Weber">
+                <span class="about__image-initials">AW</span>
+              </div>
+              <div class="about__image-decoration" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Text content -->
+          <div class="about__content reveal">
+            <p class="about__text" data-i18n="about.text1">
+              Ich bin ein leidenschaftlicher Full-Stack Developer und UI Designer mit über 5 Jahren Erfahrung.
+              Meine Stärke liegt darin, komplexe Probleme in elegante, nutzerfreundliche Lösungen zu verwandeln.
+            </p>
+            <p class="about__text" data-i18n="about.text2">
+              Von der Konzeption bis zum Launch begleite ich meine Kunden durch den gesamten Entwicklungsprozess –
+              mit Fokus auf Performance, Zugänglichkeit und modernem Design.
+            </p>
+
+            <div class="skills">
+              <h3 class="skills__title" data-i18n="about.skillsTitle">Meine Skills</h3>
+              <div class="skills__grid">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">AWS</span>
+              </div>
+            </div>
+
+            <!-- Replace href="#" with actual CV file path -->
+            <a href="#" class="btn btn--primary" download aria-label="Lebenslauf als PDF herunterladen" data-i18n="about.cta">
+              Lebenslauf herunterladen
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ──────────────────────────────────────── -->
+    <section class="section projects" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <header class="section__header reveal">
+          <span class="section__tag" data-i18n="projects.tag">Portfolio</span>
+          <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Ausgewählte Projekte</h2>
+          <p class="section__subtitle" data-i18n="projects.subtitle">Eine Auswahl meiner besten Arbeiten</p>
+        </header>
+
+        <!-- Filter tabs -->
+        <div class="projects__filter reveal" role="group" aria-label="Projekte nach Kategorie filtern">
+          <button class="filter-btn active" data-filter="all"    aria-pressed="true"  data-i18n="projects.filterAll">Alle</button>
+          <button class="filter-btn"        data-filter="web"    aria-pressed="false" data-i18n="projects.filterWeb">Web</button>
+          <button class="filter-btn"        data-filter="design" aria-pressed="false" data-i18n="projects.filterDesign">Design</button>
+          <button class="filter-btn"        data-filter="app"    aria-pressed="false" data-i18n="projects.filterApp">App</button>
+        </div>
+
+        <div class="projects__grid" id="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card reveal" data-category="web" aria-labelledby="proj1-title">
+            <div class="project-card__image">
+              <!-- Replace with: <img src="assets/project-1.jpg" alt="E-Commerce Platform Screenshot" loading="lazy" /> -->
+              <div class="project-card__img-placeholder project-card__img-placeholder--1"
+                   role="img" aria-label="E-Commerce Platform – Screenshot"></div>
+              <div class="project-card__overlay" aria-hidden="true">
+                <a href="#" class="project-card__link-icon" aria-label="Live Demo der E-Commerce Platform" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags" aria-label="Verwendete Technologien">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <h3 class="project-card__title" id="proj1-title" data-i18n="projects.p1.title">E-Commerce Platform</h3>
+              <p class="project-card__desc" data-i18n="projects.p1.desc">
+                Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal" data-category="design" aria-labelledby="proj2-title">
+            <div class="project-card__image">
+              <div class="project-card__img-placeholder project-card__img-placeholder--2"
+                   role="img" aria-label="Design System – Screenshot"></div>
+              <div class="project-card__overlay" aria-hidden="true">
+                <a href="#" class="project-card__link-icon" aria-label="Live Demo des Design Systems" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags" aria-label="Verwendete Technologien">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">Design System</span>
+              </div>
+              <h3 class="project-card__title" id="proj2-title" data-i18n="projects.p2.title">Design System</h3>
+              <p class="project-card__desc" data-i18n="projects.p2.desc">
+                Umfassendes Design System mit über 200 Komponenten für ein FinTech-Startup.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal" data-category="app" aria-labelledby="proj3-title">
+            <div class="project-card__image">
+              <div class="project-card__img-placeholder project-card__img-placeholder--3"
+                   role="img" aria-label="Task Manager App – Screenshot"></div>
+              <div class="project-card__overlay" aria-hidden="true">
+                <a href="#" class="project-card__link-icon" aria-label="Live Demo der Task Manager App" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags" aria-label="Verwendete Technologien">
+                <span class="project-tag">React Native</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Firebase</span>
+              </div>
+              <h3 class="project-card__title" id="proj3-title" data-i18n="projects.p3.title">Task Manager App</h3>
+              <p class="project-card__desc" data-i18n="projects.p3.desc">
+                Mobile App zur Aufgabenverwaltung mit KI-gestützter Priorisierung und Team-Kollaboration.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal" data-category="web" aria-labelledby="proj4-title">
+            <div class="project-card__image">
+              <div class="project-card__img-placeholder project-card__img-placeholder--4"
+                   role="img" aria-label="Analytics Dashboard – Screenshot"></div>
+              <div class="project-card__overlay" aria-hidden="true">
+                <a href="#" class="project-card__link-icon" aria-label="Live Demo des Analytics Dashboards" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags" aria-label="Verwendete Technologien">
+                <span class="project-tag">Vue.js</span>
+                <span class="project-tag">D3.js</span>
+                <span class="project-tag">Python</span>
+              </div>
+              <h3 class="project-card__title" id="proj4-title" data-i18n="projects.p4.title">Analytics Dashboard</h3>
+              <p class="project-card__desc" data-i18n="projects.p4.desc">
+                Interaktives Analyse-Dashboard mit Echtzeit-Daten und maßgeschneiderten Visualisierungen.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /#projects-grid -->
+
+        <div class="projects__more reveal">
+          <a href="#" class="btn btn--outline" data-i18n="projects.viewAll">Alle Projekte ansehen</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SERVICES ──────────────────────────────────────── -->
+    <section class="section services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+
+        <header class="section__header reveal">
+          <span class="section__tag" data-i18n="services.tag">Was ich biete</span>
+          <h2 class="section__title" id="services-heading" data-i18n="services.title">Meine Leistungen</h2>
+          <p class="section__subtitle" data-i18n="services.subtitle">Maßgeschneiderte Lösungen für Ihr digitales Wachstum</p>
+        </header>
+
+        <div class="services__grid">
+
+          <!-- Service 1 – Web Development -->
+          <div class="service-card reveal" aria-labelledby="svc1-title">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc1-title" data-i18n="services.s1.title">Web Development</h3>
+            <p class="service-card__desc" data-i18n="services.s1.desc">Maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.</p>
+            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+              <li data-i18n="services.s1.f1">React / Vue.js Frontend</li>
+              <li data-i18n="services.s1.f2">Node.js / Python Backend</li>
+              <li data-i18n="services.s1.f3">REST &amp; GraphQL APIs</li>
+              <li data-i18n="services.s1.f4">Cloud Deployment</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+          </div>
+
+          <!-- Service 2 – UI/UX Design (featured) -->
+          <div class="service-card service-card--featured reveal" aria-labelledby="svc2-title">
+            <div class="service-card__badge" data-i18n="services.popular" aria-label="Beliebt">Beliebt</div>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc2-title" data-i18n="services.s2.title">UI/UX Design</h3>
+            <p class="service-card__desc" data-i18n="services.s2.desc">Nutzerfreundliche und ästhetisch ansprechende Interfaces, die Besucher in Kunden verwandeln.</p>
+            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+              <li data-i18n="services.s2.f1">User Research &amp; Wireframing</li>
+              <li data-i18n="services.s2.f2">Figma Prototyping</li>
+              <li data-i18n="services.s2.f3">Design System</li>
+              <li data-i18n="services.s2.f4">Usability Testing</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+          </div>
+
+          <!-- Service 3 – Consulting -->
+          <div class="service-card reveal" aria-labelledby="svc3-title">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc3-title" data-i18n="services.s3.title">Consulting</h3>
+            <p class="service-card__desc" data-i18n="services.s3.desc">Strategische Beratung für Ihre digitale Transformation – von der Architektur bis zur Umsetzung.</p>
+            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+              <li data-i18n="services.s3.f1">Tech Stack Beratung</li>
+              <li data-i18n="services.s3.f2">Code Review</li>
+              <li data-i18n="services.s3.f3">Performance Audit</li>
+              <li data-i18n="services.s3.f4">Team Mentoring</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+          </div>
+
+          <!-- Service 4 – Maintenance -->
+          <div class="service-card reveal" aria-labelledby="svc4-title">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc4-title" data-i18n="services.s4.title">Wartung &amp; Support</h3>
+            <p class="service-card__desc" data-i18n="services.s4.desc">Zuverlässige Wartung und schneller Support für Ihre bestehenden Webprojekte.</p>
+            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+              <li data-i18n="services.s4.f1">Bug Fixing</li>
+              <li data-i18n="services.s4.f2">Security Updates</li>
+              <li data-i18n="services.s4.f3">Performance Monitoring</li>
+              <li data-i18n="services.s4.f4">24/7 Support</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────── -->
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <header class="section__header reveal">
+          <span class="section__tag" data-i18n="contact.tag">Kontakt</span>
+          <h2 class="section__title" id="contact-heading" data-i18n="contact.title">Lass uns zusammenarbeiten</h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">Hast du ein Projekt? Ich freue mich auf deine Nachricht.</p>
+        </header>
+
+        <div class="contact__grid">
+
+          <!-- Contact info -->
+          <div class="contact__info reveal">
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <p class="contact-item__label" data-i18n="contact.emailLabel">E-Mail</p>
+                <!-- Replace with your actual email -->
+                <a href="mailto:hello@alexweber.dev" class="contact-item__value">hello@alexweber.dev</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="contact-item__label" data-i18n="contact.locationLabel">Standort</p>
+                <p class="contact-item__value" data-i18n="contact.location">München, Deutschland</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="contact-item__label" data-i18n="contact.responseLabel">Antwortzeit</p>
+                <p class="contact-item__value" data-i18n="contact.response">Innerhalb von 24 Stunden</p>
+              </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="contact__social" aria-label="Social Media Links">
+              <!-- Replace href="#" with your actual profile URLs -->
+              <a href="#" class="social-btn" aria-label="GitHub Profil besuchen" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="LinkedIn Profil besuchen" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Twitter Profil besuchen" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="contact__form-wrapper reveal">
+            <!--
+              To wire up real form submission, replace the JS submit handler in main.js
+              with a real backend or use a service like Formspree:
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" …>
+            -->
+            <form class="contact-form" id="contact-form" novalidate aria-label="Kontaktformular">
+
+              <div class="form-group">
+                <label class="form-label" for="contact-name" data-i18n="contact.form.name">Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input"
+                       required autocomplete="name" placeholder="Max Mustermann"
+                       aria-describedby="name-error" />
+                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email" data-i18n="contact.form.email">E-Mail</label>
+                <input type="email" id="contact-email" name="email" class="form-input"
+                       required autocomplete="email" placeholder="max@beispiel.de"
+                       aria-describedby="email-error" />
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-service" data-i18n="contact.form.service">Leistung</label>
+                <select id="contact-service" name="service" class="form-input form-select">
+                  <option value=""          data-i18n="contact.form.selectService">Leistung wählen…</option>
+                  <option value="web"       data-i18n="services.s1.title">Web Development</option>
+                  <option value="design"    data-i18n="services.s2.title">UI/UX Design</option>
+                  <option value="consulting" data-i18n="services.s3.title">Consulting</option>
+                  <option value="maintenance" data-i18n="services.s4.title">Wartung &amp; Support</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message" data-i18n="contact.form.message">Nachricht</label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea"
+                          rows="5" required placeholder="Erzähl mir von deinem Projekt…"
+                          aria-describedby="message-error"></textarea>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="form-submit">
+                <span data-i18n="contact.form.submit">Nachricht senden</span>
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+
+              <!-- Success message (shown after submit) -->
+              <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p data-i18n="contact.form.successMsg">Danke! Ich melde mich so schnell wie möglich bei dir.</p>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /#main -->
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container container">
+
+      <div class="footer__brand">
+        <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
+          <span class="nav__logo-text">AW<span class="accent">.</span></span>
+        </a>
+        <p class="footer__tagline" data-i18n="footer.tagline">Digitale Erlebnisse, die begeistern.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer Navigation">
+        <ul role="list">
+          <li><a href="#about"    data-i18n="nav.about">Über mich</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
+          <li><a href="#services" data-i18n="nav.services">Leistungen</a></li>
+          <li><a href="#contact"  data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social" aria-label="Social Media">
+        <a href="#" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p class="footer__copy"><span data-i18n="footer.copy">© 2026 Alex Weber. Alle Rechte vorbehalten.</span></p>
+        <p class="footer__made"><span data-i18n="footer.made">Mit ♥ in München gemacht</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Zurück nach oben" hidden>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
