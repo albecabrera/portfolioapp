@@ -242,14 +242,38 @@ strong { font-weight: 600; }
 
 /* Logo */
 .nav__logo { display: flex; align-items: center; }
+
 .nav__logo-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .15em;
   font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -.03em;
   color: var(--tx-base);
   transition: color var(--t-fast);
+  line-height: 1;
 }
 .nav__logo:hover .nav__logo-text { color: var(--clr-primary); }
+
+/* The "&" in the logo gets the brand color */
+.nav__logo-amp {
+  color: var(--clr-primary);
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* "WebArt" – lighter weight, smaller, muted */
+.nav__logo-sub {
+  font-size: .62em;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--tx-muted);
+  transition: color var(--t-fast);
+  align-self: center;
+  padding-left: .05em;
+}
+.nav__logo:hover .nav__logo-sub { color: var(--clr-primary-light); }
 
 /* Menu */
 .nav__menu {
@@ -508,6 +532,36 @@ strong { font-weight: 600; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.hero__avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Crossfade slideshow: mandy first, then alberto, loop every 4s visible + 1s fade */
+.hero__avatar--slideshow { position: relative; }
+
+.hero__avatar-photo--1 {
+  animation: heroFade 10s ease-in-out infinite;
+}
+.hero__avatar-photo--2 {
+  animation: heroFade 10s ease-in-out infinite 5s;
+}
+
+@keyframes heroFade {
+  0%        { opacity: 1; }
+  40%       { opacity: 1; }
+  50%       { opacity: 0; }
+  90%       { opacity: 0; }
+  100%      { opacity: 1; }
 }
 
 /* Floating tech badges */

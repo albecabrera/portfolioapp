@@ -6,10 +6,10 @@
 
   <!-- ── SEO ──────────────────────────────────────────────── -->
   <!-- Replace with your actual details -->
-  <title>Alberto Cabrera – Full-Stack Developer &amp; UI Designer</title>
-  <meta name="description"    content="Portfolio von Alberto Cabrera – Full-Stack Entwickler und UI Designer. Maßgeschneiderte Weblösungen, moderne Interfaces und professionelle Beratung." />
-  <meta name="keywords"       content="Full-Stack Developer, UI Designer, Web Development, React, Node.js, Portfolio, München" />
-  <meta name="author"         content="Alberto Cabrera" />
+  <title>Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi</title>
+  <meta name="description"    content="Wir sind zwei Brüder aus München: Armando Urquiola Cabrera (Fullstack Developer & SEO) und Alberto Cabrera (WordPress & Divi Experte). Gemeinsam erschaffen wir digitale Erlebnisse, die begeistern." />
+  <meta name="keywords"       content="Fullstack Developer, WordPress, Divi, SEO, Web Development, React, Node.js, München" />
+  <meta name="author"         content="Armando Urquiola Cabrera, Alberto Cabrera" />
   <meta name="robots"         content="index, follow" />
   <!-- Update to your deployed URL -->
   <link rel="canonical"       href="https://alexweber.dev/" />
@@ -17,29 +17,35 @@
   <!-- ── Open Graph / Social ──────────────────────────────── -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://alexweber.dev/" />
-  <meta property="og:title"       content="Alberto Cabrera – Full-Stack Developer &amp; UI Designer" />
-  <meta property="og:description" content="Portfolio von Alberto Cabrera – Full-Stack Entwickler und UI Designer." />
+  <meta property="og:title"       content="Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi" />
+  <meta property="og:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi & SEO aus München." />
   <meta property="og:image"       content="https://alexweber.dev/assets/og-image.jpg" />
   <meta property="og:locale"      content="de_DE" />
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Alberto Cabrera – Full-Stack Developer &amp; UI Designer" />
-  <meta name="twitter:description" content="Portfolio von Alberto Cabrera – Full-Stack Entwickler und UI Designer." />
+  <meta name="twitter:title"       content="Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi" />
+  <meta name="twitter:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi & SEO aus München." />
   <meta name="twitter:image"       content="https://alexweber.dev/assets/og-image.jpg" />
 
   <!-- ── Schema.org structured data ──────────────────────── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alberto Cabrera",
-    "jobTitle": "Full-Stack Developer & UI Designer",
+    "@type": "Organization",
+    "name": "Urquiola & Cabrera Web",
     "url": "https://alexweber.dev",
     "email": "hola@albertocabrera.dev",
     "address": { "@type": "PostalAddress", "addressLocality": "München", "addressCountry": "DE" },
-    "sameAs": [
-      "https://github.com/alexweber",
-      "https://linkedin.com/in/alexweber",
-      "https://twitter.com/alexweber"
+    "member": [
+      {
+        "@type": "Person",
+        "name": "Armando Urquiola Cabrera",
+        "jobTitle": "Fullstack Developer & SEO"
+      },
+      {
+        "@type": "Person",
+        "name": "Alberto Cabrera",
+        "jobTitle": "WordPress & Divi Expert"
+      }
     ]
   }
   </script>
@@ -52,7 +58,7 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Inline SVG favicon – no extra file needed -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236366f1'/><text x='16' y='23' font-size='18' font-weight='800' font-family='system-ui' fill='white' text-anchor='middle'>AC</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><rect width='64' height='32' rx='6' fill='%236366f1'/><text x='32' y='22' font-size='13' font-weight='800' font-family='system-ui,sans-serif' fill='white' text-anchor='middle'>A%26A</text></svg>" />
 
   <!-- Prevent flash of unstyled dark mode -->
   <script>
@@ -78,12 +84,12 @@
 
       <!-- Logo -->
       <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
-        <span class="nav__logo-text">AC<span class="accent">.</span></span>
+        <span class="nav__logo-text">A<span class="nav__logo-amp">&amp;</span>A <span class="nav__logo-sub">WebArt</span></span>
       </a>
 
       <!-- Nav links -->
       <ul class="nav__menu" id="nav-menu" role="list">
-        <li><a href="#about"    class="nav__link" data-i18n="nav.about">Über mich</a></li>
+        <li><a href="#about"    class="nav__link" data-i18n="nav.about">Über uns</a></li>
         <li><a href="#projects" class="nav__link" data-i18n="nav.projects">Projekte</a></li>
         <li><a href="#services" class="nav__link" data-i18n="nav.services">Leistungen</a></li>
         <li><a href="#contact"  class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
@@ -137,11 +143,11 @@
 
         <!-- Text content -->
         <div class="hero__content">
-          <p class="hero__greeting animate-fade-up" data-i18n="hero.greeting">Hallo, ich bin</p>
-          <h1 class="hero__name animate-fade-up" id="hero-heading" data-i18n="hero.name">Alberto Cabrera</h1>
-          <p class="hero__tagline animate-fade-up" data-i18n="hero.tagline">Full-Stack Developer &amp; UI Designer</p>
+          <p class="hero__greeting animate-fade-up" data-i18n="hero.greeting">Hallo, wir sind</p>
+          <h1 class="hero__name animate-fade-up" id="hero-heading" data-i18n="hero.name">Armando &amp; Alberto</h1>
+          <p class="hero__tagline animate-fade-up" data-i18n="hero.tagline">Fullstack Development &amp; WordPress Divi</p>
           <p class="hero__description animate-fade-up" data-i18n="hero.description">
-            Ich erschaffe digitale Erlebnisse, die begeistern – von der ersten Idee bis zum fertigen Produkt.
+            Wir sind zwei Brüder, die gemeinsam digitale Erlebnisse erschaffen – von der Idee bis zur fertigen Website, mit Leidenschaft und Expertise.
           </p>
           <div class="hero__cta animate-fade-up">
             <a href="#projects" class="btn btn--primary" data-i18n="hero.cta">Projekte entdecken</a>
@@ -166,14 +172,17 @@
         <!-- Avatar with floating tech badges -->
         <div class="hero__image-wrapper animate-fade-left" aria-hidden="true">
           <div class="hero__image-container">
-            <div class="hero__avatar">
-              <!-- Decorative SVG layer -->
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="100" cy="75" r="50" fill="currentColor" opacity=".12"/>
-                <ellipse cx="100" cy="160" rx="65" ry="38" fill="currentColor" opacity=".08"/>
-              </svg>
-              <!-- Replace this span with an <img> pointing to your real photo -->
-              <span class="hero__avatar-initials">AC</span>
+            <div class="hero__avatar hero__avatar--slideshow">
+              <img src="img/mandy_perfil.jpeg"
+                   alt="Mandy – Fullstack Developer & SEO"
+                   class="hero__avatar-photo hero__avatar-photo--1"
+                   loading="eager"
+                   width="420" height="420" />
+              <img src="img/albe_perfil.jpeg"
+                   alt="Alberto Cabrera"
+                   class="hero__avatar-photo hero__avatar-photo--2"
+                   loading="eager"
+                   width="420" height="420" />
             </div>
             <div class="hero__badge hero__badge--1">
               <span aria-hidden="true">🚀</span>
@@ -181,11 +190,11 @@
             </div>
             <div class="hero__badge hero__badge--2">
               <span aria-hidden="true">⚡</span>
-              <span data-i18n="hero.badge2">Node.js</span>
+              <span data-i18n="hero.badge2">WordPress</span>
             </div>
             <div class="hero__badge hero__badge--3">
-              <span aria-hidden="true">🎨</span>
-              <span data-i18n="hero.badge3">UI/UX</span>
+              <span aria-hidden="true">📈</span>
+              <span data-i18n="hero.badge3">SEO</span>
             </div>
           </div>
         </div>
@@ -203,8 +212,8 @@
       <div class="container">
 
         <header class="section__header reveal">
-          <span class="section__tag" data-i18n="about.tag">Über mich</span>
-          <h2 class="section__title" id="about-heading" data-i18n="about.title">Wer steckt dahinter?</h2>
+          <span class="section__tag" data-i18n="about.tag">Über uns</span>
+          <h2 class="section__title" id="about-heading" data-i18n="about.title">Wer steckt hinter uns?</h2>
         </header>
 
         <div class="about__grid">
@@ -229,31 +238,28 @@
           <!-- Text content -->
           <div class="about__content reveal">
             <p class="about__text" data-i18n="about.text1">
-              Ich bin ein leidenschaftlicher Full-Stack Developer und UI Designer mit über 5 Jahren Erfahrung.
-              Meine Stärke liegt darin, komplexe Probleme in elegante, nutzerfreundliche Lösungen zu verwandeln.
+              Wir sind Armando Urquiola Cabrera und Alberto Cabrera – zwei Brüder und ein eingespieltes Team. Armando ist Fullstack Developer und SEO-Spezialist: Er entwickelt performante Webanwendungen mit React, Node.js und modernen Technologien und sorgt dafür, dass unsere Projekte bei Google gefunden werden.
             </p>
             <p class="about__text" data-i18n="about.text2">
-              Von der Konzeption bis zum Launch begleite ich meine Kunden durch den gesamten Entwicklungsprozess –
-              mit Fokus auf Performance, Zugänglichkeit und modernem Design.
+              Alberto ist unser WordPress- und Divi-Experte: Er gestaltet professionelle, schnelle und leicht pflegbare Websites, die Besucher zu Kunden machen. Gemeinsam begleiten wir euch von der Konzeption bis zum Launch – zuverlässig, transparent und mit vollem Einsatz.
             </p>
 
             <div class="skills">
-              <h3 class="skills__title" data-i18n="about.skillsTitle">Meine Skills</h3>
+              <h3 class="skills__title" data-i18n="about.skillsTitle">Unsere Skills</h3>
               <div class="skills__grid">
                 <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
                 <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Divi</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">WooCommerce</span>
                 <span class="skill-tag">AWS</span>
               </div>
             </div>
 
-            <!-- Replace href="#" with actual CV file path -->
-            <a href="#" class="btn btn--primary" download aria-label="Lebenslauf als PDF herunterladen" data-i18n="about.cta">
-              Lebenslauf herunterladen
+            <a href="#" class="btn btn--primary" download aria-label="Portfolio als PDF herunterladen" data-i18n="about.cta">
+              Portfolio herunterladen
             </a>
           </div>
 
@@ -268,7 +274,7 @@
         <header class="section__header reveal">
           <span class="section__tag" data-i18n="projects.tag">Portfolio</span>
           <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Ausgewählte Projekte</h2>
-          <p class="section__subtitle" data-i18n="projects.subtitle">Eine Auswahl meiner besten Arbeiten</p>
+          <p class="section__subtitle" data-i18n="projects.subtitle">Eine Auswahl unserer besten gemeinsamen Arbeiten</p>
         </header>
 
         <!-- Filter tabs -->
@@ -426,9 +432,9 @@
       <div class="container">
 
         <header class="section__header reveal">
-          <span class="section__tag" data-i18n="services.tag">Was ich biete</span>
-          <h2 class="section__title" id="services-heading" data-i18n="services.title">Meine Leistungen</h2>
-          <p class="section__subtitle" data-i18n="services.subtitle">Maßgeschneiderte Lösungen für Ihr digitales Wachstum</p>
+          <span class="section__tag" data-i18n="services.tag">Was wir bieten</span>
+          <h2 class="section__title" id="services-heading" data-i18n="services.title">Unsere Leistungen</h2>
+          <p class="section__subtitle" data-i18n="services.subtitle">Maßgeschneiderte Lösungen für euer digitales Wachstum</p>
         </header>
 
         <div class="services__grid">
@@ -440,13 +446,13 @@
                 <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
               </svg>
             </div>
-            <h3 class="service-card__title" id="svc1-title" data-i18n="services.s1.title">Web Development</h3>
-            <p class="service-card__desc" data-i18n="services.s1.desc">Maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.</p>
+            <h3 class="service-card__title" id="svc1-title" data-i18n="services.s1.title">Fullstack Development</h3>
+            <p class="service-card__desc" data-i18n="services.s1.desc">Wir entwickeln maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.</p>
             <ul class="service-card__features" aria-label="Enthaltene Leistungen">
-              <li data-i18n="services.s1.f1">React / Vue.js Frontend</li>
+              <li data-i18n="services.s1.f1">React / Next.js Frontend</li>
               <li data-i18n="services.s1.f2">Node.js / Python Backend</li>
               <li data-i18n="services.s1.f3">REST &amp; GraphQL APIs</li>
-              <li data-i18n="services.s1.f4">Cloud Deployment</li>
+              <li data-i18n="services.s1.f4">Cloud Deployment &amp; DevOps</li>
             </ul>
             <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
@@ -459,13 +465,13 @@
                 <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
               </svg>
             </div>
-            <h3 class="service-card__title" id="svc2-title" data-i18n="services.s2.title">UI/UX Design</h3>
-            <p class="service-card__desc" data-i18n="services.s2.desc">Nutzerfreundliche und ästhetisch ansprechende Interfaces, die Besucher in Kunden verwandeln.</p>
+            <h3 class="service-card__title" id="svc2-title" data-i18n="services.s2.title">WordPress &amp; Divi</h3>
+            <p class="service-card__desc" data-i18n="services.s2.desc">Professionelle WordPress-Websites mit dem Divi Builder – optisch ansprechend, schnell und einfach zu pflegen.</p>
             <ul class="service-card__features" aria-label="Enthaltene Leistungen">
-              <li data-i18n="services.s2.f1">User Research &amp; Wireframing</li>
-              <li data-i18n="services.s2.f2">Figma Prototyping</li>
-              <li data-i18n="services.s2.f3">Design System</li>
-              <li data-i18n="services.s2.f4">Usability Testing</li>
+              <li data-i18n="services.s2.f1">Individuelle Divi-Themes</li>
+              <li data-i18n="services.s2.f2">WooCommerce Online-Shops</li>
+              <li data-i18n="services.s2.f3">Performance-Optimierung</li>
+              <li data-i18n="services.s2.f4">Schulung &amp; Übergabe</li>
             </ul>
             <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
@@ -477,13 +483,13 @@
                 <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
               </svg>
             </div>
-            <h3 class="service-card__title" id="svc3-title" data-i18n="services.s3.title">Consulting</h3>
-            <p class="service-card__desc" data-i18n="services.s3.desc">Strategische Beratung für Ihre digitale Transformation – von der Architektur bis zur Umsetzung.</p>
+            <h3 class="service-card__title" id="svc3-title" data-i18n="services.s3.title">SEO-Optimierung</h3>
+            <p class="service-card__desc" data-i18n="services.s3.desc">Wir bringen eure Website in die Suchergebnisse – nachhaltig, datengetrieben und mit messbaren Ergebnissen.</p>
             <ul class="service-card__features" aria-label="Enthaltene Leistungen">
-              <li data-i18n="services.s3.f1">Tech Stack Beratung</li>
-              <li data-i18n="services.s3.f2">Code Review</li>
-              <li data-i18n="services.s3.f3">Performance Audit</li>
-              <li data-i18n="services.s3.f4">Team Mentoring</li>
+              <li data-i18n="services.s3.f1">Keyword-Recherche &amp; Strategie</li>
+              <li data-i18n="services.s3.f2">On-Page &amp; technisches SEO</li>
+              <li data-i18n="services.s3.f3">Content-Optimierung</li>
+              <li data-i18n="services.s3.f4">Monatliches Reporting</li>
             </ul>
             <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
@@ -496,12 +502,12 @@
               </svg>
             </div>
             <h3 class="service-card__title" id="svc4-title" data-i18n="services.s4.title">Wartung &amp; Support</h3>
-            <p class="service-card__desc" data-i18n="services.s4.desc">Zuverlässige Wartung und schneller Support für Ihre bestehenden Webprojekte.</p>
+            <p class="service-card__desc" data-i18n="services.s4.desc">Zuverlässige Wartung und schneller Support für eure bestehenden Webprojekte – damit ihr euch aufs Wesentliche konzentrieren könnt.</p>
             <ul class="service-card__features" aria-label="Enthaltene Leistungen">
-              <li data-i18n="services.s4.f1">Bug Fixing</li>
-              <li data-i18n="services.s4.f2">Security Updates</li>
-              <li data-i18n="services.s4.f3">Performance Monitoring</li>
-              <li data-i18n="services.s4.f4">24/7 Support</li>
+              <li data-i18n="services.s4.f1">Updates &amp; Bug Fixing</li>
+              <li data-i18n="services.s4.f2">Sicherheits-Patches</li>
+              <li data-i18n="services.s4.f3">Performance-Monitoring</li>
+              <li data-i18n="services.s4.f4">Persönlicher Ansprechpartner</li>
             </ul>
             <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
@@ -516,8 +522,8 @@
 
         <header class="section__header reveal">
           <span class="section__tag" data-i18n="contact.tag">Kontakt</span>
-          <h2 class="section__title" id="contact-heading" data-i18n="contact.title">Lass uns zusammenarbeiten</h2>
-          <p class="section__subtitle" data-i18n="contact.subtitle">Hast du ein Projekt? Ich freue mich auf deine Nachricht.</p>
+          <h2 class="section__title" id="contact-heading" data-i18n="contact.title">Lasst uns zusammenarbeiten</h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">Habt ihr ein Projekt? Wir freuen uns auf eure Nachricht.</p>
         </header>
 
         <div class="contact__grid">
@@ -622,7 +628,7 @@
               <!-- Success message (shown after submit) -->
               <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <p data-i18n="contact.form.successMsg">Danke! Ich melde mich so schnell wie möglich bei dir.</p>
+                <p data-i18n="contact.form.successMsg">Danke! Wir melden uns so schnell wie möglich bei euch.</p>
               </div>
 
             </form>
@@ -642,14 +648,14 @@
 
       <div class="footer__brand">
         <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
-          <span class="nav__logo-text">AC<span class="accent">.</span></span>
+          <span class="nav__logo-text">A<span class="nav__logo-amp">&amp;</span>A <span class="nav__logo-sub">WebArt</span></span>
         </a>
-        <p class="footer__tagline" data-i18n="footer.tagline">Digitale Erlebnisse, die begeistern.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Digitale Erlebnisse, die wir gemeinsam erschaffen.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer Navigation">
         <ul role="list">
-          <li><a href="#about"    data-i18n="nav.about">Über mich</a></li>
+          <li><a href="#about"    data-i18n="nav.about">Über uns</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
           <li><a href="#services" data-i18n="nav.services">Leistungen</a></li>
           <li><a href="#contact"  data-i18n="nav.contact">Kontakt</a></li>
@@ -672,7 +678,7 @@
 
     <div class="footer__bottom">
       <div class="container">
-        <p class="footer__copy"><span data-i18n="footer.copy">© 2026 Alberto Cabrera. Alle Rechte vorbehalten.</span></p>
+        <p class="footer__copy"><span data-i18n="footer.copy">© 2026 Armando &amp; Alberto. Alle Rechte vorbehalten.</span></p>
         <p class="footer__made"><span data-i18n="footer.made">Mit ♥ in München gemacht</span></p>
       </div>
     </div>
