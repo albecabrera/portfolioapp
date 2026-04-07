@@ -168,18 +168,8 @@ function initStickyHeader() {
   const header = document.getElementById("header");
   if (!header) return;
 
-  let lastScroll = 0;
-
   window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    header.classList.toggle("header--scrolled", y > 20);
-    // Hide on fast scroll-down, show on scroll-up
-    if (y > 80 && y > lastScroll + 5) {
-      header.classList.add("header--hidden");
-    } else if (y < lastScroll - 5) {
-      header.classList.remove("header--hidden");
-    }
-    lastScroll = y;
+    header.classList.toggle("header--scrolled", window.scrollY > 20);
   }, { passive: true });
 }
 

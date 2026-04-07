@@ -13,7 +13,7 @@ const TRANSLATIONS = {
     },
     hero: {
       greeting:     "Hallo, ich bin",
-      name:         "Alex Weber",
+      name:         "Alberto Cabrera",
       tagline:      "Full-Stack Developer & UI Designer",
       description:  "Ich erschaffe digitale Erlebnisse, die begeistern – von der ersten Idee bis zum fertigen Produkt.",
       cta:          "Projekte entdecken",
@@ -42,6 +42,7 @@ const TRANSLATIONS = {
       filterDesign: "Design",
       filterApp:    "App",
       viewAll:      "Alle Projekte ansehen",
+      viewProject:  "Zum Projekt",
       p1: { title: "E-Commerce Platform",  desc: "Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard." },
       p2: { title: "Design System",        desc: "Umfassendes Design System mit über 200 Komponenten für ein FinTech-Startup." },
       p3: { title: "Task Manager App",     desc: "Mobile App zur Aufgabenverwaltung mit KI-gestützter Priorisierung und Team-Kollaboration." },
@@ -79,7 +80,7 @@ const TRANSLATIONS = {
     },
     footer: {
       tagline: "Digitale Erlebnisse, die begeistern.",
-      copy:    "© 2026 Alex Weber. Alle Rechte vorbehalten.",
+      copy:    "© 2026 Alberto Cabrera. Alle Rechte vorbehalten.",
       made:    "Mit ♥ in München gemacht",
     },
     validation: {
@@ -89,8 +90,8 @@ const TRANSLATIONS = {
       messageRequired: "Bitte schreib mir eine Nachricht.",
     },
     meta: {
-      title:       "Alex Weber – Full-Stack Developer & UI Designer",
-      description: "Portfolio von Alex Weber – Full-Stack Entwickler und UI Designer. Maßgeschneiderte Weblösungen, moderne Interfaces und professionelle Beratung.",
+      title:       "Alberto Cabrera – Full-Stack Developer & UI Designer",
+      description: "Portfolio von Alberto Cabrera – Full-Stack Entwickler und UI Designer. Maßgeschneiderte Weblösungen, moderne Interfaces und professionelle Beratung.",
     },
   },
 
@@ -104,7 +105,7 @@ const TRANSLATIONS = {
     },
     hero: {
       greeting:     "Hi, I'm",
-      name:         "Alex Weber",
+      name:         "Alberto Cabrera",
       tagline:      "Full-Stack Developer & UI Designer",
       description:  "I craft digital experiences that inspire – from the first idea to the finished product.",
       cta:          "Explore projects",
@@ -133,6 +134,7 @@ const TRANSLATIONS = {
       filterDesign: "Design",
       filterApp:    "App",
       viewAll:      "View all projects",
+      viewProject:  "View Project",
       p1: { title: "E-Commerce Platform",  desc: "Full e-commerce solution with product management, payment integration and real-time dashboard." },
       p2: { title: "Design System",        desc: "Comprehensive design system with 200+ components for a FinTech startup." },
       p3: { title: "Task Manager App",     desc: "Mobile task management app with AI-powered prioritisation and team collaboration." },
@@ -170,7 +172,7 @@ const TRANSLATIONS = {
     },
     footer: {
       tagline: "Digital experiences that inspire.",
-      copy:    "© 2026 Alex Weber. All rights reserved.",
+      copy:    "© 2026 Alberto Cabrera. All rights reserved.",
       made:    "Made with ♥ in Munich",
     },
     validation: {
@@ -180,8 +182,8 @@ const TRANSLATIONS = {
       messageRequired: "Please write me a message.",
     },
     meta: {
-      title:       "Alex Weber – Full-Stack Developer & UI Designer",
-      description: "Portfolio of Alex Weber – Full-Stack Developer and UI Designer. Custom web solutions, modern interfaces and professional consulting.",
+      title:       "Alberto Cabrera – Full-Stack Developer & UI Designer",
+      description: "Portfolio of Alberto Cabrera – Full-Stack Developer and UI Designer. Custom web solutions, modern interfaces and professional consulting.",
     },
   },
 
@@ -195,7 +197,7 @@ const TRANSLATIONS = {
     },
     hero: {
       greeting:     "Hola, soy",
-      name:         "Alex Weber",
+      name:         "Alberto Cabrera",
       tagline:      "Desarrollador Full-Stack & Diseñador UI",
       description:  "Creo experiencias digitales que inspiran – desde la primera idea hasta el producto final.",
       cta:          "Ver proyectos",
@@ -224,6 +226,7 @@ const TRANSLATIONS = {
       filterDesign: "Diseño",
       filterApp:    "App",
       viewAll:      "Ver todos los proyectos",
+      viewProject:  "Ver Proyecto",
       p1: { title: "Plataforma E-Commerce", desc: "Solución e-commerce completa con gestión de productos, integración de pagos y panel en tiempo real." },
       p2: { title: "Sistema de Diseño",     desc: "Sistema de diseño con más de 200 componentes para una startup FinTech." },
       p3: { title: "App Gestión Tareas",    desc: "App móvil para gestión de tareas con priorización por IA y colaboración en equipo." },
@@ -261,7 +264,7 @@ const TRANSLATIONS = {
     },
     footer: {
       tagline: "Experiencias digitales que inspiran.",
-      copy:    "© 2026 Alex Weber. Todos los derechos reservados.",
+      copy:    "© 2026 Alberto Cabrera. Todos los derechos reservados.",
       made:    "Hecho con ♥ en Múnich",
     },
     validation: {
@@ -271,8 +274,8 @@ const TRANSLATIONS = {
       messageRequired: "Por favor, escríbeme un mensaje.",
     },
     meta: {
-      title:       "Alex Weber – Desarrollador Full-Stack & Diseñador UI",
-      description: "Portfolio de Alex Weber – Desarrollador Full-Stack y Diseñador UI. Soluciones web personalizadas, interfaces modernas y asesoría profesional.",
+      title:       "Alberto Cabrera – Desarrollador Full-Stack & Diseñador UI",
+      description: "Portfolio de Alberto Cabrera – Desarrollador Full-Stack y Diseñador UI. Soluciones web personalizadas, interfaces modernas y asesoría profesional.",
     },
   },
 };
