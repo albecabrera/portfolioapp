@@ -1,636 +1,1460 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="light">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A&amp;A WebArt – Fullstack Development &amp; WordPress Divi | München</title>
+  <meta name="description" content="Armando &amp; Alberto – Zwei Brüder, ein Team. Fullstack Development, WordPress Divi &amp; SEO aus München. 50+ Projekte, 5+ Jahre Erfahrung." />
+  <meta name="keywords" content="Fullstack Developer, WordPress, Divi, SEO, React, Node.js, München, Web Development" />
+  <meta name="author" content="Armando Urquiola Cabrera, Alberto Cabrera" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A&amp;A WebArt – Fullstack &amp; WordPress" />
+  <meta property="og:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi &amp; SEO aus München." />
+  <link rel="canonical" href="https://albertocabrera.dev/" />
 
-  <!-- ── SEO ──────────────────────────────────────────────── -->
-  <!-- Replace with your actual details -->
-  <title>Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi</title>
-  <meta name="description"    content="Wir sind zwei Brüder aus München: Armando Urquiola Cabrera (Fullstack Developer & SEO) und Alberto Cabrera (WordPress & Divi Experte). Gemeinsam erschaffen wir digitale Erlebnisse, die begeistern." />
-  <meta name="keywords"       content="Fullstack Developer, WordPress, Divi, SEO, Web Development, React, Node.js, München" />
-  <meta name="author"         content="Armando Urquiola Cabrera, Alberto Cabrera" />
-  <meta name="robots"         content="index, follow" />
-  <!-- Update to your deployed URL -->
-  <link rel="canonical"       href="https://alexweber.dev/" />
-
-  <!-- ── Open Graph / Social ──────────────────────────────── -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://alexweber.dev/" />
-  <meta property="og:title"       content="Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi" />
-  <meta property="og:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi & SEO aus München." />
-  <meta property="og:image"       content="https://alexweber.dev/assets/og-image.jpg" />
-  <meta property="og:locale"      content="de_DE" />
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Armando &amp; Alberto – Fullstack Development &amp; WordPress Divi" />
-  <meta name="twitter:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi & SEO aus München." />
-  <meta name="twitter:image"       content="https://alexweber.dev/assets/og-image.jpg" />
-
-  <!-- ── Schema.org structured data ──────────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Urquiola & Cabrera Web",
-    "url": "https://alexweber.dev",
-    "email": "hola@albertocabrera.dev",
-    "address": { "@type": "PostalAddress", "addressLocality": "München", "addressCountry": "DE" },
-    "member": [
-      {
-        "@type": "Person",
-        "name": "Armando Urquiola Cabrera",
-        "jobTitle": "Fullstack Developer & SEO"
-      },
-      {
-        "@type": "Person",
-        "name": "Alberto Cabrera",
-        "jobTitle": "WordPress & Divi Expert"
-      }
-    ]
-  }
-  </script>
-
-  <!-- ── Performance hints ────────────────────────────────── -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><rect width='64' height='32' rx='8' fill='%236366f1'/><text x='32' y='22' font-size='14' font-weight='800' font-family='system-ui' fill='white' text-anchor='middle'>A%26A</text></svg>" />
 
-  <!-- Inline SVG favicon – no extra file needed -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><rect width='64' height='32' rx='6' fill='%236366f1'/><text x='32' y='22' font-size='13' font-weight='800' font-family='system-ui,sans-serif' fill='white' text-anchor='middle'>A%26A</text></svg>" />
+  <style>
+/* ================================================================
+   A&A WebArt – Portfolio 2026
+   Single-file, fully embedded CSS
+   1.  Custom Properties (dark + light)
+   2.  Reset & Base
+   3.  Typography
+   4.  Layout
+   5.  Custom Cursor
+   6.  Navigation
+   7.  Hero
+   8.  About
+   9.  Projects (Bento Grid)
+  10.  Services
+  11.  Contact
+  12.  Footer
+  13.  Back-to-Top
+  14.  Animations & Keyframes
+  15.  Responsive
+  16.  Accessibility
+================================================================ */
 
-  <!-- Prevent flash of unstyled dark mode -->
+/* ── 1. CUSTOM PROPERTIES ─────────────────────────────────────── */
+:root {
+  /* Brand */
+  --primary:        #818cf8;
+  --primary-dark:   #6366f1;
+  --primary-rgb:    129, 140, 248;
+  --secondary:      #a78bfa;
+  --accent:         #f59e0b;
+
+  /* Dark-mode surfaces (default) */
+  --bg-0:    #040812;
+  --bg-1:    #070c18;
+  --bg-2:    #0d1526;
+  --bg-3:    #111d35;
+  --bg-card: rgba(255,255,255,0.04);
+  --border:  rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+
+  /* Text */
+  --tx-1: #f1f5f9;
+  --tx-2: #94a3b8;
+  --tx-3: #475569;
+
+  /* Shadows */
+  --sh-sm:  0 1px 4px rgba(0,0,0,.4);
+  --sh-md:  0 4px 20px rgba(0,0,0,.5);
+  --sh-lg:  0 12px 40px rgba(0,0,0,.6);
+  --sh-glow:0 0 40px rgba(var(--primary-rgb),.25);
+
+  /* Typography */
+  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --s-1:.25rem; --s-2:.5rem;  --s-3:.75rem; --s-4:1rem;
+  --s-5:1.25rem;--s-6:1.5rem; --s-8:2rem;   --s-10:2.5rem;
+  --s-12:3rem;  --s-16:4rem;  --s-20:5rem;  --s-24:6rem;
+
+  /* Radius */
+  --r-sm:8px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-full:9999px;
+
+  /* Transitions */
+  --t-fast:150ms ease;
+  --t-base:300ms cubic-bezier(.4,0,.2,1);
+  --t-slow:600ms cubic-bezier(.4,0,.2,1);
+
+  /* Layout */
+  --nav-h:    4.5rem;
+  --container:1200px;
+  --sec-py:   clamp(4rem,8vw,7rem);
+}
+
+[data-theme="light"] {
+  --primary:      #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-rgb:  99,102,241;
+  --secondary:    #8b5cf6;
+
+  --bg-0:    #eef2ff;
+  --bg-1:    #f5f7ff;
+  --bg-2:    #eff0ff;
+  --bg-3:    #ffffff;
+  --bg-card: rgba(255,255,255,0.75);
+  --border:  rgba(99,102,241,0.12);
+  --border-hover: rgba(99,102,241,0.3);
+
+  --tx-1: #0f172a;
+  --tx-2: #334155;
+  --tx-3: #64748b;
+
+  --sh-sm:  0 1px 4px rgba(0,0,0,.06);
+  --sh-md:  0 4px 20px rgba(0,0,0,.08);
+  --sh-lg:  0 12px 40px rgba(0,0,0,.1);
+  --sh-glow:0 0 40px rgba(var(--primary-rgb),.15);
+}
+
+/* ── 2. RESET & BASE ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.65;
+  color:var(--tx-1);
+  background:var(--bg-0);
+  overflow-x:hidden;
+  transition:background var(--t-slow),color var(--t-slow);
+}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+ul,ol{list-style:none}
+svg{display:block}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
+
+/* ── 3. TYPOGRAPHY ────────────────────────────────────────────── */
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
+
+.gradient-text{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── 4. LAYOUT ────────────────────────────────────────────────── */
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem)}
+
+.section{padding-block:var(--sec-py)}
+
+.section-header{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+
+.section-tag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--primary);
+  background:rgba(var(--primary-rgb),.1);
+  border:1px solid rgba(var(--primary-rgb),.2);
+  border-radius:var(--r-full);
+  padding:.35rem .9rem;
+  margin-bottom:var(--s-4);
+}
+
+.section-title{
+  font-size:clamp(1.75rem,4vw,2.75rem);
+  font-weight:800;
+  margin-bottom:var(--s-4);
+}
+
+.section-desc{font-size:1.05rem;color:var(--tx-2);max-width:54ch;margin-inline:auto}
+
+/* ── 5. CUSTOM CURSOR ─────────────────────────────────────────── */
+.cursor{
+  position:fixed;z-index:9999;
+  width:10px;height:10px;
+  background:var(--primary);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform .1s,width .2s,height .2s,background .2s;
+  mix-blend-mode:normal;
+}
+.cursor-ring{
+  position:fixed;z-index:9998;
+  width:36px;height:36px;
+  border:1.5px solid rgba(var(--primary-rgb),.5);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform .08s linear,width .25s,height .25s,border-color .2s;
+}
+.cursor.cursor--hover{width:20px;height:20px;background:var(--secondary)}
+.cursor-ring.cursor--hover{width:52px;height:52px;border-color:rgba(var(--primary-rgb),.3)}
+@media(hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none}}
+
+/* ── 6. NAVIGATION ────────────────────────────────────────────── */
+.skip-link{
+  position:fixed;top:-100%;left:1rem;z-index:10000;
+  background:var(--primary);color:#fff;
+  padding:.5rem 1rem;border-radius:0 0 var(--r-md) var(--r-md);
+  font-weight:600;font-size:.875rem;
+  transition:top .2s;
+}
+.skip-link:focus{top:0}
+
+.nav-overlay{
+  position:fixed;inset:0;z-index:400;
+  background:rgba(0,0,0,.7);
+  opacity:0;visibility:hidden;
+  transition:opacity var(--t-base),visibility var(--t-base);
+  backdrop-filter:blur(4px);
+}
+.nav-overlay.is-open{opacity:1;visibility:visible}
+
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:var(--nav-h);
+  transition:background var(--t-base),box-shadow var(--t-base),border-color var(--t-base);
+}
+.header.is-scrolled{
+  background:rgba(4,8,18,.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--sh-md);
+}
+[data-theme="light"] .header.is-scrolled{
+  background:rgba(245,247,255,.9);
+}
+
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:100%;gap:var(--s-8);
+}
+
+/* Logo */
+.logo{display:flex;align-items:baseline;gap:.4rem;font-family:var(--font-head)}
+.logo__text{
+  font-size:1.4rem;font-weight:800;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.logo__amp{color:var(--accent);-webkit-text-fill-color:var(--accent)}
+.logo__sub{font-size:.85rem;font-weight:500;color:var(--tx-2)}
+
+/* Nav links */
+.nav__list{
+  display:none;
+  gap:var(--s-2);
+}
+@media(min-width:768px){
+  .nav__list{display:flex}
+}
+
+.nav__link{
+  position:relative;
+  font-size:.9rem;font-weight:500;
+  color:var(--tx-2);
+  padding:.4rem .7rem;
+  border-radius:var(--r-sm);
+  transition:color var(--t-fast),background var(--t-fast);
+}
+.nav__link::after{
+  content:'';position:absolute;bottom:0;left:.7rem;right:.7rem;height:2px;
+  background:var(--primary);border-radius:2px;
+  transform:scaleX(0);transform-origin:right;
+  transition:transform var(--t-base);
+}
+.nav__link:hover{color:var(--tx-1)}
+.nav__link:hover::after,.nav__link.active::after{transform:scaleX(1);transform-origin:left}
+.nav__link.active{color:var(--tx-1)}
+
+/* Controls */
+.nav__controls{display:flex;align-items:center;gap:var(--s-3)}
+
+.lang-switcher{display:flex;gap:2px;background:rgba(var(--primary-rgb),.08);border-radius:var(--r-full);padding:3px}
+.lang-btn{
+  font-size:.75rem;font-weight:600;
+  color:var(--tx-2);
+  padding:.25rem .6rem;
+  border-radius:var(--r-full);
+  transition:all var(--t-fast);
+}
+.lang-btn.active,.lang-btn:hover{background:var(--primary);color:#fff}
+
+.theme-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:2.25rem;height:2.25rem;
+  border-radius:var(--r-full);
+  color:var(--tx-2);
+  background:rgba(var(--primary-rgb),.08);
+  border:1px solid var(--border);
+  transition:all var(--t-fast);
+}
+.theme-btn:hover{color:var(--primary);border-color:var(--primary);background:rgba(var(--primary-rgb),.15)}
+.theme-btn svg{width:1.1rem;height:1.1rem;transition:transform .4s}
+.theme-btn:hover svg{transform:rotate(20deg)}
+.icon-moon{display:none}
+[data-theme="light"] .icon-sun{display:none}
+[data-theme="light"] .icon-moon{display:block}
+
+.hamburger{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:2.25rem;height:2.25rem;
+  border-radius:var(--r-sm);
+  padding:.4rem;
+}
+.hamburger__bar{
+  display:block;height:2px;background:var(--tx-2);border-radius:2px;
+  transition:transform var(--t-base),opacity var(--t-fast),width var(--t-base);
+}
+.hamburger.is-open .hamburger__bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.is-open .hamburger__bar:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.is-open .hamburger__bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:768px){.hamburger{display:none}}
+
+/* Mobile menu */
+.nav__list--mobile{
+  position:fixed;top:var(--nav-h);right:0;bottom:0;z-index:450;
+  width:min(320px,90vw);
+  background:var(--bg-2);
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;gap:var(--s-2);
+  padding:var(--s-8) var(--s-6);
+  transform:translateX(100%);
+  transition:transform var(--t-slow);
+  overflow-y:auto;
+}
+.nav__list--mobile.is-open{transform:translateX(0)}
+.nav__list--mobile .nav__link{display:block;font-size:1.1rem;padding:.75rem 1rem}
+
+/* ── 7. HERO ──────────────────────────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;align-items:center;
+  overflow:hidden;
+  padding-top:var(--nav-h);
+}
+
+/* Animated bg */
+.hero__bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+.hero__orb{
+  position:absolute;border-radius:50%;
+  filter:blur(90px);
+  animation:orbFloat 10s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.hero__orb--1{
+  width:clamp(300px,45vw,600px);height:clamp(300px,45vw,600px);
+  background:radial-gradient(circle,rgba(99,102,241,.35),transparent 70%);
+  top:-15%;left:-10%;
+  animation-duration:9s;
+}
+.hero__orb--2{
+  width:clamp(250px,35vw,500px);height:clamp(250px,35vw,500px);
+  background:radial-gradient(circle,rgba(167,139,250,.25),transparent 70%);
+  top:20%;right:-10%;
+  animation-duration:13s;animation-delay:-4s;
+}
+.hero__orb--3{
+  width:clamp(200px,25vw,380px);height:clamp(200px,25vw,380px);
+  background:radial-gradient(circle,rgba(245,158,11,.15),transparent 70%);
+  bottom:-10%;left:35%;
+  animation-duration:11s;animation-delay:-7s;
+}
+
+/* Dot grid */
+.hero__grid{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(var(--primary-rgb),.2) 1px,transparent 1px);
+  background-size:36px 36px;
+  opacity:.4;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);
+}
+
+.hero__container{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(2rem,5vw,4rem);
+  align-items:center;
+  padding-block:var(--s-20);
+  position:relative;z-index:1;
+}
+@media(min-width:900px){.hero__container{grid-template-columns:1fr 1fr}}
+
+/* Hero text */
+.hero__text{display:flex;flex-direction:column;gap:var(--s-5)}
+
+.hero__eyebrow{
+  font-size:.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--primary);
+  opacity:0;animation:fadeUp .7s .1s both;
+}
+.hero__title{
+  font-size:clamp(2.4rem,7vw,5rem);
+  font-weight:800;
+  line-height:1.05;
+  opacity:0;animation:fadeUp .7s .2s both;
+}
+.hero__title .amp{
+  display:inline-block;
+  font-size:clamp(2rem,5vw,4rem);
+  background:none;-webkit-text-fill-color:var(--accent);
+  padding-inline:.3rem;
+}
+.hero__subtitle{
+  font-size:clamp(1rem,2vw,1.25rem);
+  color:var(--tx-2);font-weight:400;
+  opacity:0;animation:fadeUp .7s .3s both;
+}
+.hero__desc{
+  font-size:1rem;color:var(--tx-2);max-width:52ch;
+  opacity:0;animation:fadeUp .7s .4s both;
+}
+.hero__cta{
+  display:flex;flex-wrap:wrap;gap:var(--s-3);
+  opacity:0;animation:fadeUp .7s .5s both;
+}
+.hero__stats{
+  display:flex;align-items:center;gap:var(--s-6);
+  padding-top:var(--s-4);
+  border-top:1px solid var(--border);
+  opacity:0;animation:fadeUp .7s .6s both;
+}
+.stat__num{font-family:var(--font-head);font-size:1.75rem;font-weight:800;color:var(--tx-1)}
+.stat__label{font-size:.8rem;color:var(--tx-2);font-weight:500}
+.stat__div{width:1px;height:2.5rem;background:var(--border)}
+
+/* Hero visual */
+.hero__visual{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;animation:fadeLeft .9s .3s both;
+}
+
+.avatar-stack{
+  position:relative;
+  width:clamp(280px,40vw,460px);
+  height:clamp(300px,40vw,460px);
+}
+
+.avatar{
+  position:absolute;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  border:2px solid var(--border);
+  box-shadow:var(--sh-lg);
+  transition:transform var(--t-slow),box-shadow var(--t-slow);
+}
+.avatar:hover{transform:scale(1.03) rotate(0deg) !important;box-shadow:var(--sh-glow)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+.avatar--1{
+  width:62%;height:75%;
+  top:0;left:0;
+  transform:rotate(-4deg);
+  z-index:2;
+}
+.avatar--2{
+  width:62%;height:75%;
+  bottom:0;right:0;
+  transform:rotate(4deg);
+  z-index:1;
+}
+
+.avatar__label{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:.75rem 1rem;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+.avatar__name{display:block;font-family:var(--font-head);font-weight:700;font-size:.9rem;color:#fff}
+.avatar__role{font-size:.7rem;color:rgba(255,255,255,.7)}
+
+/* Floating badges */
+.float-badge{
+  position:absolute;z-index:3;
+  display:flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;
+  background:var(--bg-card);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:var(--r-full);
+  font-size:.78rem;font-weight:600;color:var(--tx-1);
+  box-shadow:var(--sh-md);
+  white-space:nowrap;
+}
+.float-badge--1{top:5%;right:-8%;animation:floatBadge 3.5s ease-in-out infinite}
+.float-badge--2{top:42%;left:-12%;animation:floatBadge 4.2s 1s ease-in-out infinite}
+.float-badge--3{bottom:15%;right:-10%;animation:floatBadge 3.8s .5s ease-in-out infinite}
+.float-badge--4{bottom:2%;left:5%;animation:floatBadge 4.5s 1.5s ease-in-out infinite}
+
+/* Scroll indicator */
+.scroll-indicator{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  opacity:0;animation:fadeUp .7s 1s both;
+}
+.scroll-indicator__text{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3)}
+.scroll-indicator__line{
+  width:1px;height:50px;
+  background:linear-gradient(var(--primary),transparent);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+
+/* ── 8. ABOUT ─────────────────────────────────────────────────── */
+.about{background:var(--bg-1)}
+
+.profiles{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--s-6);
+}
+@media(min-width:700px){.profiles{grid-template-columns:1fr 1fr}}
+
+.profile-card{
+  display:flex;flex-direction:column;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+}
+
+.profile-card__img{
+  height:clamp(200px,30vw,280px);overflow:hidden;
+}
+.profile-card__img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease}
+.profile-card:hover .profile-card__img img{transform:scale(1.05)}
+
+.profile-card__body{padding:var(--s-6);display:flex;flex-direction:column;gap:var(--s-3)}
+
+.profile-card__name{font-size:1.2rem;font-weight:700;color:var(--tx-1)}
+.profile-card__role{
+  font-size:.8rem;font-weight:600;letter-spacing:.06em;
+  color:var(--primary);text-transform:uppercase;
+}
+.profile-card__bio{font-size:.9rem;color:var(--tx-2);line-height:1.7}
+
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s-2)}
+.skill-tag{
+  font-size:.75rem;font-weight:600;
+  padding:.3rem .7rem;
+  background:rgba(var(--primary-rgb),.1);
+  color:var(--primary);
+  border:1px solid rgba(var(--primary-rgb),.2);
+  border-radius:var(--r-full);
+  transition:all var(--t-fast);
+}
+.skill-tag:hover{background:rgba(var(--primary-rgb),.2);border-color:var(--primary)}
+
+/* ── 9. PROJECTS ──────────────────────────────────────────────── */
+.projects{background:var(--bg-0)}
+
+/* Filter */
+.filter-tabs{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;
+  margin-bottom:var(--s-10);
+}
+.filter-tab{
+  font-size:.85rem;font-weight:600;
+  padding:.5rem 1.2rem;
+  border-radius:var(--r-full);
+  color:var(--tx-2);
+  border:1px solid var(--border);
+  transition:all var(--t-fast);
+}
+.filter-tab:hover{border-color:var(--border-hover);color:var(--tx-1)}
+.filter-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 4px 14px rgba(var(--primary-rgb),.4)}
+
+/* Bento grid */
+.bento-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--s-5);
+}
+@media(min-width:640px){.bento-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.bento-grid{grid-template-columns:repeat(3,1fr)}}
+
+.project-card{
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform var(--t-base),box-shadow var(--t-base),opacity .3s,scale .3s;
+}
+.project-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg),var(--sh-glow)}
+.project-card.hidden{opacity:0;scale:.95;pointer-events:none;position:absolute}
+
+.project-card--featured{
+  grid-column:1/-1;
+  flex-direction:row;
+}
+@media(max-width:767px){.project-card--featured{flex-direction:column}}
+
+/* Browser mockup inside featured card */
+.project-mockup{
+  flex:0 0 55%;
+  background:var(--bg-2);
+  border-radius:0;
+  overflow:hidden;
+  min-height:260px;
+}
+.browser-bar{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.6rem 1rem;
+  background:rgba(0,0,0,.3);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.browser-dots{display:flex;gap:.35rem}
+.browser-dots span{
+  display:block;width:10px;height:10px;border-radius:50%;
+}
+.browser-dots span:nth-child(1){background:#ff5f57}
+.browser-dots span:nth-child(2){background:#ffbd2e}
+.browser-dots span:nth-child(3){background:#28c940}
+.browser-url{
+  flex:1;background:rgba(255,255,255,.06);border-radius:4px;
+  font-size:.7rem;color:var(--tx-3);padding:.15rem .6rem;
+  font-family:monospace;
+}
+
+.browser-content{
+  height:calc(100% - 42px);min-height:220px;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+}
+
+/* CSS UI mockup shapes */
+.ui-mockup{width:100%;display:flex;flex-direction:column;gap:.75rem}
+.ui-bar{height:10px;border-radius:4px;background:rgba(255,255,255,.15)}
+.ui-bar--short{width:60%}
+.ui-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ui-card{height:60px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06)}
+.ui-chart{height:80px;border-radius:6px;background:linear-gradient(to top,rgba(129,140,248,.4),transparent);position:relative;overflow:hidden}
+.ui-chart::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:rgba(129,140,248,.2)}
+
+/* Preview for small cards */
+.project-preview{
+  height:160px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:1.5rem;
+  flex-shrink:0;
+}
+.project-preview .ui-mockup{gap:.5rem}
+.project-preview .ui-bar{height:8px}
+.project-preview .ui-card{height:44px}
+
+.project-card__body{
+  padding:var(--s-5) var(--s-6);
+  display:flex;flex-direction:column;
+  gap:var(--s-3);
+  flex:1;
+}
+.project-card--featured .project-card__body{justify-content:center}
+
+.project-tag-line{
+  font-size:.72rem;font-weight:600;letter-spacing:.05em;
+  color:var(--primary);text-transform:uppercase;
+}
+.project-title{font-size:1.15rem;font-weight:700;color:var(--tx-1)}
+.project-desc{font-size:.875rem;color:var(--tx-2);line-height:1.65;flex:1}
+.project-links{display:flex;align-items:center;gap:.75rem;margin-top:var(--s-2)}
+
+/* ── 10. SERVICES ─────────────────────────────────────────────── */
+.services{background:var(--bg-1)}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--s-5);
+}
+@media(min-width:600px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.services-grid{grid-template-columns:repeat(4,1fr)}}
+
+.service-card{
+  border-radius:var(--r-xl);
+  padding:var(--s-8) var(--s-6);
+  display:flex;flex-direction:column;gap:var(--s-4);
+  transition:transform var(--t-base),box-shadow var(--t-base);
+}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg),var(--sh-glow)}
+
+.service-card--featured{
+  background:linear-gradient(135deg,rgba(var(--primary-rgb),.15),rgba(167,139,250,.08));
+  border-color:rgba(var(--primary-rgb),.3) !important;
+  position:relative;
+}
+.service-badge{
+  position:absolute;top:-1px;right:var(--s-6);
+  font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.3rem .8rem;
+  background:var(--primary);color:#fff;
+  border-radius:0 0 var(--r-md) var(--r-md);
+}
+
+.service-icon{
+  width:52px;height:52px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(var(--primary-rgb),.1);
+  border:1px solid rgba(var(--primary-rgb),.2);
+  border-radius:var(--r-md);
+  color:var(--primary);
+  transition:all var(--t-base);
+}
+.service-card:hover .service-icon{
+  background:rgba(var(--primary-rgb),.2);
+  box-shadow:0 0 20px rgba(var(--primary-rgb),.3);
+}
+.service-icon svg{width:24px;height:24px}
+.service-title{font-size:1.05rem;font-weight:700;color:var(--tx-1)}
+.service-desc{font-size:.875rem;color:var(--tx-2);line-height:1.7;flex:1}
+.service-list{display:flex;flex-direction:column;gap:.5rem}
+.service-list li{
+  font-size:.8rem;color:var(--tx-2);
+  padding-left:1.1rem;position:relative;
+}
+.service-list li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--primary);font-size:.75rem;
+}
+
+/* ── 11. CONTACT ──────────────────────────────────────────────── */
+.contact{background:var(--bg-0)}
+
+.contact-grid{
+  display:grid;grid-template-columns:1fr;gap:var(--s-8);
+}
+@media(min-width:860px){.contact-grid{grid-template-columns:1fr 1.4fr;align-items:start}}
+
+.contact-info{display:flex;flex-direction:column;gap:var(--s-6)}
+.contact-info__title{font-size:1.4rem;font-weight:700}
+.contact-info__text{font-size:.9rem;color:var(--tx-2);line-height:1.7}
+
+.contact-details{display:flex;flex-direction:column;gap:var(--s-5)}
+.contact-detail{display:flex;align-items:flex-start;gap:var(--s-4)}
+.contact-detail__icon{
+  flex-shrink:0;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(var(--primary-rgb),.1);
+  border:1px solid rgba(var(--primary-rgb),.2);
+  border-radius:var(--r-md);
+  color:var(--primary);
+}
+.contact-detail__icon svg{width:18px;height:18px}
+.contact-detail__label{font-size:.75rem;color:var(--tx-3);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.contact-detail__value{font-size:.95rem;color:var(--tx-1);font-weight:500;margin-top:.1rem}
+a.contact-detail__value:hover{color:var(--primary)}
+
+/* Form */
+.contact-form{
+  border-radius:var(--r-xl);
+  padding:clamp(1.5rem,4vw,2.5rem);
+}
+
+.form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:var(--s-5)}
+.form-group label{
+  font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--tx-2);
+}
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:.8rem 1rem;
+  background:rgba(var(--primary-rgb),.05);
+  border:1px solid var(--border);
+  border-radius:var(--r-md);
+  color:var(--tx-1);
+  font:inherit;
+  font-size:.9rem;
+  transition:border-color var(--t-fast),box-shadow var(--t-fast),background var(--t-fast);
+  resize:none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--tx-3)}
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:var(--primary);
+  background:rgba(var(--primary-rgb),.08);
+  box-shadow:0 0 0 3px rgba(var(--primary-rgb),.15);
+}
+.field-error{font-size:.75rem;color:#f87171;min-height:1rem}
+
+.form-success{
+  display:none;
+  flex-direction:column;align-items:center;gap:var(--s-4);
+  padding:var(--s-8);text-align:center;
+}
+.form-success.is-visible{display:flex}
+.form-success svg{width:48px;height:48px;color:#4ade80;stroke:#4ade80}
+.form-success p{font-size:1.05rem;font-weight:600;color:var(--tx-1)}
+
+/* ── 12. FOOTER ───────────────────────────────────────────────── */
+.footer{
+  background:var(--bg-1);
+  border-top:1px solid var(--border);
+  padding-block:var(--s-12) var(--s-8);
+}
+.footer__content{
+  display:flex;flex-wrap:wrap;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:var(--s-8);
+  margin-bottom:var(--s-10);
+}
+.footer__tagline{font-size:.875rem;color:var(--tx-2);margin-top:.5rem;max-width:28ch}
+.footer__nav{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-6)}
+.footer__link{font-size:.875rem;color:var(--tx-2);transition:color var(--t-fast)}
+.footer__link:hover{color:var(--primary)}
+.footer__social{display:flex;gap:var(--s-3)}
+.social-link{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:var(--r-md);
+  color:var(--tx-2);
+  border:1px solid var(--border);
+  transition:all var(--t-fast);
+}
+.social-link:hover{color:var(--primary);border-color:var(--primary);background:rgba(var(--primary-rgb),.1)}
+.social-link svg{width:18px;height:18px}
+.footer__bottom{
+  border-top:1px solid var(--border);
+  padding-top:var(--s-6);
+  text-align:center;
+}
+.footer__copy{font-size:.8rem;color:var(--tx-3)}
+
+/* ── 13. BACK TO TOP ─────────────────────────────────────────── */
+.back-top{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:300;
+  width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--primary);color:#fff;
+  border-radius:var(--r-md);
+  box-shadow:0 4px 16px rgba(var(--primary-rgb),.4);
+  transform:translateY(80px);
+  opacity:0;
+  transition:transform var(--t-base),opacity var(--t-base);
+}
+.back-top.is-visible{transform:translateY(0);opacity:1}
+.back-top:hover{background:var(--secondary);transform:translateY(-3px)}
+.back-top svg{width:20px;height:20px}
+
+/* ── GLASS CARD UTILITY ───────────────────────────────────────── */
+.glass-card{
+  background:var(--bg-card);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  box-shadow:var(--sh-md);
+  transition:border-color var(--t-base);
+}
+.glass-card:hover{border-color:var(--border-hover)}
+
+/* ── BUTTONS ──────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-body);
+  font-size:.875rem;font-weight:600;
+  padding:.75rem 1.5rem;
+  border-radius:var(--r-md);
+  border:1.5px solid transparent;
+  transition:all var(--t-fast);
+  position:relative;overflow:hidden;
+  white-space:nowrap;
+}
+.btn::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,.1);
+  opacity:0;transition:opacity var(--t-fast);
+}
+.btn:hover::before{opacity:1}
+
+.btn--primary{
+  background:var(--primary);color:#fff;
+  box-shadow:0 4px 14px rgba(var(--primary-rgb),.35);
+}
+.btn--primary:hover{background:var(--primary-dark);box-shadow:0 6px 20px rgba(var(--primary-rgb),.5);transform:translateY(-1px)}
+
+.btn--ghost{
+  color:var(--tx-1);
+  border-color:var(--border);
+  background:rgba(var(--primary-rgb),.05);
+}
+.btn--ghost:hover{border-color:var(--border-hover);background:rgba(var(--primary-rgb),.12)}
+
+.btn--sm{padding:.5rem 1rem;font-size:.8rem}
+.btn--full{width:100%}
+
+.btn-spinner{
+  display:none;
+  width:16px;height:16px;
+  border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .6s linear infinite;
+}
+.btn--loading .btn-text{display:none}
+.btn--loading .btn-spinner{display:block}
+
+/* ── 14. ANIMATIONS & KEYFRAMES ──────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeLeft{
+  from{opacity:0;transform:translateX(40px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes orbFloat{
+  0%{transform:translate(0,0) scale(1)}
+  100%{transform:translate(25px,-20px) scale(1.08)}
+}
+@keyframes floatBadge{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes scrollLine{
+  0%{opacity:1;transform:scaleY(1) translateY(0)}
+  100%{opacity:0;transform:scaleY(.5) translateY(20px)}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* Scroll-reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1);
+}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ── 15. RESPONSIVE ───────────────────────────────────────────── */
+@media(max-width:499px){
+  .hero__title{font-size:2.2rem}
+  .float-badge--2,.float-badge--4{display:none}
+  .avatar--2{right:-5%;bottom:-5%}
+}
+@media(min-width:500px){
+  .avatar-stack{width:380px;height:380px}
+}
+
+/* ── 16. ACCESSIBILITY ────────────────────────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    transition-duration:.01ms !important;
+  }
+  .hero__orb{animation:none !important}
+  .float-badge{animation:none !important}
+}
+
+@media print{
+  .header,.cursor,.cursor-ring,.back-top,.scroll-indicator,
+  .hero__bg,.float-badge{display:none !important}
+  body{background:#fff;color:#000}
+  .hero{min-height:auto;padding-top:2rem}
+}
+  </style>
+
+  <!-- Prevent flash of wrong theme -->
   <script>
-    (function () {
-      const t = localStorage.getItem("portfolio-theme");
-      if (t) document.documentElement.setAttribute("data-theme", t);
+    (function(){
+      var t=localStorage.getItem('aa-theme')||
+        (window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
+      document.documentElement.setAttribute('data-theme',t);
     })();
   </script>
 </head>
-
 <body>
-  <!-- Skip to main content (accessibility) -->
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
-  <!-- Mobile menu backdrop -->
-  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="nav-overlay" role="presentation" aria-hidden="true"></div>
 
-  <!-- ══════════════════════════════════════════════════════
-       HEADER / NAVIGATION
-       ══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════ HEADER / NAV ═══════════════ -->
   <header class="header" id="header">
     <nav class="nav container" aria-label="Hauptnavigation">
 
-      <!-- Logo -->
-      <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
-        <span class="nav__logo-text">A<span class="nav__logo-amp">&amp;</span>A <span class="nav__logo-sub">WebArt</span></span>
+      <a href="#hero" class="logo" aria-label="A&amp;A WebArt – Startseite">
+        <span class="logo__text">A<span class="logo__amp">&amp;</span>A</span>
+        <span class="logo__sub">WebArt</span>
       </a>
 
-      <!-- Nav links -->
-      <ul class="nav__menu" id="nav-menu" role="list">
+      <!-- Desktop links -->
+      <ul class="nav__list" id="nav-menu-desktop" role="list">
         <li><a href="#about"    class="nav__link" data-i18n="nav.about">Über uns</a></li>
         <li><a href="#projects" class="nav__link" data-i18n="nav.projects">Projekte</a></li>
         <li><a href="#services" class="nav__link" data-i18n="nav.services">Leistungen</a></li>
         <li><a href="#contact"  class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
       </ul>
 
-      <!-- Right-side controls -->
       <div class="nav__controls">
-
-        <!-- Language switcher -->
         <div class="lang-switcher" role="group" aria-label="Sprache wählen">
-          <button class="lang-btn active" data-lang="de" aria-pressed="true"  title="Deutsch">DE</button>
-          <button class="lang-btn"        data-lang="en" aria-pressed="false" title="English">EN</button>
-          <button class="lang-btn"        data-lang="es" aria-pressed="false" title="Español">ES</button>
+          <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+          <button class="lang-btn"        data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn"        data-lang="es" aria-pressed="false">ES</button>
         </div>
 
-        <!-- Theme toggle -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Dunkelmodus umschalten" aria-pressed="false">
-          <!-- Sun icon (shown in light mode) -->
-          <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button class="theme-btn" id="theme-btn" aria-label="Farbschema wechseln">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
           </svg>
-          <!-- Moon icon (shown in dark mode) -->
-          <svg class="theme-icon theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
 
-        <!-- Hamburger (mobile only) -->
-        <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-menu-mobile" aria-label="Menü öffnen">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
         </button>
-
       </div>
     </nav>
+
+    <!-- Mobile menu panel -->
+    <div class="nav__list--mobile" id="nav-menu-mobile" role="dialog" aria-label="Mobilmenü" aria-hidden="true">
+      <a href="#about"    class="nav__link" data-i18n="nav.about">Über uns</a>
+      <a href="#projects" class="nav__link" data-i18n="nav.projects">Projekte</a>
+      <a href="#services" class="nav__link" data-i18n="nav.services">Leistungen</a>
+      <a href="#contact"  class="nav__link" data-i18n="nav.contact">Kontakt</a>
+    </div>
   </header>
 
-  <!-- ══════════════════════════════════════════════════════
-       MAIN CONTENT
-       ══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════ MAIN ═══════════════ -->
   <main id="main">
 
-    <!-- ── HERO ─────────────────────────────────────────── -->
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <!-- ─── HERO ────────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+
       <div class="container hero__container">
 
-        <!-- Text content -->
-        <div class="hero__content">
-          <p class="hero__greeting animate-fade-up" data-i18n="hero.greeting">Hallo, wir sind</p>
-          <h1 class="hero__name animate-fade-up" id="hero-heading" data-i18n="hero.name">Armando &amp; Alberto</h1>
-          <p class="hero__tagline animate-fade-up" data-i18n="hero.tagline">Fullstack Development &amp; WordPress Divi</p>
-          <p class="hero__description animate-fade-up" data-i18n="hero.description">
+        <!-- Left: copy -->
+        <div class="hero__text">
+          <p class="hero__eyebrow" data-i18n="hero.greeting">Hallo, wir sind</p>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="gradient-text">Armando</span>
+            <span class="amp">&amp;</span>
+            <span class="gradient-text">Alberto</span>
+          </h1>
+
+          <p class="hero__subtitle" data-i18n="hero.tagline">Fullstack Development &amp; WordPress Divi</p>
+
+          <p class="hero__desc" data-i18n="hero.description">
             Wir sind zwei Brüder, die gemeinsam digitale Erlebnisse erschaffen – von der Idee bis zur fertigen Website, mit Leidenschaft und Expertise.
           </p>
-          <div class="hero__cta animate-fade-up">
+
+          <div class="hero__cta">
             <a href="#projects" class="btn btn--primary" data-i18n="hero.cta">Projekte entdecken</a>
-            <a href="#contact"  class="btn btn--outline" data-i18n="hero.ctaContact">Kontakt aufnehmen</a>
+            <a href="#contact"  class="btn btn--ghost"   data-i18n="hero.ctaContact">Kontakt aufnehmen</a>
           </div>
-          <div class="hero__stats animate-fade-up">
-            <div class="hero__stat">
-              <span class="hero__stat-number" aria-label="50 plus">50+</span>
-              <span class="hero__stat-label" data-i18n="hero.statProjects">Projekte</span>
+
+          <div class="hero__stats" aria-label="Unsere Zahlen">
+            <div class="stat">
+              <span class="stat__num">50+</span>
+              <span class="stat__label" data-i18n="hero.statProjects">Projekte</span>
             </div>
-            <div class="hero__stat">
-              <span class="hero__stat-number" aria-label="5 plus">5+</span>
-              <span class="hero__stat-label" data-i18n="hero.statYears">Jahre Erfahrung</span>
+            <div class="stat__div" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat__num">5+</span>
+              <span class="stat__label" data-i18n="hero.statYears">Jahre</span>
             </div>
-            <div class="hero__stat">
-              <span class="hero__stat-number" aria-label="30 plus">30+</span>
-              <span class="hero__stat-label" data-i18n="hero.statClients">Kunden</span>
+            <div class="stat__div" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat__num">30+</span>
+              <span class="stat__label" data-i18n="hero.statClients">Kunden</span>
             </div>
           </div>
         </div>
 
-        <!-- Avatar with floating tech badges -->
-        <div class="hero__image-wrapper animate-fade-left" aria-hidden="true">
-          <div class="hero__image-container">
-            <div class="hero__avatar hero__avatar--slideshow">
-              <img src="img/mandy_perfil.jpeg"
-                   alt="Mandy – Fullstack Developer & SEO"
-                   class="hero__avatar-photo hero__avatar-photo--1"
-                   loading="eager"
-                   width="420" height="420" />
-              <img src="img/albe_perfil.jpeg"
-                   alt="Alberto Cabrera"
-                   class="hero__avatar-photo hero__avatar-photo--2"
-                   loading="eager"
-                   width="420" height="420" />
+        <!-- Right: avatars -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="avatar-stack">
+
+            <div class="avatar avatar--1">
+              <img src="img/mandy_perfil.jpeg" alt="Armando – Fullstack Developer" loading="eager" width="280" height="360" />
+              <div class="avatar__label">
+                <span class="avatar__name">Armando</span>
+                <span class="avatar__role">Fullstack &amp; SEO</span>
+              </div>
             </div>
-            <div class="hero__badge hero__badge--1">
-              <span aria-hidden="true">🚀</span>
-              <span data-i18n="hero.badge1">React</span>
+
+            <div class="avatar avatar--2">
+              <img src="img/albe_perfil.jpeg" alt="Alberto – WordPress Expert" loading="eager" width="280" height="360" />
+              <div class="avatar__label">
+                <span class="avatar__name">Alberto</span>
+                <span class="avatar__role">WordPress &amp; Divi</span>
+              </div>
             </div>
-            <div class="hero__badge hero__badge--2">
-              <span aria-hidden="true">⚡</span>
-              <span data-i18n="hero.badge2">WordPress</span>
-            </div>
-            <div class="hero__badge hero__badge--3">
-              <span aria-hidden="true">📈</span>
-              <span data-i18n="hero.badge3">SEO</span>
-            </div>
+
+            <div class="float-badge float-badge--1">⚛️ React</div>
+            <div class="float-badge float-badge--2">🚀 Node.js</div>
+            <div class="float-badge float-badge--3">🎨 Divi</div>
+            <div class="float-badge float-badge--4">📈 SEO</div>
           </div>
         </div>
 
       </div><!-- /.hero__container -->
 
-      <!-- Scroll indicator -->
-      <div class="hero__scroll-indicator" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-indicator__text">scroll</span>
+        <div class="scroll-indicator__line"></div>
       </div>
     </section>
 
-    <!-- ── ABOUT ─────────────────────────────────────────── -->
-    <section class="section about" id="about" aria-labelledby="about-heading">
+    <!-- ─── ABOUT ─────────────────────────────────── -->
+    <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container">
 
-        <header class="section__header reveal">
-          <span class="section__tag" data-i18n="about.tag">Über uns</span>
-          <h2 class="section__title" id="about-heading" data-i18n="about.title">Wer steckt hinter uns?</h2>
-        </header>
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="about.tag">Über uns</span>
+          <h2 class="section-title" id="about-title" data-i18n="about.title">Wer steckt hinter uns?</h2>
+          <p class="section-desc" data-i18n="about.subtitle">Zwei Brüder, ein eingespieltes Team aus München</p>
+        </div>
 
-        <div class="about__grid">
+        <div class="profiles">
 
-          <!-- Profile image placeholder -->
-          <div class="about__image-col reveal">
-            <div class="about__image-wrapper">
-              <!--
-                📸 FOTO DE PERFIL – para cambiarla reemplaza el atributo src:
-                   • Local:   src="assets/img/profile.jpg"
-                   • Externa: src="https://tudominio.com/foto.jpg"
-              -->
-              <img class="about__photo"
-                   src="https://picsum.photos/seed/alexweber-profile/360/430"
-                   alt="Profilfoto von Alberto Cabrera"
-                   loading="lazy"
-                   width="360" height="430" />
-              <div class="about__image-decoration" aria-hidden="true"></div>
+          <article class="profile-card glass-card reveal reveal-delay-1" aria-labelledby="armando-name">
+            <div class="profile-card__img">
+              <img src="img/mandy_perfil.jpeg" alt="Armando Urquiola Cabrera" loading="lazy" width="400" height="280" />
             </div>
-          </div>
-
-          <!-- Text content -->
-          <div class="about__content reveal">
-            <p class="about__text" data-i18n="about.text1">
-              Wir sind Armando Urquiola Cabrera und Alberto Cabrera – zwei Brüder und ein eingespieltes Team. Armando ist Fullstack Developer und SEO-Spezialist: Er entwickelt performante Webanwendungen mit React, Node.js und modernen Technologien und sorgt dafür, dass unsere Projekte bei Google gefunden werden.
-            </p>
-            <p class="about__text" data-i18n="about.text2">
-              Alberto ist unser WordPress- und Divi-Experte: Er gestaltet professionelle, schnelle und leicht pflegbare Websites, die Besucher zu Kunden machen. Gemeinsam begleiten wir euch von der Konzeption bis zum Launch – zuverlässig, transparent und mit vollem Einsatz.
-            </p>
-
-            <div class="skills">
-              <h3 class="skills__title" data-i18n="about.skillsTitle">Unsere Skills</h3>
-              <div class="skills__grid">
+            <div class="profile-card__body">
+              <h3 class="profile-card__name" id="armando-name">Armando Urquiola Cabrera</h3>
+              <p class="profile-card__role">Fullstack Developer &amp; SEO Specialist</p>
+              <p class="profile-card__bio" data-i18n="about.armandoBio">
+                Armando entwickelt performante Webanwendungen mit React, Node.js und modernen Cloud-Technologien. Als SEO-Spezialist sorgt er dafür, dass unsere Projekte bei Google top platziert werden.
+              </p>
+              <div class="skill-tags">
                 <span class="skill-tag">React</span>
                 <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">WordPress</span>
-                <span class="skill-tag">Divi</span>
                 <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">SEO</span>
-                <span class="skill-tag">WooCommerce</span>
+                <span class="skill-tag">Next.js</span>
                 <span class="skill-tag">AWS</span>
+                <span class="skill-tag">SEO</span>
               </div>
             </div>
+          </article>
 
-            <a href="#" class="btn btn--primary" download aria-label="Portfolio als PDF herunterladen" data-i18n="about.cta">
-              Portfolio herunterladen
-            </a>
-          </div>
+          <article class="profile-card glass-card reveal reveal-delay-2" aria-labelledby="alberto-name">
+            <div class="profile-card__img">
+              <img src="img/albe_perfil.jpeg" alt="Alberto Cabrera" loading="lazy" width="400" height="280" />
+            </div>
+            <div class="profile-card__body">
+              <h3 class="profile-card__name" id="alberto-name">Alberto Cabrera</h3>
+              <p class="profile-card__role">WordPress &amp; Divi Expert</p>
+              <p class="profile-card__bio" data-i18n="about.albertoBio">
+                Alberto gestaltet professionelle, schnelle und leicht pflegbare WordPress-Websites mit Divi, die Besucher zu Kunden machen. Sein Fokus liegt auf Performance und User Experience.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Divi</span>
+                <span class="skill-tag">WooCommerce</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">UI/UX</span>
+                <span class="skill-tag">Figma</span>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ── PROJECTS ──────────────────────────────────────── -->
-    <section class="section projects" id="projects" aria-labelledby="projects-heading">
+    <!-- ─── PROJECTS ──────────────────────────────── -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
       <div class="container">
 
-        <header class="section__header reveal">
-          <span class="section__tag" data-i18n="projects.tag">Portfolio</span>
-          <h2 class="section__title" id="projects-heading" data-i18n="projects.title">Ausgewählte Projekte</h2>
-          <p class="section__subtitle" data-i18n="projects.subtitle">Eine Auswahl unserer besten gemeinsamen Arbeiten</p>
-        </header>
-
-        <!-- Filter tabs -->
-        <div class="projects__filter reveal" role="group" aria-label="Projekte nach Kategorie filtern">
-          <button class="filter-btn active" data-filter="all"    aria-pressed="true"  data-i18n="projects.filterAll">Alle</button>
-          <button class="filter-btn"        data-filter="web"    aria-pressed="false" data-i18n="projects.filterWeb">Web</button>
-          <button class="filter-btn"        data-filter="design" aria-pressed="false" data-i18n="projects.filterDesign">Design</button>
-          <button class="filter-btn"        data-filter="app"    aria-pressed="false" data-i18n="projects.filterApp">App</button>
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="projects.tag">Portfolio</span>
+          <h2 class="section-title" id="projects-title" data-i18n="projects.title">Ausgewählte Projekte</h2>
+          <p class="section-desc" data-i18n="projects.subtitle">Eine Auswahl unserer besten gemeinsamen Arbeiten</p>
         </div>
 
-        <div class="projects__grid" id="projects-grid">
+        <div class="filter-tabs reveal" role="group" aria-label="Projekte filtern">
+          <button class="filter-tab active" data-filter="all"    aria-pressed="true"  data-i18n="projects.filterAll">Alle</button>
+          <button class="filter-tab"        data-filter="web"    aria-pressed="false" data-i18n="projects.filterWeb">Web</button>
+          <button class="filter-tab"        data-filter="design" aria-pressed="false" data-i18n="projects.filterDesign">Design</button>
+          <button class="filter-tab"        data-filter="app"    aria-pressed="false" data-i18n="projects.filterApp">App</button>
+        </div>
 
-          <!-- Project 1 -->
-          <article class="project-card reveal" data-category="web" aria-labelledby="proj1-title">
-            <div class="project-card__image">
-              <!-- 📸 PROYECTO 1 – cambia src por tu imagen: assets/img/project-1.jpg -->
-              <img class="project-card__img"
-                   src="https://picsum.photos/seed/proj-ecommerce/800/520"
-                   alt="E-Commerce Platform"
-                   loading="lazy" width="800" height="520" />
-              <div class="project-card__overlay" aria-hidden="true">
-                <span class="project-card__view-btn" data-i18n="projects.viewProject">Zum Projekt</span>
-                <div class="project-card__links">
-                  <a href="#" class="project-card__link-icon" aria-label="Live Demo der E-Commerce Platform" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                  <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  </a>
+        <div class="bento-grid" id="projects-grid">
+
+          <!-- Featured project -->
+          <article class="project-card project-card--featured glass-card reveal" data-category="web" aria-labelledby="p1-title">
+            <div class="project-mockup">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">shopwave.app</div>
+              </div>
+              <div class="browser-content" style="background:linear-gradient(135deg,#1a1040,#2d1b69 50%,#1a0530)">
+                <div class="ui-mockup">
+                  <div class="ui-bar"></div>
+                  <div class="ui-bar ui-bar--short"></div>
+                  <div class="ui-cards">
+                    <div class="ui-card"></div>
+                    <div class="ui-card"></div>
+                    <div class="ui-card"></div>
+                  </div>
+                  <div class="ui-chart"></div>
                 </div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__tags" aria-label="Verwendete Technologien">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Node.js</span>
-                <span class="project-tag">MongoDB</span>
+            <div class="project-card__body">
+              <span class="project-tag-line">React · Node.js · AWS</span>
+              <h3 class="project-title" id="p1-title" data-i18n="projects.p1.title">E-Commerce Platform</h3>
+              <p class="project-desc" data-i18n="projects.p1.desc">Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard für Performance-Monitoring.</p>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
+                <a href="#" class="btn btn--sm btn--ghost" aria-label="GitHub Repository">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
               </div>
-              <h3 class="project-card__title" id="proj1-title" data-i18n="projects.p1.title">E-Commerce Platform</h3>
-              <p class="project-card__desc" data-i18n="projects.p1.desc">
-                Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard.
-              </p>
             </div>
           </article>
 
           <!-- Project 2 -->
-          <article class="project-card reveal" data-category="design" aria-labelledby="proj2-title">
-            <div class="project-card__image">
-              <!-- 📸 PROYECTO 2 – cambia src por tu imagen: assets/img/project-2.jpg -->
-              <img class="project-card__img"
-                   src="https://picsum.photos/seed/proj-design/800/520"
-                   alt="Design System"
-                   loading="lazy" width="800" height="520" />
-              <div class="project-card__overlay" aria-hidden="true">
-                <span class="project-card__view-btn" data-i18n="projects.viewProject">Zum Projekt</span>
-                <div class="project-card__links">
-                  <a href="#" class="project-card__link-icon" aria-label="Live Demo des Design Systems" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                  <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  </a>
-                </div>
+          <article class="project-card glass-card reveal reveal-delay-1" data-category="design" aria-labelledby="p2-title">
+            <div class="project-preview" style="background:linear-gradient(135deg,#0f3460,#16213e)">
+              <div class="ui-mockup">
+                <div class="ui-bar"></div>
+                <div class="ui-bar ui-bar--short"></div>
+                <div class="ui-cards"><div class="ui-card"></div><div class="ui-card"></div></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__tags" aria-label="Verwendete Technologien">
-                <span class="project-tag">Figma</span>
-                <span class="project-tag">Design System</span>
+            <div class="project-card__body">
+              <span class="project-tag-line">Figma · Design System</span>
+              <h3 class="project-title" id="p2-title" data-i18n="projects.p2.title">WordPress Divi Website</h3>
+              <p class="project-desc" data-i18n="projects.p2.desc">Professionelle Unternehmenswebsite mit dem Divi Builder – schnell, responsiv und leicht pflegbar.</p>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
               </div>
-              <h3 class="project-card__title" id="proj2-title" data-i18n="projects.p2.title">Design System</h3>
-              <p class="project-card__desc" data-i18n="projects.p2.desc">
-                Umfassendes Design System mit über 200 Komponenten für ein FinTech-Startup.
-              </p>
             </div>
           </article>
 
           <!-- Project 3 -->
-          <article class="project-card reveal" data-category="app" aria-labelledby="proj3-title">
-            <div class="project-card__image">
-              <!-- 📸 PROYECTO 3 – cambia src por tu imagen: assets/img/project-3.jpg -->
-              <img class="project-card__img"
-                   src="https://picsum.photos/seed/proj-taskapp/800/520"
-                   alt="Task Manager App"
-                   loading="lazy" width="800" height="520" />
-              <div class="project-card__overlay" aria-hidden="true">
-                <span class="project-card__view-btn" data-i18n="projects.viewProject">Zum Projekt</span>
-                <div class="project-card__links">
-                  <a href="#" class="project-card__link-icon" aria-label="Live Demo der Task Manager App" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                  <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  </a>
-                </div>
+          <article class="project-card glass-card reveal reveal-delay-2" data-category="app" aria-labelledby="p3-title">
+            <div class="project-preview" style="background:linear-gradient(135deg,#064e3b,#022c22)">
+              <div class="ui-mockup">
+                <div class="ui-bar"></div>
+                <div class="ui-chart"></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__tags" aria-label="Verwendete Technologien">
-                <span class="project-tag">React Native</span>
-                <span class="project-tag">TypeScript</span>
-                <span class="project-tag">Firebase</span>
+            <div class="project-card__body">
+              <span class="project-tag-line">React Native · TypeScript · Firebase</span>
+              <h3 class="project-title" id="p3-title" data-i18n="projects.p3.title">SEO &amp; Web-App</h3>
+              <p class="project-desc" data-i18n="projects.p3.desc">Fullstack-Webanwendung mit integrierter SEO-Strategie und messbarem Ranking-Wachstum.</p>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
               </div>
-              <h3 class="project-card__title" id="proj3-title" data-i18n="projects.p3.title">Task Manager App</h3>
-              <p class="project-card__desc" data-i18n="projects.p3.desc">
-                Mobile App zur Aufgabenverwaltung mit KI-gestützter Priorisierung und Team-Kollaboration.
-              </p>
             </div>
           </article>
 
           <!-- Project 4 -->
-          <article class="project-card reveal" data-category="web" aria-labelledby="proj4-title">
-            <div class="project-card__image">
-              <!-- 📸 PROYECTO 4 – cambia src por tu imagen: assets/img/project-4.jpg -->
-              <img class="project-card__img"
-                   src="https://picsum.photos/seed/proj-analytics/800/520"
-                   alt="Analytics Dashboard"
-                   loading="lazy" width="800" height="520" />
-              <div class="project-card__overlay" aria-hidden="true">
-                <span class="project-card__view-btn" data-i18n="projects.viewProject">Zum Projekt</span>
-                <div class="project-card__links">
-                  <a href="#" class="project-card__link-icon" aria-label="Live Demo des Analytics Dashboards" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                  <a href="#" class="project-card__link-icon" aria-label="Quellcode auf GitHub" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  </a>
-                </div>
+          <article class="project-card glass-card reveal reveal-delay-3" data-category="web" aria-labelledby="p4-title">
+            <div class="project-preview" style="background:linear-gradient(135deg,#312e81,#1e1b4b)">
+              <div class="ui-mockup">
+                <div class="ui-bar"></div>
+                <div class="ui-cards"><div class="ui-card"></div><div class="ui-card"></div><div class="ui-card"></div></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__tags" aria-label="Verwendete Technologien">
-                <span class="project-tag">Vue.js</span>
-                <span class="project-tag">D3.js</span>
-                <span class="project-tag">Python</span>
+            <div class="project-card__body">
+              <span class="project-tag-line">Vue.js · D3.js · Python</span>
+              <h3 class="project-title" id="p4-title" data-i18n="projects.p4.title">Analytics Dashboard</h3>
+              <p class="project-desc" data-i18n="projects.p4.desc">Interaktives Analyse-Dashboard mit Echtzeit-Daten und maßgeschneiderten Visualisierungen.</p>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
               </div>
-              <h3 class="project-card__title" id="proj4-title" data-i18n="projects.p4.title">Analytics Dashboard</h3>
-              <p class="project-card__desc" data-i18n="projects.p4.desc">
-                Interaktives Analyse-Dashboard mit Echtzeit-Daten und maßgeschneiderten Visualisierungen.
-              </p>
             </div>
           </article>
 
-        </div><!-- /#projects-grid -->
+        </div><!-- /.bento-grid -->
 
-        <div class="projects__more reveal">
-          <a href="#" class="btn btn--outline" data-i18n="projects.viewAll">Alle Projekte ansehen</a>
+        <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem)" class="reveal">
+          <a href="#contact" class="btn btn--ghost" data-i18n="projects.viewAll">Alle Projekte ansehen</a>
         </div>
 
       </div>
     </section>
 
-    <!-- ── SERVICES ──────────────────────────────────────── -->
-    <section class="section services" id="services" aria-labelledby="services-heading">
+    <!-- ─── SERVICES ──────────────────────────────── -->
+    <section class="section services" id="services" aria-labelledby="services-title">
       <div class="container">
 
-        <header class="section__header reveal">
-          <span class="section__tag" data-i18n="services.tag">Was wir bieten</span>
-          <h2 class="section__title" id="services-heading" data-i18n="services.title">Unsere Leistungen</h2>
-          <p class="section__subtitle" data-i18n="services.subtitle">Maßgeschneiderte Lösungen für euer digitales Wachstum</p>
-        </header>
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="services.tag">Was wir bieten</span>
+          <h2 class="section-title" id="services-title" data-i18n="services.title">Unsere Leistungen</h2>
+          <p class="section-desc" data-i18n="services.subtitle">Maßgeschneiderte Lösungen für euer digitales Wachstum</p>
+        </div>
 
-        <div class="services__grid">
+        <div class="services-grid">
 
-          <!-- Service 1 – Web Development -->
-          <div class="service-card reveal" aria-labelledby="svc1-title">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-              </svg>
+          <div class="service-card glass-card reveal reveal-delay-1">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <h3 class="service-card__title" id="svc1-title" data-i18n="services.s1.title">Fullstack Development</h3>
-            <p class="service-card__desc" data-i18n="services.s1.desc">Wir entwickeln maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.</p>
-            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+            <h3 class="service-title" data-i18n="services.s1.title">Fullstack Development</h3>
+            <p class="service-desc" data-i18n="services.s1.desc">Maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.</p>
+            <ul class="service-list">
               <li data-i18n="services.s1.f1">React / Next.js Frontend</li>
               <li data-i18n="services.s1.f2">Node.js / Python Backend</li>
               <li data-i18n="services.s1.f3">REST &amp; GraphQL APIs</li>
               <li data-i18n="services.s1.f4">Cloud Deployment &amp; DevOps</li>
             </ul>
-            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+            <a href="#contact" class="btn btn--sm btn--ghost" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
 
-          <!-- Service 2 – UI/UX Design (featured) -->
-          <div class="service-card service-card--featured reveal" aria-labelledby="svc2-title">
-            <div class="service-card__badge" data-i18n="services.popular" aria-label="Beliebt">Beliebt</div>
-            <div class="service-card__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-              </svg>
+          <div class="service-card service-card--featured glass-card reveal reveal-delay-2">
+            <div class="service-badge" data-i18n="services.popular" aria-label="Beliebt">Beliebt</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
-            <h3 class="service-card__title" id="svc2-title" data-i18n="services.s2.title">WordPress &amp; Divi</h3>
-            <p class="service-card__desc" data-i18n="services.s2.desc">Professionelle WordPress-Websites mit dem Divi Builder – optisch ansprechend, schnell und einfach zu pflegen.</p>
-            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+            <h3 class="service-title" data-i18n="services.s2.title">WordPress &amp; Divi</h3>
+            <p class="service-desc" data-i18n="services.s2.desc">Professionelle WordPress-Websites mit dem Divi Builder – optisch ansprechend und einfach zu pflegen.</p>
+            <ul class="service-list">
               <li data-i18n="services.s2.f1">Individuelle Divi-Themes</li>
               <li data-i18n="services.s2.f2">WooCommerce Online-Shops</li>
               <li data-i18n="services.s2.f3">Performance-Optimierung</li>
               <li data-i18n="services.s2.f4">Schulung &amp; Übergabe</li>
             </ul>
-            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+            <a href="#contact" class="btn btn--sm btn--primary" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
 
-          <!-- Service 3 – Consulting -->
-          <div class="service-card reveal" aria-labelledby="svc3-title">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-              </svg>
+          <div class="service-card glass-card reveal reveal-delay-3">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg>
             </div>
-            <h3 class="service-card__title" id="svc3-title" data-i18n="services.s3.title">SEO-Optimierung</h3>
-            <p class="service-card__desc" data-i18n="services.s3.desc">Wir bringen eure Website in die Suchergebnisse – nachhaltig, datengetrieben und mit messbaren Ergebnissen.</p>
-            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
+            <h3 class="service-title" data-i18n="services.s3.title">SEO-Optimierung</h3>
+            <p class="service-desc" data-i18n="services.s3.desc">Nachhaltige Suchmaschinenoptimierung – datengetrieben und mit messbaren Ergebnissen.</p>
+            <ul class="service-list">
               <li data-i18n="services.s3.f1">Keyword-Recherche &amp; Strategie</li>
-              <li data-i18n="services.s3.f2">On-Page &amp; technisches SEO</li>
-              <li data-i18n="services.s3.f3">Content-Optimierung</li>
-              <li data-i18n="services.s3.f4">Monatliches Reporting</li>
+              <li data-i18n="services.s3.f2">On-Page &amp; Technisches SEO</li>
+              <li data-i18n="services.s3.f3">Core Web Vitals</li>
+              <li data-i18n="services.s3.f4">Analytics &amp; Reporting</li>
             </ul>
-            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+            <a href="#contact" class="btn btn--sm btn--ghost" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
 
-          <!-- Service 4 – Maintenance -->
-          <div class="service-card reveal" aria-labelledby="svc4-title">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
+          <div class="service-card glass-card reveal reveal-delay-4">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
             </div>
-            <h3 class="service-card__title" id="svc4-title" data-i18n="services.s4.title">Wartung &amp; Support</h3>
-            <p class="service-card__desc" data-i18n="services.s4.desc">Zuverlässige Wartung und schneller Support für eure bestehenden Webprojekte – damit ihr euch aufs Wesentliche konzentrieren könnt.</p>
-            <ul class="service-card__features" aria-label="Enthaltene Leistungen">
-              <li data-i18n="services.s4.f1">Updates &amp; Bug Fixing</li>
-              <li data-i18n="services.s4.f2">Sicherheits-Patches</li>
-              <li data-i18n="services.s4.f3">Performance-Monitoring</li>
-              <li data-i18n="services.s4.f4">Persönlicher Ansprechpartner</li>
+            <h3 class="service-title" data-i18n="services.s4.title">UI/UX Design</h3>
+            <p class="service-desc" data-i18n="services.s4.desc">Nutzerfreundliche und ästhetische Interfaces, die konvertieren – von Wireframes bis zum Prototyp.</p>
+            <ul class="service-list">
+              <li data-i18n="services.s4.f1">Figma Prototyping</li>
+              <li data-i18n="services.s4.f2">Design Systems</li>
+              <li data-i18n="services.s4.f3">Usability Testing</li>
+              <li data-i18n="services.s4.f4">Responsive Design</li>
             </ul>
-            <a href="#contact" class="btn btn--primary btn--sm" data-i18n="services.bookBtn">Jetzt buchen</a>
+            <a href="#contact" class="btn btn--sm btn--ghost" data-i18n="services.bookBtn">Jetzt buchen</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ── CONTACT ────────────────────────────────────────── -->
-    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+    <!-- ─── CONTACT ───────────────────────────────── -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="container">
 
-        <header class="section__header reveal">
-          <span class="section__tag" data-i18n="contact.tag">Kontakt</span>
-          <h2 class="section__title" id="contact-heading" data-i18n="contact.title">Lasst uns zusammenarbeiten</h2>
-          <p class="section__subtitle" data-i18n="contact.subtitle">Habt ihr ein Projekt? Wir freuen uns auf eure Nachricht.</p>
-        </header>
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="contact.tag">Kontakt</span>
+          <h2 class="section-title" id="contact-title" data-i18n="contact.title">Lass uns reden</h2>
+          <p class="section-desc" data-i18n="contact.subtitle">Haben Sie ein Projekt? Wir freuen uns auf Ihre Nachricht.</p>
+        </div>
 
-        <div class="contact__grid">
+        <div class="contact-grid">
 
-          <!-- Contact info -->
-          <div class="contact__info reveal">
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <p class="contact-item__label" data-i18n="contact.emailLabel">E-Mail</p>
-                <!-- Replace with your actual email -->
-                <a href="mailto:hola@albertocabrera.dev" class="contact-item__value">hola@albertocabrera.dev</a>
-              </div>
-            </div>
+          <div class="contact-info reveal">
+            <h3 class="contact-info__title" data-i18n="contact.infoTitle">Bereit, Ihr Projekt zu starten?</h3>
+            <p class="contact-info__text" data-i18n="contact.infoText">Wir antworten in der Regel innerhalb von 24 Stunden – auch auf Englisch und Spanisch.</p>
 
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <p class="contact-item__label" data-i18n="contact.locationLabel">Standort</p>
-                <p class="contact-item__value" data-i18n="contact.location">München, Deutschland</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <p class="contact-item__label" data-i18n="contact.responseLabel">Antwortzeit</p>
-                <p class="contact-item__value" data-i18n="contact.response">Innerhalb von 24 Stunden</p>
-              </div>
-            </div>
-
-            <!-- Social links -->
-            <div class="contact__social" aria-label="Social Media Links">
-              <!-- Replace href="#" with your actual profile URLs -->
-              <a href="#" class="social-btn" aria-label="GitHub Profil besuchen" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="LinkedIn Profil besuchen" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="Twitter Profil besuchen" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-              </a>
-            </div>
+            <ul class="contact-details" role="list">
+              <li class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <p class="contact-detail__label">Email</p>
+                  <a href="mailto:hola@albertocabrera.dev" class="contact-detail__value">hola@albertocabrera.dev</a>
+                </div>
+              </li>
+              <li class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p class="contact-detail__label" data-i18n="contact.location">Standort</p>
+                  <p class="contact-detail__value">München, Deutschland</p>
+                </div>
+              </li>
+              <li class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                </div>
+                <div>
+                  <p class="contact-detail__label" data-i18n="contact.response">Antwortzeit</p>
+                  <p class="contact-detail__value">&lt; 24h</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <!-- Contact form -->
-          <div class="contact__form-wrapper reveal">
-            <!--
-              To wire up real form submission, replace the JS submit handler in main.js
-              with a real backend or use a service like Formspree:
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" …>
-            -->
-            <form class="contact-form" id="contact-form" novalidate aria-label="Kontaktformular">
-
+          <div class="contact-form-wrapper reveal reveal-delay-2">
+            <form class="contact-form glass-card" id="contact-form" novalidate aria-label="Kontaktformular">
               <div class="form-group">
-                <label class="form-label" for="contact-name" data-i18n="contact.form.name">Name</label>
-                <input type="text" id="contact-name" name="name" class="form-input"
-                       required autocomplete="name" placeholder="Max Mustermann"
-                       aria-describedby="name-error" />
-                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+                <label for="f-name" data-i18n="contact.name">Name</label>
+                <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Max Mustermann" />
+                <span class="field-error" role="alert" aria-live="polite"></span>
               </div>
-
               <div class="form-group">
-                <label class="form-label" for="contact-email" data-i18n="contact.form.email">E-Mail</label>
-                <input type="email" id="contact-email" name="email" class="form-input"
-                       required autocomplete="email" placeholder="max@beispiel.de"
-                       aria-describedby="email-error" />
-                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="max@example.com" />
+                <span class="field-error" role="alert" aria-live="polite"></span>
               </div>
-
               <div class="form-group">
-                <label class="form-label" for="contact-service" data-i18n="contact.form.service">Leistung</label>
-                <select id="contact-service" name="service" class="form-input form-select">
-                  <option value=""          data-i18n="contact.form.selectService">Leistung wählen…</option>
-                  <option value="web"       data-i18n="services.s1.title">Web Development</option>
-                  <option value="design"    data-i18n="services.s2.title">UI/UX Design</option>
-                  <option value="consulting" data-i18n="services.s3.title">Consulting</option>
-                  <option value="maintenance" data-i18n="services.s4.title">Wartung &amp; Support</option>
-                </select>
+                <label for="f-subject" data-i18n="contact.subject">Betreff</label>
+                <input type="text" id="f-subject" name="subject" placeholder="Ich habe ein Projekt…" />
               </div>
-
               <div class="form-group">
-                <label class="form-label" for="contact-message" data-i18n="contact.form.message">Nachricht</label>
-                <textarea id="contact-message" name="message" class="form-input form-textarea"
-                          rows="5" required placeholder="Erzähl mir von deinem Projekt…"
-                          aria-describedby="message-error"></textarea>
-                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+                <label for="f-message" data-i18n="contact.message">Nachricht</label>
+                <textarea id="f-message" name="message" rows="5" required placeholder="Erzählen Sie uns von Ihrem Projekt…"></textarea>
+                <span class="field-error" role="alert" aria-live="polite"></span>
               </div>
 
               <button type="submit" class="btn btn--primary btn--full" id="form-submit">
-                <span data-i18n="contact.form.submit">Nachricht senden</span>
-                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span class="btn-text" data-i18n="contact.send">Nachricht senden</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
               </button>
 
-              <!-- Success message (shown after submit) -->
-              <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <p data-i18n="contact.form.successMsg">Danke! Wir melden uns so schnell wie möglich bei euch.</p>
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="20,6 9,17 4,12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p data-i18n="contact.successMsg">Danke! Wir melden uns bald bei Ihnen.</p>
               </div>
-
             </form>
           </div>
 
@@ -638,58 +1462,480 @@
       </div>
     </section>
 
-  </main><!-- /#main -->
+  </main>
 
-  <!-- ══════════════════════════════════════════════════════
-       FOOTER
-       ══════════════════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__container container">
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" aria-label="Seitenende">
+    <div class="container">
+      <div class="footer__content">
 
-      <div class="footer__brand">
-        <a href="#hero" class="nav__logo" aria-label="Zurück zur Startseite">
-          <span class="nav__logo-text">A<span class="nav__logo-amp">&amp;</span>A <span class="nav__logo-sub">WebArt</span></span>
-        </a>
-        <p class="footer__tagline" data-i18n="footer.tagline">Digitale Erlebnisse, die wir gemeinsam erschaffen.</p>
+        <div class="footer__brand">
+          <a href="#hero" class="logo" aria-label="Zurück nach oben">
+            <span class="logo__text">A<span class="logo__amp">&amp;</span>A</span>
+            <span class="logo__sub">WebArt</span>
+          </a>
+          <p class="footer__tagline" data-i18n="footer.tagline">Zwei Brüder. Ein Team. Unendliche Möglichkeiten.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer-Navigation">
+          <a href="#about"    class="footer__link" data-i18n="nav.about">Über uns</a>
+          <a href="#projects" class="footer__link" data-i18n="nav.projects">Projekte</a>
+          <a href="#services" class="footer__link" data-i18n="nav.services">Leistungen</a>
+          <a href="#contact"  class="footer__link" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+
+        <div class="footer__social">
+          <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:hola@albertocabrera.dev" class="social-link" aria-label="Email senden">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+
       </div>
 
-      <nav class="footer__nav" aria-label="Footer Navigation">
-        <ul role="list">
-          <li><a href="#about"    data-i18n="nav.about">Über uns</a></li>
-          <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
-          <li><a href="#services" data-i18n="nav.services">Leistungen</a></li>
-          <li><a href="#contact"  data-i18n="nav.contact">Kontakt</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer__social" aria-label="Social Media">
-        <a href="#" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="social-btn" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-        </a>
-      </div>
-
-    </div>
-
-    <div class="footer__bottom">
-      <div class="container">
-        <p class="footer__copy"><span data-i18n="footer.copy">© 2026 Armando &amp; Alberto. Alle Rechte vorbehalten.</span></p>
-        <p class="footer__made"><span data-i18n="footer.made">Mit ♥ in München gemacht</span></p>
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; <span id="year"></span> A&amp;A WebArt &mdash; Armando &amp; Alberto.
+          <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span>
+        </p>
       </div>
     </div>
   </footer>
 
   <!-- Back to top -->
-  <button class="back-to-top" id="back-to-top" aria-label="Zurück nach oben" hidden>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  <button class="back-top" id="back-top" aria-label="Zurück nach oben">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+      <polyline points="18,15 12,9 6,15"/>
+    </svg>
   </button>
 
-  <script src="js/translations.js"></script>
-  <script src="js/main.js"></script>
+  <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── TRANSLATIONS ────────────────────────────────────────── */
+    const T = {
+      de: {
+        'nav.about':'Über uns','nav.projects':'Projekte',
+        'nav.services':'Leistungen','nav.contact':'Kontakt',
+        'hero.greeting':'Hallo, wir sind',
+        'hero.tagline':'Fullstack Development & WordPress Divi',
+        'hero.description':'Wir sind zwei Brüder, die gemeinsam digitale Erlebnisse erschaffen – von der Idee bis zur fertigen Website, mit Leidenschaft und Expertise.',
+        'hero.cta':'Projekte entdecken','hero.ctaContact':'Kontakt aufnehmen',
+        'hero.statProjects':'Projekte','hero.statYears':'Jahre','hero.statClients':'Kunden',
+        'about.tag':'Über uns','about.title':'Wer steckt hinter uns?',
+        'about.subtitle':'Zwei Brüder, ein eingespieltes Team aus München',
+        'about.armandoBio':'Armando entwickelt performante Webanwendungen mit React, Node.js und modernen Cloud-Technologien. Als SEO-Spezialist sorgt er dafür, dass unsere Projekte bei Google top platziert werden.',
+        'about.albertoBio':'Alberto gestaltet professionelle, schnelle und leicht pflegbare WordPress-Websites mit Divi, die Besucher zu Kunden machen. Sein Fokus liegt auf Performance und User Experience.',
+        'projects.tag':'Portfolio','projects.title':'Ausgewählte Projekte',
+        'projects.subtitle':'Eine Auswahl unserer besten gemeinsamen Arbeiten',
+        'projects.filterAll':'Alle','projects.filterWeb':'Web',
+        'projects.filterDesign':'Design','projects.filterApp':'App',
+        'projects.viewProject':'Zum Projekt','projects.viewAll':'Alle Projekte ansehen',
+        'projects.p1.title':'E-Commerce Platform',
+        'projects.p1.desc':'Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard für Performance-Monitoring.',
+        'projects.p2.title':'WordPress Divi Website',
+        'projects.p2.desc':'Professionelle Unternehmenswebsite mit dem Divi Builder – schnell, responsiv und leicht pflegbar.',
+        'projects.p3.title':'SEO & Web-App',
+        'projects.p3.desc':'Fullstack-Webanwendung mit integrierter SEO-Strategie und messbarem Ranking-Wachstum.',
+        'projects.p4.title':'Analytics Dashboard',
+        'projects.p4.desc':'Interaktives Analyse-Dashboard mit Echtzeit-Daten und maßgeschneiderten Visualisierungen.',
+        'services.tag':'Was wir bieten','services.title':'Unsere Leistungen',
+        'services.subtitle':'Maßgeschneiderte Lösungen für euer digitales Wachstum',
+        'services.popular':'Beliebt','services.bookBtn':'Jetzt buchen',
+        'services.s1.title':'Fullstack Development',
+        'services.s1.desc':'Maßgeschneiderte Webanwendungen mit modernsten Technologien – performant, sicher und skalierbar.',
+        'services.s1.f1':'React / Next.js Frontend','services.s1.f2':'Node.js / Python Backend',
+        'services.s1.f3':'REST & GraphQL APIs','services.s1.f4':'Cloud Deployment & DevOps',
+        'services.s2.title':'WordPress & Divi',
+        'services.s2.desc':'Professionelle WordPress-Websites mit dem Divi Builder – optisch ansprechend und einfach zu pflegen.',
+        'services.s2.f1':'Individuelle Divi-Themes','services.s2.f2':'WooCommerce Online-Shops',
+        'services.s2.f3':'Performance-Optimierung','services.s2.f4':'Schulung & Übergabe',
+        'services.s3.title':'SEO-Optimierung',
+        'services.s3.desc':'Nachhaltige Suchmaschinenoptimierung – datengetrieben und mit messbaren Ergebnissen.',
+        'services.s3.f1':'Keyword-Recherche & Strategie','services.s3.f2':'On-Page & Technisches SEO',
+        'services.s3.f3':'Core Web Vitals','services.s3.f4':'Analytics & Reporting',
+        'services.s4.title':'UI/UX Design',
+        'services.s4.desc':'Nutzerfreundliche und ästhetische Interfaces, die konvertieren – von Wireframes bis zum Prototyp.',
+        'services.s4.f1':'Figma Prototyping','services.s4.f2':'Design Systems',
+        'services.s4.f3':'Usability Testing','services.s4.f4':'Responsive Design',
+        'contact.tag':'Kontakt','contact.title':'Lass uns reden',
+        'contact.subtitle':'Haben Sie ein Projekt? Wir freuen uns auf Ihre Nachricht.',
+        'contact.infoTitle':'Bereit, Ihr Projekt zu starten?',
+        'contact.infoText':'Wir antworten in der Regel innerhalb von 24 Stunden – auch auf Englisch und Spanisch.',
+        'contact.location':'Standort','contact.response':'Antwortzeit',
+        'contact.name':'Name','contact.subject':'Betreff',
+        'contact.message':'Nachricht','contact.send':'Nachricht senden',
+        'contact.successMsg':'Danke! Wir melden uns bald bei Ihnen.',
+        'footer.tagline':'Zwei Brüder. Ein Team. Unendliche Möglichkeiten.',
+        'footer.rights':'Alle Rechte vorbehalten.',
+      },
+      en: {
+        'nav.about':'About','nav.projects':'Projects',
+        'nav.services':'Services','nav.contact':'Contact',
+        'hero.greeting':'Hello, we are',
+        'hero.tagline':'Fullstack Development & WordPress Divi',
+        'hero.description':'We are two brothers who create digital experiences together – from idea to launch, with passion and expertise.',
+        'hero.cta':'Explore Projects','hero.ctaContact':'Get in Touch',
+        'hero.statProjects':'Projects','hero.statYears':'Years','hero.statClients':'Clients',
+        'about.tag':'About Us','about.title':'Who are we?',
+        'about.subtitle':'Two brothers, one well-oiled team from Munich',
+        'about.armandoBio':'Armando builds high-performance web applications with React, Node.js, and modern cloud technologies. As an SEO specialist, he ensures our projects rank at the top of Google.',
+        'about.albertoBio':'Alberto crafts professional, fast, and easy-to-manage WordPress websites with Divi that turn visitors into customers. His focus is on performance and user experience.',
+        'projects.tag':'Portfolio','projects.title':'Selected Projects',
+        'projects.subtitle':'A selection of our best collaborative work',
+        'projects.filterAll':'All','projects.filterWeb':'Web',
+        'projects.filterDesign':'Design','projects.filterApp':'App',
+        'projects.viewProject':'View Project','projects.viewAll':'View All Projects',
+        'projects.p1.title':'E-Commerce Platform',
+        'projects.p1.desc':'Full e-commerce solution with product management, payment integration, and a real-time performance dashboard.',
+        'projects.p2.title':'WordPress Divi Website',
+        'projects.p2.desc':'Professional business website built with Divi – fast, responsive, and easy to manage.',
+        'projects.p3.title':'SEO & Web App',
+        'projects.p3.desc':'Fullstack web application with integrated SEO strategy and measurable ranking growth.',
+        'projects.p4.title':'Analytics Dashboard',
+        'projects.p4.desc':'Interactive analytics dashboard with real-time data and custom visualisations.',
+        'services.tag':'What We Do','services.title':'Our Services',
+        'services.subtitle':'Tailored solutions for your digital growth',
+        'services.popular':'Popular','services.bookBtn':'Book Now',
+        'services.s1.title':'Fullstack Development',
+        'services.s1.desc':'Custom web applications built with cutting-edge technologies – performant, secure, and scalable.',
+        'services.s1.f1':'React / Next.js Frontend','services.s1.f2':'Node.js / Python Backend',
+        'services.s1.f3':'REST & GraphQL APIs','services.s1.f4':'Cloud Deployment & DevOps',
+        'services.s2.title':'WordPress & Divi',
+        'services.s2.desc':'Professional WordPress websites with Divi Builder – visually stunning and easy to maintain.',
+        'services.s2.f1':'Custom Divi Themes','services.s2.f2':'WooCommerce Shops',
+        'services.s2.f3':'Performance Optimization','services.s2.f4':'Training & Handover',
+        'services.s3.title':'SEO Optimization',
+        'services.s3.desc':'Sustainable search engine optimization – data-driven with measurable results.',
+        'services.s3.f1':'Keyword Research & Strategy','services.s3.f2':'On-Page & Technical SEO',
+        'services.s3.f3':'Core Web Vitals','services.s3.f4':'Analytics & Reporting',
+        'services.s4.title':'UI/UX Design',
+        'services.s4.desc':'User-friendly and aesthetic interfaces that convert – from wireframes to final prototype.',
+        'services.s4.f1':'Figma Prototyping','services.s4.f2':'Design Systems',
+        'services.s4.f3':'Usability Testing','services.s4.f4':'Responsive Design',
+        'contact.tag':'Contact','contact.title':'Let\'s Talk',
+        'contact.subtitle':'Have a project? We\'d love to hear from you.',
+        'contact.infoTitle':'Ready to start your project?',
+        'contact.infoText':'We usually reply within 24 hours – in German, English, or Spanish.',
+        'contact.location':'Location','contact.response':'Response Time',
+        'contact.name':'Name','contact.subject':'Subject',
+        'contact.message':'Message','contact.send':'Send Message',
+        'contact.successMsg':'Thank you! We\'ll get back to you soon.',
+        'footer.tagline':'Two brothers. One team. Infinite possibilities.',
+        'footer.rights':'All rights reserved.',
+      },
+      es: {
+        'nav.about':'Nosotros','nav.projects':'Proyectos',
+        'nav.services':'Servicios','nav.contact':'Contacto',
+        'hero.greeting':'Hola, somos',
+        'hero.tagline':'Desarrollo Fullstack & WordPress Divi',
+        'hero.description':'Somos dos hermanos que creamos experiencias digitales juntos – desde la idea hasta el lanzamiento, con pasión y expertise.',
+        'hero.cta':'Ver Proyectos','hero.ctaContact':'Contactar',
+        'hero.statProjects':'Proyectos','hero.statYears':'Años','hero.statClients':'Clientes',
+        'about.tag':'Nosotros','about.title':'¿Quiénes somos?',
+        'about.subtitle':'Dos hermanos, un equipo compenetrado de Múnich',
+        'about.armandoBio':'Armando desarrolla aplicaciones web de alto rendimiento con React, Node.js y tecnologías cloud modernas. Como especialista en SEO, garantiza que nuestros proyectos estén en el top de Google.',
+        'about.albertoBio':'Alberto crea sitios WordPress profesionales, rápidos y fáciles de gestionar con Divi, que convierten visitantes en clientes. Su foco está en el rendimiento y la experiencia de usuario.',
+        'projects.tag':'Portfolio','projects.title':'Proyectos Destacados',
+        'projects.subtitle':'Una selección de nuestros mejores trabajos',
+        'projects.filterAll':'Todos','projects.filterWeb':'Web',
+        'projects.filterDesign':'Diseño','projects.filterApp':'App',
+        'projects.viewProject':'Ver Proyecto','projects.viewAll':'Ver Todos los Proyectos',
+        'projects.p1.title':'Plataforma E-Commerce',
+        'projects.p1.desc':'Solución e-commerce completa con gestión de productos, integración de pagos y dashboard en tiempo real.',
+        'projects.p2.title':'Web WordPress Divi',
+        'projects.p2.desc':'Web corporativa profesional con Divi Builder – rápida, responsive y fácil de gestionar.',
+        'projects.p3.title':'SEO & App Web',
+        'projects.p3.desc':'Aplicación web fullstack con estrategia SEO integrada y crecimiento de ranking medible.',
+        'projects.p4.title':'Dashboard Analytics',
+        'projects.p4.desc':'Dashboard analítico interactivo con datos en tiempo real y visualizaciones personalizadas.',
+        'services.tag':'Qué Hacemos','services.title':'Nuestros Servicios',
+        'services.subtitle':'Soluciones a medida para tu crecimiento digital',
+        'services.popular':'Popular','services.bookBtn':'Reservar',
+        'services.s1.title':'Desarrollo Fullstack',
+        'services.s1.desc':'Aplicaciones web a medida con tecnologías de vanguardia – eficientes, seguras y escalables.',
+        'services.s1.f1':'Frontend React / Next.js','services.s1.f2':'Backend Node.js / Python',
+        'services.s1.f3':'APIs REST & GraphQL','services.s1.f4':'Cloud & DevOps',
+        'services.s2.title':'WordPress & Divi',
+        'services.s2.desc':'Sitios WordPress profesionales con Divi Builder – visualmente impresionantes y fáciles de mantener.',
+        'services.s2.f1':'Temas Divi Personalizados','services.s2.f2':'Tiendas WooCommerce',
+        'services.s2.f3':'Optimización de Rendimiento','services.s2.f4':'Formación y Entrega',
+        'services.s3.title':'Optimización SEO',
+        'services.s3.desc':'Posicionamiento sostenible en buscadores – basado en datos y con resultados medibles.',
+        'services.s3.f1':'Investigación de Keywords','services.s3.f2':'SEO Técnico y On-Page',
+        'services.s3.f3':'Core Web Vitals','services.s3.f4':'Analytics y Reporting',
+        'services.s4.title':'Diseño UI/UX',
+        'services.s4.desc':'Interfaces atractivas y usables que convierten – desde wireframes hasta prototipo final.',
+        'services.s4.f1':'Prototipado en Figma','services.s4.f2':'Sistemas de Diseño',
+        'services.s4.f3':'Tests de Usabilidad','services.s4.f4':'Diseño Responsive',
+        'contact.tag':'Contacto','contact.title':'Hablemos',
+        'contact.subtitle':'¿Tienes un proyecto? Nos encantaría saber más.',
+        'contact.infoTitle':'¿Listo para empezar tu proyecto?',
+        'contact.infoText':'Solemos responder en menos de 24 horas – en alemán, inglés o español.',
+        'contact.location':'Ubicación','contact.response':'Tiempo de respuesta',
+        'contact.name':'Nombre','contact.subject':'Asunto',
+        'contact.message':'Mensaje','contact.send':'Enviar Mensaje',
+        'contact.successMsg':'¡Gracias! Nos pondremos en contacto pronto.',
+        'footer.tagline':'Dos hermanos. Un equipo. Posibilidades infinitas.',
+        'footer.rights':'Todos los derechos reservados.',
+      }
+    };
+
+    /* ── DOM REFS ─────────────────────────────────────────────── */
+    const $ = id => document.getElementById(id);
+    const $$ = sel => document.querySelectorAll(sel);
+
+    const header    = $('header') || document.querySelector('.header');
+    const headerEl  = document.querySelector('.header');
+    const themBtn   = $('theme-btn');
+    const hamburger = $('hamburger');
+    const mobileMenu= $('nav-menu-mobile');
+    const navOverlay= $('nav-overlay');
+    const backTop   = $('back-top');
+    const yearEl    = $('year');
+    const contactForm = $('contact-form');
+    const formSuccess = $('form-success');
+    const formSubmit  = $('form-submit');
+    const cursorDot  = $('cursor');
+    const cursorRing = $('cursor-ring');
+
+    /* ── YEAR ─────────────────────────────────────────────────── */
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* ── LANGUAGE ─────────────────────────────────────────────── */
+    let currentLang = localStorage.getItem('aa-lang') || 'de';
+
+    function applyLang(lang) {
+      if (!T[lang]) return;
+      currentLang = lang;
+      document.documentElement.lang = lang === 'de' ? 'de' : lang === 'en' ? 'en' : 'es';
+      $$('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (T[lang][key] !== undefined) el.textContent = T[lang][key];
+      });
+      $$('.lang-btn').forEach(btn => {
+        const pressed = btn.dataset.lang === lang;
+        btn.classList.toggle('active', pressed);
+        btn.setAttribute('aria-pressed', pressed);
+      });
+      localStorage.setItem('aa-lang', lang);
+    }
+
+    $$('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    applyLang(currentLang);
+
+    /* ── THEME ────────────────────────────────────────────────── */
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('aa-theme', theme);
+      if (themBtn) themBtn.setAttribute('aria-label', theme === 'dark' ? 'Zum hellen Modus' : 'Zum dunklen Modus');
+    }
+
+    if (themBtn) {
+      themBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    /* ── SCROLL: header + back-to-top ─────────────────────────── */
+    function onScroll() {
+      const y = window.scrollY;
+      if (headerEl) headerEl.classList.toggle('is-scrolled', y > 60);
+      if (backTop)  backTop.classList.toggle('is-visible', y > 400);
+
+      // Active nav link
+      $$('.nav__link[href^="#"]').forEach(link => {
+        const sec = document.querySelector(link.getAttribute('href'));
+        if (!sec) return;
+        const { top, bottom } = sec.getBoundingClientRect();
+        link.classList.toggle('active', top <= 120 && bottom > 120);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ── MOBILE MENU ──────────────────────────────────────────── */
+    function openMenu() {
+      hamburger.classList.add('is-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      navOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      navOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger) hamburger.addEventListener('click', () =>
+      mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu()
+    );
+    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+
+    // Close mobile menu on link click
+    $$('#nav-menu-mobile .nav__link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    /* ── SMOOTH SCROLL for anchor links ─────────────────────────*/
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    /* ── BACK TO TOP ─────────────────────────────────────────── */
+    if (backTop) {
+      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    /* ── CUSTOM CURSOR ────────────────────────────────────────── */
+    if (cursorDot && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      let mx = 0, my = 0, rx = 0, ry = 0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+      function animateCursor() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        if (cursorDot)  cursorDot.style.left  = mx + 'px', cursorDot.style.top  = my + 'px';
+        if (cursorRing) cursorRing.style.left = rx + 'px', cursorRing.style.top = ry + 'px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      const hoverEls = 'a,button,.project-card,.service-card,.avatar,.skill-tag';
+      document.addEventListener('mouseover', e => {
+        if (e.target.closest(hoverEls)) {
+          cursorDot.classList.add('cursor--hover');
+          cursorRing.classList.add('cursor--hover');
+        }
+      });
+      document.addEventListener('mouseout', e => {
+        if (e.target.closest(hoverEls)) {
+          cursorDot.classList.remove('cursor--hover');
+          cursorRing.classList.remove('cursor--hover');
+        }
+      });
+    }
+
+    /* ── INTERSECTION OBSERVER – scroll reveal ───────────────── */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      $$('.reveal').forEach(el => io.observe(el));
+    } else {
+      // Fallback: show all immediately
+      $$('.reveal').forEach(el => el.classList.add('is-visible'));
+    }
+
+    /* ── PROJECT FILTER ──────────────────────────────────────── */
+    const filterTabs  = $$('.filter-tab');
+    const projectCards = $$('.project-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter;
+
+        filterTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-pressed', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-pressed', 'true');
+
+        projectCards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? '' : 'none';
+          // Re-trigger reveal for newly shown cards
+          if (match && !card.classList.contains('is-visible')) {
+            setTimeout(() => card.classList.add('is-visible'), 50);
+          }
+        });
+      });
+    });
+
+    /* ── CONTACT FORM ────────────────────────────────────────── */
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        // Simple validation
+        const fields = [
+          { id: 'f-name',    required: true,  type: 'text',  msgs: { de:'Bitte geben Sie Ihren Namen ein.', en:'Please enter your name.', es:'Por favor ingrese su nombre.' } },
+          { id: 'f-email',   required: true,  type: 'email', msgs: { de:'Bitte geben Sie eine gültige E-Mail-Adresse ein.', en:'Please enter a valid email address.', es:'Por favor ingrese un email válido.' } },
+          { id: 'f-message', required: true,  type: 'text',  msgs: { de:'Bitte geben Sie eine Nachricht ein.', en:'Please enter a message.', es:'Por favor ingrese un mensaje.' } },
+        ];
+
+        fields.forEach(f => {
+          const input = $(f.id);
+          const errEl = input.parentElement.querySelector('.field-error');
+          const val = input.value.trim();
+          let err = '';
+
+          if (f.required && !val) {
+            err = f.msgs[currentLang] || f.msgs.de;
+          } else if (f.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            err = f.msgs[currentLang] || f.msgs.de;
+          }
+
+          if (errEl) errEl.textContent = err;
+          input.style.borderColor = err ? '#f87171' : '';
+          if (err) valid = false;
+        });
+
+        if (!valid) return;
+
+        // Simulate submission
+        formSubmit.classList.add('btn--loading');
+        formSubmit.disabled = true;
+
+        await new Promise(r => setTimeout(r, 1400));
+
+        contactForm.querySelectorAll('.form-group').forEach(g => g.style.display = 'none');
+        formSubmit.style.display = 'none';
+        if (formSuccess) formSuccess.classList.add('is-visible');
+      });
+
+      // Clear errors on input
+      $$('#contact-form input, #contact-form textarea').forEach(input => {
+        input.addEventListener('input', () => {
+          const errEl = input.parentElement.querySelector('.field-error');
+          if (errEl) errEl.textContent = '';
+          input.style.borderColor = '';
+        });
+      });
+    }
+
+  })();
+  </script>
+
 </body>
 </html>
