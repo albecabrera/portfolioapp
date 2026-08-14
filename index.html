@@ -10,11 +10,23 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="A&amp;A WebArt – Fullstack &amp; WordPress" />
   <meta property="og:description" content="Zwei Brüder, ein Team: Fullstack Development, WordPress Divi &amp; SEO aus München." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://albertocabrera.dev/" />
+  <meta property="og:image" content="https://albertocabrera.dev/img/preview-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A&amp;A WebArt – Fullstack &amp; WordPress" />
+  <meta name="twitter:description" content="Moderne Webentwicklung, WordPress Divi und SEO aus München." />
+  <meta name="twitter:image" content="https://albertocabrera.dev/img/preview-og.jpg" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="dark light" />
   <link rel="canonical" href="https://albertocabrera.dev/" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://picsum.photos" />
+  <link rel="preconnect" href="https://ui-avatars.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- SVG Favicon -->
@@ -151,6 +163,7 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem)}
 
 .section{padding-block:var(--sec-py)}
+.section{content-visibility:auto;contain-intrinsic-size:1px 900px}
 
 .section-header{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
 
@@ -168,34 +181,13 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 .section-title{
   font-size:clamp(1.75rem,4vw,2.75rem);
   font-weight:800;
-  margin-bottom:var(--s-4);
+  margin-bottom:var(--s-3);
+  letter-spacing:-.015em;
 }
 
-.section-desc{font-size:1.05rem;color:var(--tx-2);max-width:54ch;margin-inline:auto}
+.section-desc{font-size:1rem;color:var(--tx-2);max-width:58ch;margin-inline:auto;line-height:1.75}
 
 /* ── 5. CUSTOM CURSOR ─────────────────────────────────────────── */
-.cursor{
-  position:fixed;z-index:9999;
-  width:10px;height:10px;
-  background:var(--primary);
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  transition:transform .1s,width .2s,height .2s,background .2s;
-  mix-blend-mode:normal;
-}
-.cursor-ring{
-  position:fixed;z-index:9998;
-  width:36px;height:36px;
-  border:1.5px solid rgba(var(--primary-rgb),.5);
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  transition:transform .08s linear,width .25s,height .25s,border-color .2s;
-}
-.cursor.cursor--hover{width:20px;height:20px;background:var(--secondary)}
-.cursor-ring.cursor--hover{width:52px;height:52px;border-color:rgba(var(--primary-rgb),.3)}
-@media(hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none}}
 
 /* ── 6. NAVIGATION ────────────────────────────────────────────── */
 .skip-link{
@@ -238,14 +230,23 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 }
 
 /* Logo */
-.logo{display:flex;align-items:baseline;gap:.4rem;font-family:var(--font-head)}
-.logo__text{
-  font-size:1.4rem;font-weight:800;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.logo{display:flex;align-items:center;gap:.65rem;font-family:var(--font-head)}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  display:grid;place-items:center;
+  color:#fff;font-size:.8rem;font-weight:800;letter-spacing:.02em;
+  background:linear-gradient(145deg,var(--primary),var(--secondary));
+  box-shadow:0 8px 20px rgba(var(--primary-rgb),.35);
 }
-.logo__amp{color:var(--accent);-webkit-text-fill-color:var(--accent)}
-.logo__sub{font-size:.85rem;font-weight:500;color:var(--tx-2)}
+.logo-wordmark{display:flex;flex-direction:column;line-height:1.05}
+.logo-title{
+  font-size:1rem;font-weight:800;
+  color:var(--tx-1);letter-spacing:.01em;
+}
+.logo-sub{
+  font-size:.72rem;font-weight:600;color:var(--tx-3);
+  letter-spacing:.14em;text-transform:uppercase;
+}
 
 /* Nav links */
 .nav__list{
@@ -526,10 +527,25 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 }
 
 .profile-card__img{
-  height:clamp(200px,30vw,280px);overflow:hidden;
+  height:clamp(320px,48vw,430px);
+  overflow:hidden;
+  background:linear-gradient(180deg,rgba(var(--primary-rgb),.12),transparent);
 }
-.profile-card__img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease}
+.profile-card__img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 14%;
+  transition:transform .6s ease;
+}
 .profile-card:hover .profile-card__img img{transform:scale(1.05)}
+.profile-card__img--armando img{object-position:center 12%}
+.profile-card__img--alberto img{object-position:center 16%}
+@media(min-width:700px){
+  .profile-card__img{height:clamp(330px,32vw,440px)}
+  .profile-card__img--armando img{object-position:center 10%}
+  .profile-card__img--alberto img{object-position:center 14%}
+}
 
 .profile-card__body{padding:var(--s-6);display:flex;flex-direction:column;gap:var(--s-3)}
 
@@ -627,6 +643,13 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
   display:flex;align-items:center;justify-content:center;
   padding:1.5rem;
 }
+.project-shot{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+}
 
 /* CSS UI mockup shapes */
 .ui-mockup{width:100%;display:flex;flex-direction:column;gap:.75rem}
@@ -643,6 +666,7 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
   display:flex;align-items:center;justify-content:center;padding:1.5rem;
   flex-shrink:0;
 }
+.project-preview .project-shot{border-radius:12px}
 .project-preview .ui-mockup{gap:.5rem}
 .project-preview .ui-bar{height:8px}
 .project-preview .ui-card{height:44px}
@@ -652,6 +676,7 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
   display:flex;flex-direction:column;
   gap:var(--s-3);
   flex:1;
+  min-height:340px;
 }
 .project-card--featured .project-card__body{justify-content:center}
 
@@ -659,8 +684,8 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
   font-size:.72rem;font-weight:600;letter-spacing:.05em;
   color:var(--primary);text-transform:uppercase;
 }
-.project-title{font-size:1.15rem;font-weight:700;color:var(--tx-1)}
-.project-desc{font-size:.875rem;color:var(--tx-2);line-height:1.65;flex:1}
+.project-title{font-size:1.1rem;font-weight:700;color:var(--tx-1);line-height:1.35}
+.project-desc{font-size:.9rem;color:var(--tx-2);line-height:1.68;flex:1}
 .project-links{display:flex;align-items:center;gap:.75rem;margin-top:var(--s-2)}
 
 /* ── 10. SERVICES ─────────────────────────────────────────────── */
@@ -674,11 +699,23 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 @media(min-width:600px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.services-grid{grid-template-columns:repeat(4,1fr)}}
 
+.process .services-grid{
+  max-width:1100px;
+  margin-inline:auto;
+}
+@media(min-width:1024px){
+  .process .services-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    justify-content:center;
+  }
+}
+
 .service-card{
   border-radius:var(--r-xl);
   padding:var(--s-8) var(--s-6);
   display:flex;flex-direction:column;gap:var(--s-4);
   transition:transform var(--t-base),box-shadow var(--t-base);
+  min-height:320px;
 }
 .service-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg),var(--sh-glow)}
 
@@ -709,8 +746,8 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
   box-shadow:0 0 20px rgba(var(--primary-rgb),.3);
 }
 .service-icon svg{width:24px;height:24px}
-.service-title{font-size:1.05rem;font-weight:700;color:var(--tx-1)}
-.service-desc{font-size:.875rem;color:var(--tx-2);line-height:1.7;flex:1}
+.service-title{font-size:1.02rem;font-weight:700;color:var(--tx-1);line-height:1.35}
+.service-desc{font-size:.9rem;color:var(--tx-2);line-height:1.72;flex:1}
 .service-list{display:flex;flex-direction:column;gap:.5rem}
 .service-list li{
   font-size:.8rem;color:var(--tx-2);
@@ -727,9 +764,16 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;font-weight:700}
 .contact-grid{
   display:grid;grid-template-columns:1fr;gap:var(--s-8);
 }
-@media(min-width:860px){.contact-grid{grid-template-columns:1fr 1.4fr;align-items:start}}
+@media(min-width:860px){.contact-grid{grid-template-columns:1fr 1.4fr;align-items:stretch}}
+.contact-form-wrapper,.contact-info{height:100%}
 
-.contact-info{display:flex;flex-direction:column;gap:var(--s-6)}
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s-6);
+  border-radius:var(--r-xl);
+  padding:clamp(1.25rem,3.2vw,2rem);
+}
 .contact-info__title{font-size:1.4rem;font-weight:700}
 .contact-info__text{font-size:.9rem;color:var(--tx-2);line-height:1.7}
 
@@ -847,8 +891,8 @@ a.contact-detail__value:hover{color:var(--primary)}
 /* ── GLASS CARD UTILITY ───────────────────────────────────────── */
 .glass-card{
   background:var(--bg-card);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   border:1px solid var(--border);
   box-shadow:var(--sh-md);
   transition:border-color var(--t-base);
@@ -963,6 +1007,305 @@ a.contact-detail__value:hover{color:var(--primary)}
   body{background:#fff;color:#000}
   .hero{min-height:auto;padding-top:2rem}
 }
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+
+/* ── 17. MODERN UI + COLOR SYSTEM (2026 refresh) ───────────── */
+:root{
+  --primary:#6366f1;
+  --primary-dark:#4f46e5;
+  --primary-rgb:99,102,241;
+  --secondary:#8b5cf6;
+  --accent:#f59e0b;
+  --bg-0:#020617;
+  --bg-1:#071025;
+  --bg-2:#0b1730;
+  --bg-3:#0f1d3d;
+  --bg-card:rgba(15,23,42,.62);
+  --border:rgba(148,163,184,.18);
+  --border-hover:rgba(56,189,248,.45);
+  --tx-1:#e2e8f0;
+  --tx-2:#94a3b8;
+  --sh-md:0 14px 40px rgba(2,6,23,.45);
+  --sh-lg:0 20px 60px rgba(2,6,23,.55);
+}
+
+[data-theme="light"]{
+  --primary:#4f46e5;
+  --primary-dark:#4338ca;
+  --primary-rgb:79,70,229;
+  --secondary:#7c3aed;
+  --accent:#d97706;
+  --bg-0:#f8fafc;
+  --bg-1:#f1f5f9;
+  --bg-2:#e2e8f0;
+  --bg-3:#ffffff;
+  --bg-card:rgba(255,255,255,.85);
+  --border:rgba(37,99,235,.16);
+  --border-hover:rgba(37,99,235,.35);
+  --tx-1:#0f172a;
+  --tx-2:#475569;
+}
+
+body{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(var(--primary-rgb),.13), transparent 60%),
+    radial-gradient(1000px 520px at -10% 18%, rgba(129,140,248,.18), transparent 55%),
+    var(--bg-0);
+}
+
+.glass-card,.project-card,.service-card,.profile-card,.contact-form,.contact-info{
+  background:var(--bg-card) !important;
+  border:1px solid var(--border) !important;
+  backdrop-filter:blur(14px);
+  box-shadow:var(--sh-md);
+}
+
+.glass-card:hover,.project-card:hover,.service-card:hover,.profile-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--border-hover) !important;
+  box-shadow:var(--sh-lg),0 0 0 1px rgba(var(--primary-rgb),.2) inset;
+}
+
+.btn--primary{
+  background:linear-gradient(135deg,var(--primary),var(--secondary)) !important;
+  border:0 !important;
+  box-shadow:0 10px 26px rgba(var(--primary-rgb),.35);
+}
+.btn--primary:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn--ghost{
+  border:1px solid var(--border-hover) !important;
+  background:rgba(var(--primary-rgb),.08);
+}
+
+.section-title,.hero__title{letter-spacing:-.02em}
+.hero__subtitle{color:#cbd5e1;font-weight:600}
+[data-theme="light"] .hero__subtitle{color:#334155}
+
+.header{
+  backdrop-filter:blur(10px);
+  background:color-mix(in srgb, var(--bg-0) 78%, transparent);
+  border-bottom:1px solid var(--border);
+}
+
+.project-tag-line,.section-tag,.skill-tag{
+  background:rgba(var(--primary-rgb),.11);
+  border-color:rgba(var(--primary-rgb),.33);
+}
+
+.contact-form input,.contact-form textarea{
+  background:color-mix(in srgb, var(--bg-1) 86%, transparent);
+  border:1px solid var(--border);
+}
+.contact-form input:focus,.contact-form textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(var(--primary-rgb),.18);
+}
+
+.footer{
+  border-top:1px solid var(--border);
+  background:linear-gradient(180deg, transparent, rgba(var(--primary-rgb),.06));
+}
+.case-metrics{
+  margin:.9rem 0 1.1rem;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.5rem;
+}
+.case-metric{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.55rem .45rem;
+  background:rgba(var(--primary-rgb),.08);
+  text-align:center;
+}
+.case-metric strong{display:block;font-size:1rem;line-height:1.2;color:var(--tx-1)}
+.case-metric span{font-size:.72rem;color:var(--tx-2)}
+@media(max-width:560px){.case-metrics{grid-template-columns:1fr}}
+.mini-case{
+  margin-top:.75rem;
+  padding:.7rem .8rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(var(--primary-rgb),.05);
+}
+.mini-case p{font-size:.8rem;color:var(--tx-2);margin:.18rem 0}
+.mini-case strong{color:var(--tx-1)}
+
+.trusted-by{margin-bottom:2rem;text-align:center}
+.trusted-by__title{
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--tx-2);
+  margin-bottom:.9rem;
+}
+.trusted-by__logos{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:.55rem;
+}
+.trusted-by__logos span{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.55rem .6rem;
+  font-size:.82rem;
+  color:var(--tx-2);
+  background:rgba(var(--primary-rgb),.05);
+  transition:transform .28s ease, border-color .28s ease, background .28s ease, color .28s ease;
+}
+.trusted-by__logos span:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-hover);
+  color:var(--tx-1);
+  background:rgba(var(--primary-rgb),.12);
+}
+@media(max-width:760px){.trusted-by__logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.trusted-by.reveal.is-visible .trusted-by__logos span{
+  animation:fadeUp .5s ease both;
+}
+.trusted-by.reveal.is-visible .trusted-by__logos span:nth-child(1){animation-delay:.03s}
+.trusted-by.reveal.is-visible .trusted-by__logos span:nth-child(2){animation-delay:.08s}
+.trusted-by.reveal.is-visible .trusted-by__logos span:nth-child(3){animation-delay:.13s}
+.trusted-by.reveal.is-visible .trusted-by__logos span:nth-child(4){animation-delay:.18s}
+.trusted-by.reveal.is-visible .trusted-by__logos span:nth-child(5){animation-delay:.23s}
+
+.project-card.reveal.is-visible .case-metric{
+  animation:fadeUp .45s ease both;
+}
+.project-card.reveal.is-visible .case-metric:nth-child(1){animation-delay:.05s}
+.project-card.reveal.is-visible .case-metric:nth-child(2){animation-delay:.1s}
+.project-card.reveal.is-visible .case-metric:nth-child(3){animation-delay:.15s}
+
+.testimonials-slider-controls{
+  display:flex;
+  justify-content:flex-end;
+  gap:.5rem;
+  margin:-.5rem 0 1rem;
+}
+.slider-btn{
+  width:36px;height:36px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--tx-1);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s ease;
+}
+.slider-btn:hover{border-color:var(--border-hover);transform:translateY(-1px)}
+.testimonials .services-grid{
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  gap:var(--s-6);
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding-bottom:.25rem;
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+.testimonials .services-grid::-webkit-scrollbar{display:none}
+.testimonials .services-grid > .service-card{
+  min-width:min(100%, 360px);
+  scroll-snap-align:start;
+}
+.testimonial-head{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:.8rem;
+}
+.testimonial-avatar{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(var(--primary-rgb),.35);
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+.testimonial-meta{display:flex;flex-direction:column;gap:.1rem}
+
+.hero-proof{
+  margin-top:1.25rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.hero-proof__item{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.85rem;
+  color:var(--tx-1);
+  background:rgba(var(--primary-rgb),.1);
+  border:1px solid rgba(var(--primary-rgb),.24);
+  border-radius:999px;
+  padding:.35rem .75rem;
+}
+.contact-quick-actions{
+  margin:1rem 0 1.25rem;
+}
+
+/* ── 18. COLOR SYSTEM POLISH (light/dark clean) ─────────────── */
+:root{
+  --bg-0:#0b1220;
+  --bg-1:#111a2e;
+  --bg-2:#17233d;
+  --bg-3:#1f2d4d;
+  --tx-1:#f3f7ff;
+  --tx-2:#c3d0e8;
+  --tx-3:#9db0d1;
+  --surface:rgba(19,31,56,.72);
+  --surface-soft:rgba(34,51,84,.55);
+}
+[data-theme="light"]{
+  --bg-0:#f7f9ff;
+  --bg-1:#eef3ff;
+  --bg-2:#e3ebfb;
+  --bg-3:#ffffff;
+  --tx-1:#0b1220;
+  --tx-2:#26364d;
+  --tx-3:#516784;
+  --surface:rgba(255,255,255,.92);
+  --surface-soft:rgba(245,248,255,.95);
+}
+
+body{
+  color:var(--tx-1);
+  background:
+    radial-gradient(900px 420px at 10% -10%, rgba(var(--primary-rgb),.12), transparent 60%),
+    radial-gradient(900px 420px at 90% 0%, rgba(129,140,248,.12), transparent 62%),
+    var(--bg-0);
+}
+.section-desc,.project-desc,.service-desc,.profile-card__bio,.contact-info__text,.case-metric span,.mini-case p{
+  color:var(--tx-2) !important;
+}
+.contact-detail__label,.footer__copy,.footer__tagline,.trusted-by__title{color:var(--tx-3) !important}
+
+.header{
+  background:color-mix(in srgb, var(--bg-0) 80%, transparent) !important;
+  border-bottom:1px solid var(--border);
+}
+.glass-card,.project-card,.service-card,.profile-card,.contact-form,.contact-info{
+  background:var(--surface) !important;
+}
+.project-preview,.browser-content,.contact-form input,.contact-form textarea{
+  background:var(--surface-soft) !important;
+}
+[data-theme="light"] .project-preview,
+[data-theme="light"] .browser-content{
+  border:1px solid rgba(15,23,42,.08);
+}
+
+.btn--ghost{
+  color:var(--tx-1) !important;
+  background:rgba(var(--primary-rgb),.09) !important;
+}
+.btn--ghost:hover{
+  background:rgba(var(--primary-rgb),.16) !important;
+}
   </style>
 
   <!-- Prevent flash of wrong theme -->
@@ -973,14 +1316,35 @@ a.contact-detail__value:hover{color:var(--primary)}
       document.documentElement.setAttribute('data-theme',t);
     })();
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "A&A WebArt",
+    "url": "https://albertocabrera.dev/",
+    "description": "Fullstack Development, WordPress Divi und SEO aus München.",
+    "areaServed": "DE",
+    "email": "hola@albertocabrera.dev",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "München",
+      "addressCountry": "DE"
+    },
+    "founder": [
+      {"@type": "Person", "name": "Armando Urquiola Cabrera"},
+      {"@type": "Person", "name": "Alberto Cabrera"}
+    ],
+    "sameAs": [
+      "https://github.com",
+      "https://linkedin.com"
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Custom cursor (desktop only) -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-
-  <!-- Accessibility: skip link -->
+<!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
   <!-- Mobile nav overlay -->
@@ -991,8 +1355,11 @@ a.contact-detail__value:hover{color:var(--primary)}
     <nav class="nav container" aria-label="Hauptnavigation">
 
       <a href="#hero" class="logo" aria-label="A&amp;A WebArt – Startseite">
-        <span class="logo__text">A<span class="logo__amp">&amp;</span>A</span>
-        <span class="logo__sub">WebArt</span>
+        <span class="logo-mark" aria-hidden="true">A&amp;A</span>
+        <span class="logo-wordmark">
+          <span class="logo-title">A&amp;A WebArt</span>
+          <span class="logo-sub">Digital Studio</span>
+        </span>
       </a>
 
       <!-- Desktop links -->
@@ -1088,6 +1455,12 @@ a.contact-detail__value:hover{color:var(--primary)}
               <span class="stat__label" data-i18n="hero.statClients">Kunden</span>
             </div>
           </div>
+
+          <div class="hero-proof reveal" aria-label="Vertrauensfaktoren">
+            <span class="hero-proof__item" data-i18n="hero.proof1">✅ Kostenloses Erstgespräch</span>
+            <span class="hero-proof__item" data-i18n="hero.proof2">⚡ Antwort in unter 24h</span>
+            <span class="hero-proof__item" data-i18n="hero.proof3">🎯 Fokus auf messbare Leads</span>
+          </div>
         </div>
 
         <!-- Right: avatars -->
@@ -1125,6 +1498,31 @@ a.contact-detail__value:hover{color:var(--primary)}
       </div>
     </section>
 
+    <!-- ─── PROCESS / CONVERSION ─────────────────── -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="process.tag">Proceso</span>
+          <h2 class="section-title" id="process-title" data-i18n="process.title">Cómo trabajamos para que conviertas más</h2>
+          <p class="section-desc" data-i18n="process.subtitle">Un proceso simple, rápido y medible.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card glass-card reveal">
+            <h3 class="service-title" data-i18n="process.s1.title">1. Descubrimiento</h3>
+            <p class="service-desc" data-i18n="process.s1.desc">Definimos objetivos, audiencia y propuesta de valor.</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-1">
+            <h3 class="service-title" data-i18n="process.s2.title">2. Diseño + Desarrollo</h3>
+            <p class="service-desc" data-i18n="process.s2.desc">Construimos una web moderna, rápida y pensada para conversión.</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-2">
+            <h3 class="service-title" data-i18n="process.s3.title">3. SEO + Optimización</h3>
+            <p class="service-desc" data-i18n="process.s3.desc">Medimos, iteramos y mejoramos para atraer más leads.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── ABOUT ─────────────────────────────────── -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container">
@@ -1138,7 +1536,7 @@ a.contact-detail__value:hover{color:var(--primary)}
         <div class="profiles">
 
           <article class="profile-card glass-card reveal reveal-delay-1" aria-labelledby="armando-name">
-            <div class="profile-card__img">
+            <div class="profile-card__img profile-card__img--armando">
               <img src="img/mandy_perfil.jpeg" alt="Armando Urquiola Cabrera" loading="lazy" width="400" height="280" />
             </div>
             <div class="profile-card__body">
@@ -1159,7 +1557,7 @@ a.contact-detail__value:hover{color:var(--primary)}
           </article>
 
           <article class="profile-card glass-card reveal reveal-delay-2" aria-labelledby="alberto-name">
-            <div class="profile-card__img">
+            <div class="profile-card__img profile-card__img--alberto">
               <img src="img/albe_perfil.jpeg" alt="Alberto Cabrera" loading="lazy" width="400" height="280" />
             </div>
             <div class="profile-card__body">
@@ -1210,22 +1608,23 @@ a.contact-detail__value:hover{color:var(--primary)}
                 <div class="browser-url">shopwave.app</div>
               </div>
               <div class="browser-content" style="background:linear-gradient(135deg,#1a1040,#2d1b69 50%,#1a0530)">
-                <div class="ui-mockup">
-                  <div class="ui-bar"></div>
-                  <div class="ui-bar ui-bar--short"></div>
-                  <div class="ui-cards">
-                    <div class="ui-card"></div>
-                    <div class="ui-card"></div>
-                    <div class="ui-card"></div>
-                  </div>
-                  <div class="ui-chart"></div>
-                </div>
+                <img class="project-shot" src="https://picsum.photos/seed/ecommerce-demo/1200/760" alt="Demo preview de proyecto e-commerce" loading="lazy" decoding="async" fetchpriority="low" />
               </div>
             </div>
             <div class="project-card__body">
               <span class="project-tag-line">React · Node.js · AWS</span>
               <h3 class="project-title" id="p1-title" data-i18n="projects.p1.title">E-Commerce Platform</h3>
               <p class="project-desc" data-i18n="projects.p1.desc">Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard für Performance-Monitoring.</p>
+              <div class="mini-case" aria-label="Mini case study">
+                <p><strong data-i18n="projects.case.goalLabel">Objetivo:</strong> <span data-i18n="projects.p1.goal">Aumentar leads calificados y velocidad de carga.</span></p>
+                <p><strong data-i18n="projects.case.solutionLabel">Solución:</strong> <span data-i18n="projects.p1.solution">Rediseño UX, arquitectura headless y SEO técnico.</span></p>
+                <p><strong data-i18n="projects.case.impactLabel">Impacto:</strong> <span data-i18n="projects.p1.impact">Más conversiones, menor CPA y mejor performance.</span></p>
+              </div>
+              <div class="case-metrics" aria-label="Resultados del proyecto">
+                <div class="case-metric"><strong>+182%</strong><span data-i18n="projects.p1.m1">Leads en 90 días</span></div>
+                <div class="case-metric"><strong>-38%</strong><span data-i18n="projects.p1.m2">Costo por adquisición</span></div>
+                <div class="case-metric"><strong>92</strong><span data-i18n="projects.p1.m3">Lighthouse Performance</span></div>
+              </div>
               <div class="project-links">
                 <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
                 <a href="#" class="btn btn--sm btn--ghost" aria-label="GitHub Repository">
@@ -1239,16 +1638,17 @@ a.contact-detail__value:hover{color:var(--primary)}
           <!-- Project 2 -->
           <article class="project-card glass-card reveal reveal-delay-1" data-category="design" aria-labelledby="p2-title">
             <div class="project-preview" style="background:linear-gradient(135deg,#0f3460,#16213e)">
-              <div class="ui-mockup">
-                <div class="ui-bar"></div>
-                <div class="ui-bar ui-bar--short"></div>
-                <div class="ui-cards"><div class="ui-card"></div><div class="ui-card"></div></div>
-              </div>
+              <img class="project-shot" src="https://picsum.photos/seed/wordpress-divi-demo/900/600" alt="Demo preview de proyecto WordPress Divi" loading="lazy" decoding="async" fetchpriority="low" />
             </div>
             <div class="project-card__body">
               <span class="project-tag-line">Figma · Design System</span>
               <h3 class="project-title" id="p2-title" data-i18n="projects.p2.title">WordPress Divi Website</h3>
               <p class="project-desc" data-i18n="projects.p2.desc">Professionelle Unternehmenswebsite mit dem Divi Builder – schnell, responsiv und leicht pflegbar.</p>
+              <div class="mini-case">
+                <p><strong data-i18n="projects.case.goalLabel">Objetivo:</strong> <span data-i18n="projects.p2.goal">Mejorar imagen de marca y captar consultas.</span></p>
+                <p><strong data-i18n="projects.case.solutionLabel">Solución:</strong> <span data-i18n="projects.p2.solution">Sistema visual coherente, bloques de conversión y optimización móvil.</span></p>
+                <p><strong data-i18n="projects.case.impactLabel">Impacto:</strong> <span data-i18n="projects.p2.impact">Mayor tiempo en página y más formularios enviados.</span></p>
+              </div>
               <div class="project-links">
                 <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
               </div>
@@ -1258,15 +1658,17 @@ a.contact-detail__value:hover{color:var(--primary)}
           <!-- Project 3 -->
           <article class="project-card glass-card reveal reveal-delay-2" data-category="app" aria-labelledby="p3-title">
             <div class="project-preview" style="background:linear-gradient(135deg,#064e3b,#022c22)">
-              <div class="ui-mockup">
-                <div class="ui-bar"></div>
-                <div class="ui-chart"></div>
-              </div>
+              <img class="project-shot" src="https://picsum.photos/seed/seo-webapp-demo/900/600" alt="Demo preview de proyecto SEO y app web" loading="lazy" decoding="async" fetchpriority="low" />
             </div>
             <div class="project-card__body">
               <span class="project-tag-line">React Native · TypeScript · Firebase</span>
               <h3 class="project-title" id="p3-title" data-i18n="projects.p3.title">SEO &amp; Web-App</h3>
               <p class="project-desc" data-i18n="projects.p3.desc">Fullstack-Webanwendung mit integrierter SEO-Strategie und messbarem Ranking-Wachstum.</p>
+              <div class="mini-case">
+                <p><strong data-i18n="projects.case.goalLabel">Objetivo:</strong> <span data-i18n="projects.p3.goal">Escalar adquisición orgánica sin subir pauta.</span></p>
+                <p><strong data-i18n="projects.case.solutionLabel">Solución:</strong> <span data-i18n="projects.p3.solution">Contenido estratégico, performance web y tracking por embudo.</span></p>
+                <p><strong data-i18n="projects.case.impactLabel">Impacto:</strong> <span data-i18n="projects.p3.impact">Más tráfico cualificado y crecimiento sostenido de leads.</span></p>
+              </div>
               <div class="project-links">
                 <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Zum Projekt</a>
               </div>
@@ -1276,10 +1678,7 @@ a.contact-detail__value:hover{color:var(--primary)}
           <!-- Project 4 -->
           <article class="project-card glass-card reveal reveal-delay-3" data-category="web" aria-labelledby="p4-title">
             <div class="project-preview" style="background:linear-gradient(135deg,#312e81,#1e1b4b)">
-              <div class="ui-mockup">
-                <div class="ui-bar"></div>
-                <div class="ui-cards"><div class="ui-card"></div><div class="ui-card"></div><div class="ui-card"></div></div>
-              </div>
+              <img class="project-shot" src="https://picsum.photos/seed/analytics-dashboard-demo/900/600" alt="Demo preview de dashboard analítico" loading="lazy" decoding="async" fetchpriority="low" />
             </div>
             <div class="project-card__body">
               <span class="project-tag-line">Vue.js · D3.js · Python</span>
@@ -1291,12 +1690,129 @@ a.contact-detail__value:hover{color:var(--primary)}
             </div>
           </article>
 
+          <!-- Project 5 (Demo) -->
+          <article class="project-card project-card--extra glass-card reveal reveal-delay-2" data-category="design" aria-labelledby="p5-title">
+            <div class="project-preview" style="background:linear-gradient(135deg,#1e293b,#0f172a)">
+              <img class="project-shot" src="https://picsum.photos/seed/realestate-landing-demo/900/600" alt="Demo preview de landing inmobiliaria premium" loading="lazy" decoding="async" fetchpriority="low" />
+            </div>
+            <div class="project-card__body">
+              <span class="project-tag-line">Framer · Motion · CRO</span>
+              <h3 class="project-title" id="p5-title" data-i18n="projects.p5.title">Luxury Real Estate Landing</h3>
+              <p class="project-desc" data-i18n="projects.p5.desc">Landing premium para inmobiliaria con storytelling visual, formularios de alta intención y velocidad optimizada.</p>
+              <div class="mini-case">
+                <p><strong data-i18n="projects.case.goalLabel">Objetivo:</strong> <span data-i18n="projects.p5.goal">Elevar percepción de marca y generar leads de alto ticket.</span></p>
+                <p><strong data-i18n="projects.case.solutionLabel">Solución:</strong> <span data-i18n="projects.p5.solution">Arquitectura narrativa, UX enfocada en confianza y CTAs progresivos.</span></p>
+                <p><strong data-i18n="projects.case.impactLabel">Impacto:</strong> <span data-i18n="projects.p5.impact">Más contactos calificados desde tráfico orgánico y social.</span></p>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Ver Proyecto</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 (Demo) -->
+          <article class="project-card project-card--extra glass-card reveal reveal-delay-3" data-category="app" aria-labelledby="p6-title">
+            <div class="project-preview" style="background:linear-gradient(135deg,#052e16,#14532d)">
+              <img class="project-shot" src="https://picsum.photos/seed/fitness-platform-demo/900/600" alt="Demo preview de plataforma fitness" loading="lazy" decoding="async" fetchpriority="low" />
+            </div>
+            <div class="project-card__body">
+              <span class="project-tag-line">Next.js · Supabase · Stripe</span>
+              <h3 class="project-title" id="p6-title" data-i18n="projects.p6.title">Fitness Coaching Platform</h3>
+              <p class="project-desc" data-i18n="projects.p6.desc">Plataforma de membresías con pagos, panel de progreso y automatizaciones de onboarding.</p>
+              <div class="mini-case">
+                <p><strong data-i18n="projects.case.goalLabel">Objetivo:</strong> <span data-i18n="projects.p6.goal">Reducir churn y aumentar MRR.</span></p>
+                <p><strong data-i18n="projects.case.solutionLabel">Solución:</strong> <span data-i18n="projects.p6.solution">Dashboard personalizado, recordatorios inteligentes y checkout optimizado.</span></p>
+                <p><strong data-i18n="projects.case.impactLabel">Impacto:</strong> <span data-i18n="projects.p6.impact">Mejor retención y mayor ticket promedio.</span></p>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn--sm btn--primary" data-i18n="projects.viewProject">Ver Proyecto</a>
+              </div>
+            </div>
+          </article>
+
         </div><!-- /.bento-grid -->
 
         <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem)" class="reveal">
-          <a href="#contact" class="btn btn--ghost" data-i18n="projects.viewAll">Alle Projekte ansehen</a>
+          <button type="button" id="projects-show-more" class="btn btn--ghost" data-i18n="projects.showMore">Mehr Projekte anzeigen</button>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ─────────────────────────── -->
+    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="trusted-by reveal" aria-label="Trusted by">
+          <p class="trusted-by__title" data-i18n="trusted.title">Trusted by</p>
+          <div class="trusted-by__logos">
+            <span>NovaRetail</span>
+            <span>Medisana Care</span>
+            <span>CloudPeak</span>
+            <span>Urban Legal</span>
+            <span>Bavaria Dental</span>
+          </div>
+        </div>
+        <div class="section-header reveal">
+          <span class="section-tag" data-i18n="testimonials.tag">Testimonios</span>
+          <h2 class="section-title" id="testimonials-title" data-i18n="testimonials.title">Lo que dicen nuestros clientes</h2>
+          <p class="section-desc" data-i18n="testimonials.subtitle">Resultados reales, opiniones reales.</p>
+        </div>
+        <div class="testimonials-slider-controls reveal" aria-label="Controles del slider">
+          <button class="slider-btn" id="testimonials-prev" aria-label="Anterior">‹</button>
+          <button class="slider-btn" id="testimonials-next" aria-label="Siguiente">›</button>
+        </div>
+        <div class="services-grid" id="testimonials-track">
+          <article class="service-card glass-card reveal">
+            <div class="testimonial-head">
+              <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Laura+Mendez&background=2563eb&color=fff&bold=true" alt="Laura Méndez" loading="lazy" decoding="async" fetchpriority="low" />
+              <div class="testimonial-meta">
+                <p class="profile-card__name" style="font-size:1rem">Laura Méndez</p>
+                <p class="profile-card__role" data-i18n="testimonials.t1.role">CMO · Retail Brand</p>
+              </div>
+            </div>
+            <p class="service-desc" data-i18n="testimonials.t1.quote">“Duplicamos los leads en 3 meses. El equipo entendió el negocio y ejecutó impecable.”</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-1">
+            <div class="testimonial-head">
+              <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Daniel+Kruger&background=7c3aed&color=fff&bold=true" alt="Daniel Krüger" loading="lazy" decoding="async" fetchpriority="low" />
+              <div class="testimonial-meta">
+                <p class="profile-card__name" style="font-size:1rem">Daniel Krüger</p>
+                <p class="profile-card__role" data-i18n="testimonials.t2.role">Founder · SaaS B2B</p>
+              </div>
+            </div>
+            <p class="service-desc" data-i18n="testimonials.t2.quote">“Pasamos de una web lenta a una plataforma que convierte. Claridad, velocidad y calidad.”</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-2">
+            <div class="testimonial-head">
+              <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Patricia+Alonso&background=0891b2&color=fff&bold=true" alt="Patricia Alonso" loading="lazy" decoding="async" fetchpriority="low" />
+              <div class="testimonial-meta">
+                <p class="profile-card__name" style="font-size:1rem">Patricia Alonso</p>
+                <p class="profile-card__role" data-i18n="testimonials.t3.role">Directora · Clínica privada</p>
+              </div>
+            </div>
+            <p class="service-desc" data-i18n="testimonials.t3.quote">“El rediseño y SEO técnico nos posicionó mejor y mejoró la tasa de contacto.”</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-3">
+            <div class="testimonial-head">
+              <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Marc+Reiter&background=0f766e&color=fff&bold=true" alt="Marc Reiter" loading="lazy" decoding="async" fetchpriority="low" />
+              <div class="testimonial-meta">
+                <p class="profile-card__name" style="font-size:1rem">Marc Reiter</p>
+                <p class="profile-card__role" data-i18n="testimonials.t4.role">CEO · Real Estate Group</p>
+              </div>
+            </div>
+            <p class="service-desc" data-i18n="testimonials.t4.quote">“El nuevo sitio transmite confianza premium y el equipo comercial ahora cierra reuniones de mayor valor.”</p>
+          </article>
+          <article class="service-card glass-card reveal reveal-delay-4">
+            <div class="testimonial-head">
+              <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Sofia+Calderon&background=be185d&color=fff&bold=true" alt="Sofía Calderón" loading="lazy" decoding="async" fetchpriority="low" />
+              <div class="testimonial-meta">
+                <p class="profile-card__name" style="font-size:1rem">Sofía Calderón</p>
+                <p class="profile-card__role" data-i18n="testimonials.t5.role">Marketing Lead · Wellness App</p>
+              </div>
+            </div>
+            <p class="service-desc" data-i18n="testimonials.t5.quote">“Nos dieron orden, velocidad y foco en conversión. El cambio fue claro desde el primer mes.”</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1389,9 +1905,12 @@ a.contact-detail__value:hover{color:var(--primary)}
 
         <div class="contact-grid">
 
-          <div class="contact-info reveal">
+          <div class="contact-info glass-card reveal">
             <h3 class="contact-info__title" data-i18n="contact.infoTitle">Bereit, Ihr Projekt zu starten?</h3>
             <p class="contact-info__text" data-i18n="contact.infoText">Wir antworten in der Regel innerhalb von 24 Stunden – auch auf Englisch und Spanisch.</p>
+            <div class="contact-quick-actions">
+              <a class="btn btn--primary btn--sm" href="mailto:hola@albertocabrera.dev" data-i18n="contact.quickEmail">Kostenlosen Call anfragen</a>
+            </div>
 
             <ul class="contact-details" role="list">
               <li class="contact-detail">
@@ -1422,6 +1941,11 @@ a.contact-detail__value:hover{color:var(--primary)}
                 </div>
               </li>
             </ul>
+
+            <div class="mini-case" aria-label="Información adicional de contacto">
+              <p><strong data-i18n="contact.extraTitle">Próximo paso:</strong> <span data-i18n="contact.extraLine1">Te enviamos una propuesta inicial en 48 horas.</span></p>
+              <p><strong data-i18n="contact.extraBudget">Enfoque:</strong> <span data-i18n="contact.extraLine2">Webs orientadas a conversión, rendimiento y crecimiento.</span></p>
+            </div>
           </div>
 
           <div class="contact-form-wrapper reveal reveal-delay-2">
@@ -1471,8 +1995,11 @@ a.contact-detail__value:hover{color:var(--primary)}
 
         <div class="footer__brand">
           <a href="#hero" class="logo" aria-label="Zurück nach oben">
-            <span class="logo__text">A<span class="logo__amp">&amp;</span>A</span>
-            <span class="logo__sub">WebArt</span>
+            <span class="logo-mark" aria-hidden="true">A&amp;A</span>
+            <span class="logo-wordmark">
+              <span class="logo-title">A&amp;A WebArt</span>
+              <span class="logo-sub">Digital Studio</span>
+            </span>
           </a>
           <p class="footer__tagline" data-i18n="footer.tagline">Zwei Brüder. Ein Team. Unendliche Möglichkeiten.</p>
         </div>
@@ -1527,8 +2054,13 @@ a.contact-detail__value:hover{color:var(--primary)}
         'hero.greeting':'Hallo, wir sind',
         'hero.tagline':'Fullstack Development & WordPress Divi',
         'hero.description':'Wir sind zwei Brüder, die gemeinsam digitale Erlebnisse erschaffen – von der Idee bis zur fertigen Website, mit Leidenschaft und Expertise.',
-        'hero.cta':'Projekte entdecken','hero.ctaContact':'Kontakt aufnehmen',
+        'hero.cta':'Projekte mit Resultaten sehen','hero.ctaContact':'Kostenloses Erstgespräch',
+        'hero.proof1':'Kostenloses Erstgespräch','hero.proof2':'Antwort in unter 24h','hero.proof3':'Fokus auf messbare Leads',
         'hero.statProjects':'Projekte','hero.statYears':'Jahre','hero.statClients':'Kunden',
+        'process.tag':'Prozess','process.title':'So arbeiten wir für mehr Conversions','process.subtitle':'Ein klarer, schneller und messbarer Ablauf.',
+        'process.s1.title':'1. Discovery','process.s1.desc':'Wir definieren Ziele, Zielgruppe und ein klares Nutzenversprechen.',
+        'process.s2.title':'2. Design + Entwicklung','process.s2.desc':'Wir bauen eine moderne, schnelle Website mit Fokus auf Conversion.',
+        'process.s3.title':'3. SEO + Optimierung','process.s3.desc':'Wir messen, iterieren und verbessern für mehr qualifizierte Leads.',
         'about.tag':'Über uns','about.title':'Wer steckt hinter uns?',
         'about.subtitle':'Zwei Brüder, ein eingespieltes Team aus München',
         'about.armandoBio':'Armando entwickelt performante Webanwendungen mit React, Node.js und modernen Cloud-Technologien. Als SEO-Spezialist sorgt er dafür, dass unsere Projekte bei Google top platziert werden.',
@@ -1537,15 +2069,37 @@ a.contact-detail__value:hover{color:var(--primary)}
         'projects.subtitle':'Eine Auswahl unserer besten gemeinsamen Arbeiten',
         'projects.filterAll':'Alle','projects.filterWeb':'Web',
         'projects.filterDesign':'Design','projects.filterApp':'App',
-        'projects.viewProject':'Zum Projekt','projects.viewAll':'Alle Projekte ansehen',
+        'projects.viewProject':'Zum Projekt','projects.viewAll':'Alle Projekte ansehen','projects.showMore':'Mehr Projekte anzeigen',
+        'projects.case.goalLabel':'Ziel:','projects.case.solutionLabel':'Lösung:','projects.case.impactLabel':'Ergebnis:',
         'projects.p1.title':'E-Commerce Platform',
         'projects.p1.desc':'Vollständige E-Commerce-Lösung mit Produktverwaltung, Zahlungsintegration und Echtzeit-Dashboard für Performance-Monitoring.',
+        'projects.p1.goal':'Mehr qualifizierte Leads und schnellere Ladezeiten.',
+        'projects.p1.solution':'UX-Redesign, Headless-Architektur und technisches SEO.',
+        'projects.p1.impact':'Mehr Conversions, geringerer CPA und bessere Performance.',
+        'projects.p1.m1':'Leads in 90 Tagen','projects.p1.m2':'Kosten pro Akquise','projects.p1.m3':'Lighthouse Performance',
         'projects.p2.title':'WordPress Divi Website',
         'projects.p2.desc':'Professionelle Unternehmenswebsite mit dem Divi Builder – schnell, responsiv und leicht pflegbar.',
+        'projects.p2.goal':'Markenwahrnehmung verbessern und mehr Anfragen gewinnen.',
+        'projects.p2.solution':'Klares visuelles System, Conversion-Blöcke und Mobile-Optimierung.',
+        'projects.p2.impact':'Höhere Verweildauer und mehr gesendete Formulare.',
         'projects.p3.title':'SEO & Web-App',
         'projects.p3.desc':'Fullstack-Webanwendung mit integrierter SEO-Strategie und messbarem Ranking-Wachstum.',
+        'projects.p3.goal':'Organische Akquise skalieren ohne höhere Ad-Ausgaben.',
+        'projects.p3.solution':'Strategischer Content, Web-Performance und Funnel-Tracking.',
+        'projects.p3.impact':'Mehr qualifizierter Traffic und nachhaltiges Lead-Wachstum.',
         'projects.p4.title':'Analytics Dashboard',
         'projects.p4.desc':'Interaktives Analyse-Dashboard mit Echtzeit-Daten und maßgeschneiderten Visualisierungen.',
+        'projects.p5.title':'Luxury Real Estate Landing','projects.p5.desc':'Premium-Landingpage für Immobilien mit visuellem Storytelling, High-Intent-Formularen und optimierter Geschwindigkeit.',
+        'projects.p5.goal':'Markenwahrnehmung steigern und High-Ticket-Leads generieren.','projects.p5.solution':'Narrative Seitenstruktur, vertrauensfokussierte UX und progressive CTAs.','projects.p5.impact':'Mehr qualifizierte Kontakte aus organischem und Social-Traffic.',
+        'projects.p6.title':'Fitness Coaching Platform','projects.p6.desc':'Mitgliederplattform mit Zahlungen, Fortschritts-Dashboard und automatisiertem Onboarding.',
+        'projects.p6.goal':'Churn senken und MRR erhöhen.','projects.p6.solution':'Personalisierte Dashboards, smarte Erinnerungen und optimierter Checkout.','projects.p6.impact':'Bessere Retention und höherer durchschnittlicher Warenkorb.',
+        'trusted.title':'Vertrauen von',
+        'testimonials.tag':'Kundenstimmen','testimonials.title':'Was unsere Kunden sagen','testimonials.subtitle':'Echte Resultate, echtes Feedback.',
+        'testimonials.t1.quote':'„Wir haben die Leads in 3 Monaten verdoppelt. Das Team hat unser Business verstanden und stark umgesetzt.“','testimonials.t1.role':'CMO · Retail Brand',
+        'testimonials.t2.quote':'„Von langsamer Website zu einer Plattform, die konvertiert. Klar, schnell und hochwertig.“','testimonials.t2.role':'Founder · SaaS B2B',
+        'testimonials.t3.quote':'„Das Redesign plus technisches SEO hat Ranking und Kontaktquote spürbar verbessert.“','testimonials.t3.role':'Direktorin · Privatklinik',
+        'testimonials.t4.quote':'„Die neue Website vermittelt Premium-Vertrauen und unser Vertrieb gewinnt deutlich wertigere Meetings.“','testimonials.t4.role':'CEO · Real Estate Group',
+        'testimonials.t5.quote':'„Sie brachten Struktur, Geschwindigkeit und Conversion-Fokus. Der Unterschied war ab Monat eins sichtbar.“','testimonials.t5.role':'Marketing Lead · Wellness App',
         'services.tag':'Was wir bieten','services.title':'Unsere Leistungen',
         'services.subtitle':'Maßgeschneiderte Lösungen für euer digitales Wachstum',
         'services.popular':'Beliebt','services.bookBtn':'Jetzt buchen',
@@ -1569,9 +2123,12 @@ a.contact-detail__value:hover{color:var(--primary)}
         'contact.subtitle':'Haben Sie ein Projekt? Wir freuen uns auf Ihre Nachricht.',
         'contact.infoTitle':'Bereit, Ihr Projekt zu starten?',
         'contact.infoText':'Wir antworten in der Regel innerhalb von 24 Stunden – auch auf Englisch und Spanisch.',
+        'contact.extraTitle':'Nächster Schritt:','contact.extraLine1':'Wir senden innerhalb von 48 Stunden einen ersten Vorschlag.',
+        'contact.extraBudget':'Fokus:','contact.extraLine2':'Websites für Conversion, Performance und Wachstum.',
         'contact.location':'Standort','contact.response':'Antwortzeit',
         'contact.name':'Name','contact.subject':'Betreff',
-        'contact.message':'Nachricht','contact.send':'Nachricht senden',
+        'contact.message':'Nachricht','contact.send':'Projekt anfragen',
+        'contact.quickEmail':'Kostenlosen Call anfragen',
         'contact.successMsg':'Danke! Wir melden uns bald bei Ihnen.',
         'footer.tagline':'Zwei Brüder. Ein Team. Unendliche Möglichkeiten.',
         'footer.rights':'Alle Rechte vorbehalten.',
@@ -1582,8 +2139,13 @@ a.contact-detail__value:hover{color:var(--primary)}
         'hero.greeting':'Hello, we are',
         'hero.tagline':'Fullstack Development & WordPress Divi',
         'hero.description':'We are two brothers who create digital experiences together – from idea to launch, with passion and expertise.',
-        'hero.cta':'Explore Projects','hero.ctaContact':'Get in Touch',
+        'hero.cta':'See Result-Driven Projects','hero.ctaContact':'Book a Free Intro Call',
+        'hero.proof1':'Free intro call','hero.proof2':'Reply in under 24h','hero.proof3':'Focus on measurable leads',
         'hero.statProjects':'Projects','hero.statYears':'Years','hero.statClients':'Clients',
+        'process.tag':'Process','process.title':'How we work to increase conversions','process.subtitle':'A simple, fast, measurable workflow.',
+        'process.s1.title':'1. Discovery','process.s1.desc':'We define goals, audience, and your value proposition.',
+        'process.s2.title':'2. Design + Development','process.s2.desc':'We build a modern, fast website focused on conversion.',
+        'process.s3.title':'3. SEO + Optimization','process.s3.desc':'We measure, iterate, and improve to generate more qualified leads.',
         'about.tag':'About Us','about.title':'Who are we?',
         'about.subtitle':'Two brothers, one well-oiled team from Munich',
         'about.armandoBio':'Armando builds high-performance web applications with React, Node.js, and modern cloud technologies. As an SEO specialist, he ensures our projects rank at the top of Google.',
@@ -1592,15 +2154,37 @@ a.contact-detail__value:hover{color:var(--primary)}
         'projects.subtitle':'A selection of our best collaborative work',
         'projects.filterAll':'All','projects.filterWeb':'Web',
         'projects.filterDesign':'Design','projects.filterApp':'App',
-        'projects.viewProject':'View Project','projects.viewAll':'View All Projects',
+        'projects.viewProject':'View Project','projects.viewAll':'View All Projects','projects.showMore':'Show more projects',
+        'projects.case.goalLabel':'Goal:','projects.case.solutionLabel':'Solution:','projects.case.impactLabel':'Impact:',
         'projects.p1.title':'E-Commerce Platform',
         'projects.p1.desc':'Full e-commerce solution with product management, payment integration, and a real-time performance dashboard.',
+        'projects.p1.goal':'Increase qualified leads and improve loading speed.',
+        'projects.p1.solution':'UX redesign, headless architecture, and technical SEO.',
+        'projects.p1.impact':'More conversions, lower CPA, and stronger performance.',
+        'projects.p1.m1':'Leads in 90 days','projects.p1.m2':'Cost per acquisition','projects.p1.m3':'Lighthouse Performance',
         'projects.p2.title':'WordPress Divi Website',
         'projects.p2.desc':'Professional business website built with Divi – fast, responsive, and easy to manage.',
+        'projects.p2.goal':'Improve brand perception and increase inbound inquiries.',
+        'projects.p2.solution':'Consistent visual system, conversion blocks, and mobile optimization.',
+        'projects.p2.impact':'Higher time on page and more submitted forms.',
         'projects.p3.title':'SEO & Web App',
         'projects.p3.desc':'Fullstack web application with integrated SEO strategy and measurable ranking growth.',
+        'projects.p3.goal':'Scale organic acquisition without increasing ad spend.',
+        'projects.p3.solution':'Strategic content, web performance improvements, and funnel tracking.',
+        'projects.p3.impact':'More qualified traffic and steady lead growth.',
         'projects.p4.title':'Analytics Dashboard',
         'projects.p4.desc':'Interactive analytics dashboard with real-time data and custom visualisations.',
+        'projects.p5.title':'Luxury Real Estate Landing','projects.p5.desc':'Premium real-estate landing page with visual storytelling, high-intent forms, and optimized speed.',
+        'projects.p5.goal':'Elevate brand perception and generate high-ticket leads.','projects.p5.solution':'Narrative architecture, trust-focused UX, and progressive CTAs.','projects.p5.impact':'More qualified contacts from organic and social traffic.',
+        'projects.p6.title':'Fitness Coaching Platform','projects.p6.desc':'Membership platform with payments, progress dashboard, and onboarding automations.',
+        'projects.p6.goal':'Reduce churn and increase MRR.','projects.p6.solution':'Personalized dashboard, smart reminders, and optimized checkout.','projects.p6.impact':'Higher retention and better average order value.',
+        'trusted.title':'Trusted by',
+        'testimonials.tag':'Testimonials','testimonials.title':'What our clients say','testimonials.subtitle':'Real outcomes, real feedback.',
+        'testimonials.t1.quote':'“We doubled leads in 3 months. The team understood our business and executed flawlessly.”','testimonials.t1.role':'CMO · Retail Brand',
+        'testimonials.t2.quote':'“We went from a slow website to a platform that converts. Clear, fast, and high quality.”','testimonials.t2.role':'Founder · B2B SaaS',
+        'testimonials.t3.quote':'“The redesign and technical SEO improved both our rankings and contact rate.”','testimonials.t3.role':'Director · Private Clinic',
+        'testimonials.t4.quote':'“The new website feels premium and our sales team now closes higher-value meetings.”','testimonials.t4.role':'CEO · Real Estate Group',
+        'testimonials.t5.quote':'“They brought structure, speed, and conversion focus. We saw clear change in month one.”','testimonials.t5.role':'Marketing Lead · Wellness App',
         'services.tag':'What We Do','services.title':'Our Services',
         'services.subtitle':'Tailored solutions for your digital growth',
         'services.popular':'Popular','services.bookBtn':'Book Now',
@@ -1624,9 +2208,12 @@ a.contact-detail__value:hover{color:var(--primary)}
         'contact.subtitle':'Have a project? We\'d love to hear from you.',
         'contact.infoTitle':'Ready to start your project?',
         'contact.infoText':'We usually reply within 24 hours – in German, English, or Spanish.',
+        'contact.extraTitle':'Next step:','contact.extraLine1':'We send you an initial proposal within 48 hours.',
+        'contact.extraBudget':'Focus:','contact.extraLine2':'Websites built for conversion, performance, and growth.',
         'contact.location':'Location','contact.response':'Response Time',
         'contact.name':'Name','contact.subject':'Subject',
-        'contact.message':'Message','contact.send':'Send Message',
+        'contact.message':'Message','contact.send':'Start My Project',
+        'contact.quickEmail':'Request Free Call',
         'contact.successMsg':'Thank you! We\'ll get back to you soon.',
         'footer.tagline':'Two brothers. One team. Infinite possibilities.',
         'footer.rights':'All rights reserved.',
@@ -1637,8 +2224,13 @@ a.contact-detail__value:hover{color:var(--primary)}
         'hero.greeting':'Hola, somos',
         'hero.tagline':'Desarrollo Fullstack & WordPress Divi',
         'hero.description':'Somos dos hermanos que creamos experiencias digitales juntos – desde la idea hasta el lanzamiento, con pasión y expertise.',
-        'hero.cta':'Ver Proyectos','hero.ctaContact':'Contactar',
+        'hero.cta':'Ver proyectos con resultados','hero.ctaContact':'Agendar llamada gratuita',
+        'hero.proof1':'Llamada inicial gratuita','hero.proof2':'Respuesta en menos de 24h','hero.proof3':'Enfoque en leads medibles',
         'hero.statProjects':'Proyectos','hero.statYears':'Años','hero.statClients':'Clientes',
+        'process.tag':'Proceso','process.title':'Cómo trabajamos para que conviertas más','process.subtitle':'Un proceso simple, rápido y medible.',
+        'process.s1.title':'1. Descubrimiento','process.s1.desc':'Definimos objetivos, audiencia y propuesta de valor.',
+        'process.s2.title':'2. Diseño + Desarrollo','process.s2.desc':'Construimos una web moderna, rápida y pensada para conversión.',
+        'process.s3.title':'3. SEO + Optimización','process.s3.desc':'Medimos, iteramos y mejoramos para atraer más leads.',
         'about.tag':'Nosotros','about.title':'¿Quiénes somos?',
         'about.subtitle':'Dos hermanos, un equipo compenetrado de Múnich',
         'about.armandoBio':'Armando desarrolla aplicaciones web de alto rendimiento con React, Node.js y tecnologías cloud modernas. Como especialista en SEO, garantiza que nuestros proyectos estén en el top de Google.',
@@ -1647,15 +2239,37 @@ a.contact-detail__value:hover{color:var(--primary)}
         'projects.subtitle':'Una selección de nuestros mejores trabajos',
         'projects.filterAll':'Todos','projects.filterWeb':'Web',
         'projects.filterDesign':'Diseño','projects.filterApp':'App',
-        'projects.viewProject':'Ver Proyecto','projects.viewAll':'Ver Todos los Proyectos',
+        'projects.viewProject':'Ver Proyecto','projects.viewAll':'Ver Todos los Proyectos','projects.showMore':'Ver más proyectos',
+        'projects.case.goalLabel':'Objetivo:','projects.case.solutionLabel':'Solución:','projects.case.impactLabel':'Impacto:',
         'projects.p1.title':'Plataforma E-Commerce',
         'projects.p1.desc':'Solución e-commerce completa con gestión de productos, integración de pagos y dashboard en tiempo real.',
+        'projects.p1.goal':'Aumentar leads calificados y velocidad de carga.',
+        'projects.p1.solution':'Rediseño UX, arquitectura headless y SEO técnico.',
+        'projects.p1.impact':'Más conversiones, menor CPA y mejor performance.',
+        'projects.p1.m1':'Leads en 90 días','projects.p1.m2':'Costo por adquisición','projects.p1.m3':'Rendimiento Lighthouse',
         'projects.p2.title':'Web WordPress Divi',
         'projects.p2.desc':'Web corporativa profesional con Divi Builder – rápida, responsive y fácil de gestionar.',
+        'projects.p2.goal':'Mejorar imagen de marca y captar consultas.',
+        'projects.p2.solution':'Sistema visual coherente, bloques de conversión y optimización móvil.',
+        'projects.p2.impact':'Mayor tiempo en página y más formularios enviados.',
         'projects.p3.title':'SEO & App Web',
         'projects.p3.desc':'Aplicación web fullstack con estrategia SEO integrada y crecimiento de ranking medible.',
+        'projects.p3.goal':'Escalar adquisición orgánica sin subir pauta.',
+        'projects.p3.solution':'Contenido estratégico, performance web y tracking por embudo.',
+        'projects.p3.impact':'Más tráfico cualificado y crecimiento sostenido de leads.',
         'projects.p4.title':'Dashboard Analytics',
         'projects.p4.desc':'Dashboard analítico interactivo con datos en tiempo real y visualizaciones personalizadas.',
+        'projects.p5.title':'Landing Inmobiliaria Premium','projects.p5.desc':'Landing premium para inmobiliaria con storytelling visual, formularios de alta intención y velocidad optimizada.',
+        'projects.p5.goal':'Elevar percepción de marca y generar leads de alto ticket.','projects.p5.solution':'Arquitectura narrativa, UX enfocada en confianza y CTAs progresivos.','projects.p5.impact':'Más contactos calificados desde tráfico orgánico y social.',
+        'projects.p6.title':'Plataforma de Coaching Fitness','projects.p6.desc':'Plataforma de membresías con pagos, panel de progreso y automatizaciones de onboarding.',
+        'projects.p6.goal':'Reducir churn y aumentar MRR.','projects.p6.solution':'Dashboard personalizado, recordatorios inteligentes y checkout optimizado.','projects.p6.impact':'Mejor retención y mayor ticket promedio.',
+        'trusted.title':'Confían en nosotros',
+        'testimonials.tag':'Testimonios','testimonials.title':'Lo que dicen nuestros clientes','testimonials.subtitle':'Resultados reales, opiniones reales.',
+        'testimonials.t1.quote':'“Duplicamos los leads en 3 meses. El equipo entendió el negocio y ejecutó impecable.”','testimonials.t1.role':'CMO · Marca Retail',
+        'testimonials.t2.quote':'“Pasamos de una web lenta a una plataforma que convierte. Claridad, velocidad y calidad.”','testimonials.t2.role':'Founder · SaaS B2B',
+        'testimonials.t3.quote':'“El rediseño y SEO técnico nos posicionó mejor y mejoró la tasa de contacto.”','testimonials.t3.role':'Directora · Clínica privada',
+        'testimonials.t4.quote':'“El nuevo sitio transmite confianza premium y el equipo comercial ahora cierra reuniones de mayor valor.”','testimonials.t4.role':'CEO · Real Estate Group',
+        'testimonials.t5.quote':'“Nos dieron orden, velocidad y foco en conversión. El cambio fue claro desde el primer mes.”','testimonials.t5.role':'Marketing Lead · Wellness App',
         'services.tag':'Qué Hacemos','services.title':'Nuestros Servicios',
         'services.subtitle':'Soluciones a medida para tu crecimiento digital',
         'services.popular':'Popular','services.bookBtn':'Reservar',
@@ -1679,9 +2293,12 @@ a.contact-detail__value:hover{color:var(--primary)}
         'contact.subtitle':'¿Tienes un proyecto? Nos encantaría saber más.',
         'contact.infoTitle':'¿Listo para empezar tu proyecto?',
         'contact.infoText':'Solemos responder en menos de 24 horas – en alemán, inglés o español.',
+        'contact.extraTitle':'Próximo paso:','contact.extraLine1':'Te enviamos una propuesta inicial en 48 horas.',
+        'contact.extraBudget':'Enfoque:','contact.extraLine2':'Webs orientadas a conversión, rendimiento y crecimiento.',
         'contact.location':'Ubicación','contact.response':'Tiempo de respuesta',
         'contact.name':'Nombre','contact.subject':'Asunto',
-        'contact.message':'Mensaje','contact.send':'Enviar Mensaje',
+        'contact.message':'Mensaje','contact.send':'Quiero iniciar mi proyecto',
+        'contact.quickEmail':'Solicitar llamada gratuita',
         'contact.successMsg':'¡Gracias! Nos pondremos en contacto pronto.',
         'footer.tagline':'Dos hermanos. Un equipo. Posibilidades infinitas.',
         'footer.rights':'Todos los derechos reservados.',
@@ -1705,6 +2322,11 @@ a.contact-detail__value:hover{color:var(--primary)}
     const formSubmit  = $('form-submit');
     const cursorDot  = $('cursor');
     const cursorRing = $('cursor-ring');
+    const testimonialsTrack = $('testimonials-track');
+    const testimonialsPrev = $('testimonials-prev');
+    const testimonialsNext = $('testimonials-next');
+    const projectsShowMore = $('projects-show-more');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ── YEAR ─────────────────────────────────────────────────── */
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -1749,21 +2371,31 @@ a.contact-detail__value:hover{color:var(--primary)}
     }
 
     /* ── SCROLL: header + back-to-top ─────────────────────────── */
+    const navSections = Array.from($$('.nav__link[href^="#"]')).map(link => ({
+      link,
+      sec: document.querySelector(link.getAttribute('href'))
+    })).filter(item => item.sec);
+
     function onScroll() {
       const y = window.scrollY;
       if (headerEl) headerEl.classList.toggle('is-scrolled', y > 60);
       if (backTop)  backTop.classList.toggle('is-visible', y > 400);
 
       // Active nav link
-      $$('.nav__link[href^="#"]').forEach(link => {
-        const sec = document.querySelector(link.getAttribute('href'));
-        if (!sec) return;
+      navSections.forEach(({ link, sec }) => {
         const { top, bottom } = sec.getBoundingClientRect();
         link.classList.toggle('active', top <= 120 && bottom > 120);
       });
     }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        scrollTicking = false;
+      });
+    }, { passive: true });
     onScroll();
 
     /* ── MOBILE MENU ──────────────────────────────────────────── */
@@ -1801,12 +2433,12 @@ a.contact-detail__value:hover{color:var(--primary)}
       const target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     });
 
     /* ── BACK TO TOP ─────────────────────────────────────────── */
     if (backTop) {
-      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
     }
 
     /* ── CUSTOM CURSOR ────────────────────────────────────────── */
@@ -1858,10 +2490,32 @@ a.contact-detail__value:hover{color:var(--primary)}
     /* ── PROJECT FILTER ──────────────────────────────────────── */
     const filterTabs  = $$('.filter-tab');
     const projectCards = $$('.project-card');
+    const extraProjectCards = $$('.project-card--extra');
+    let projectsExpanded = false;
+    let currentProjectFilter = 'all';
+
+    function applyProjectVisibility() {
+      projectCards.forEach(card => {
+        const matchFilter = currentProjectFilter === 'all' || card.dataset.category === currentProjectFilter;
+        const isExtra = card.classList.contains('project-card--extra');
+        const visible = matchFilter && (!isExtra || projectsExpanded);
+        card.style.display = visible ? '' : 'none';
+        if (visible && !card.classList.contains('is-visible')) {
+          setTimeout(() => card.classList.add('is-visible'), 50);
+        }
+      });
+      if (projectsShowMore) {
+        const hasHiddenExtras = !projectsExpanded && Array.from(extraProjectCards).some(card =>
+          currentProjectFilter === 'all' || card.dataset.category === currentProjectFilter
+        );
+        projectsShowMore.style.display = hasHiddenExtras ? '' : 'none';
+      }
+    }
 
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const filter = tab.dataset.filter;
+        currentProjectFilter = filter;
 
         filterTabs.forEach(t => {
           t.classList.remove('active');
@@ -1869,17 +2523,56 @@ a.contact-detail__value:hover{color:var(--primary)}
         });
         tab.classList.add('active');
         tab.setAttribute('aria-pressed', 'true');
-
-        projectCards.forEach(card => {
-          const match = filter === 'all' || card.dataset.category === filter;
-          card.style.display = match ? '' : 'none';
-          // Re-trigger reveal for newly shown cards
-          if (match && !card.classList.contains('is-visible')) {
-            setTimeout(() => card.classList.add('is-visible'), 50);
-          }
-        });
+        applyProjectVisibility();
       });
     });
+
+    projectsShowMore?.addEventListener('click', () => {
+      projectsExpanded = true;
+      applyProjectVisibility();
+    });
+
+    applyProjectVisibility();
+
+    /* ── TESTIMONIALS SLIDER (auto + controls) ──────────────── */
+    if (testimonialsTrack) {
+      const cards = Array.from(testimonialsTrack.querySelectorAll('.service-card'));
+      let idx = 0;
+      let autoTimer = null;
+
+      function goTo(i) {
+        if (!cards.length) return;
+        idx = (i + cards.length) % cards.length;
+        testimonialsTrack.scrollTo({
+          left: cards[idx].offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+      function next() { goTo(idx + 1); }
+      function prev() { goTo(idx - 1); }
+      function startAuto() {
+        if (reduceMotion) return;
+        stopAuto();
+        autoTimer = setInterval(next, 3000);
+      }
+      function stopAuto() {
+        if (autoTimer) clearInterval(autoTimer);
+        autoTimer = null;
+      }
+
+      testimonialsNext?.addEventListener('click', () => { next(); startAuto(); });
+      testimonialsPrev?.addEventListener('click', () => { prev(); startAuto(); });
+      testimonialsTrack.addEventListener('mouseenter', stopAuto);
+      testimonialsTrack.addEventListener('mouseleave', startAuto);
+      testimonialsTrack.addEventListener('touchstart', stopAuto, { passive: true });
+      testimonialsTrack.addEventListener('touchend', startAuto, { passive: true });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopAuto();
+        else startAuto();
+      });
+
+      startAuto();
+    }
 
     /* ── CONTACT FORM ────────────────────────────────────────── */
     if (contactForm) {
